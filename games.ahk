@@ -88,8 +88,6 @@ AutoRun(forwardKey, runKey)
     Send, {Numpad0 up}
 }
 
-; GroupAdd, DoomGroup, ahk_exe DOOMEternalx64vk.exe
-; GroupAdd, DoomGroup, ahk_exe DOOMx64vk.exe
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
     or WinActive("ahk_exe DOOMx64vk.exe")
 {
@@ -126,32 +124,6 @@ AutoRun(forwardKey, runKey)
     return
 }
 
-; #if WinActive("ahk_exe sekiro.exe")
-; {
-;     WheelUp::
-;         SendInput {P down}
-;         sleep 45
-;         SendInput {P up}
-;     return
-
-;     WheelDown::
-;         SendInput {L down}
-;         sleep 45
-;         SendInput {L up}
-;     return
-; }
-
-; #if WinActive("ahk_exe DarkSoulsRemastered.exe")
-; {
-;     [::
-;         SendInput {LShift WheelUp}
-;     return
-
-;     ]::
-;         SendInput {LShift WheelDown}
-;     return
-; }
-
 #if WinActive("ahk_exe ULTRAKILL.exe")
 {
     #MaxThreadsPerHotkey, 2
@@ -163,56 +135,14 @@ AutoRun(forwardKey, runKey)
     WheelDown::
         SendInput G
     return
-
-    ; WheelLeft::
-    ;     SendInput G
-    ; return
-
-    ; WheelRight::
-    ;     SendInput G
-    ; return
 }
-
-; #if WinActive("ahk_exe farcry3_d3d11.exe")
-; or WinActive("ahk_exe hollow_knight.exe")
-; or WinActive("ahk_exe witcher3.exe")
-; or WinActive("ahk_exe ELDERBORN.exe")
-; or WinActive("ahk_exe GoW.exe")
-; {
-; }
 
 #if WinActive("ahk_exe destiny2.exe")
 {
-    ; ~w::
-    ;     desiredHoldMs := 1000
-    ;     startMs := A_TickCount
-
-    ;     Send, {Numpad0 down}
-
-    ;     While GetKeyState("w", "P")
-    ;     {
-    ;         elapsedMs := A_TickCount - startMs
-    ;         elapsedTimeIsFulfilled := elapsedMs >= desiredHoldMs
-
-    ;         if (elapsedTimeIsFulfilled)
-    ;         {
-    ;             Send, {w down}
-    ;         }
-
-    ;         Sleep, 1
-    ;     }
-
-    ;     Send, {w up}
-    ;     Send, {Numpad0 up}
-    return
-
     Enter::Space
     Delete::Enter
-    ; BackSpace::Enter
     LControl::Numpad0
     RControl::Numpad1
-    ; WheelUp::Q
-    ; WheelDown::E
 }
 
 #if WinActive("ahk_exe Magicka.exe")
