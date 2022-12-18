@@ -143,7 +143,6 @@ SendMode, Input
 }
 
 #if WinActive("ahk_exe AI.exe")
-    or WinActive("ahk_exe DiabloImmortal.exe")
 {
     Enter::Space
     Ctrl::Shift
@@ -151,7 +150,6 @@ SendMode, Input
 }
 
 #if WinActive("ahk_exe arma3_x64.exe")
-    or WinActive("ahk_exe DarkSoulsIII.exe")
 ; or WinActive("ahk_exe Indiana-Win64-Shipping.exe")
 {
     Enter::Space
