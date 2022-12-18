@@ -76,7 +76,7 @@ SendMode, Input
 ; #Include sticky-shift.ahk
 ; #Include spam.ahk
 #Include desktop-8a.ahk
-#Include hotstrings.ahk
+; #Include hotstrings.ahk
 ; #Include games.ahk
 
 Pause::Suspend
