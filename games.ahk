@@ -75,19 +75,6 @@ SendMode, Input
 ;PID := DllCall("GetCurrentProcessId")
 ;Process, Priority, %PID%, High
 
-AutoRun(forwardKey, runKey)
-{
-    Send, {Numpad0 down}
-    While GetKeyState("w", "P")
-    {
-        Send, {w down}
-        Sleep, 1
-    }
-
-    Send, {w up}
-    Send, {Numpad0 up}
-}
-
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
     or WinActive("ahk_exe DOOMx64vk.exe")
 {
