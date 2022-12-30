@@ -75,25 +75,31 @@ SendMode, Input
 ;PID := DllCall("GetCurrentProcessId")
 ;Process, Priority, %PID%, High
 
+; Halo Infinite binds
+grapplingHook := 1
+motionTracker := 2
+dropwall := 3
+thruster := 4
+activateAbility := "q"
+
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
     or WinActive("ahk_exe DOOMx64vk.exe")
 {
     =::Suspend
 
+    ; Ice bomb
     t::
-        ; Fire ice grenade
-        KeyWait, t
-        Send, {WheelDown}{RControl}
-        ; g^
+        SendInput, {WheelDown}{RControl}
         Sleep, 50
-        Send, {WheelDown}
+        SendInput, {WheelDown}
     return
 
+    ; Autohop
     Enter::
         desiredHoldMs := 100
         startMs := A_TickCount
 
-        Send, {Enter}
+        SendInput, {Enter}
 
         While GetKeyState("Enter", "P")
         {
@@ -102,8 +108,8 @@ SendMode, Input
 
             if (elapsedTimeIsFulfilled)
             {
-                Send, {Enter}
-
+                ; Send, {Enter}
+                SendInput {Enter}
             }
 
             Sleep, 1
@@ -113,8 +119,6 @@ SendMode, Input
 
 #if WinActive("ahk_exe ULTRAKILL.exe")
 {
-    #MaxThreadsPerHotkey, 2
-
     WheelUp::
         SendInput T
     return
@@ -165,48 +169,42 @@ SendMode, Input
 
 #if WinActive("ahk_exe HaloInfinite.exe")
 {
-    useAbility(abilityBind, bindToAwait, timeout := 10){
-        KeyWait, %bindToAwait%
+    global grapplingHook
+    global dropwall
+    global motionTracker
+    global thruster
+    global activateAbility
 
-        Send, {%abilityBind% down}
-        Sleep, timeout
-        Send, {%abilityBind% up}
-        Sleep, timeout
+    SelectAbility(key, delay := 10)
+    {
+        SendInput, {%key% down}
+        Sleep, delay
 
-        Send, {m down}
-        Sleep, timeout
-        Send, {m up}
-        Sleep, timeout
+        SendInput, {%key% up}
+        Sleep, delay
     }
 
-    resetToGrapplingHook() {
-        Send {1 down}
-        Sleep, 10
-        Send {1 up}
-        Sleep 10
+    UseAbility(key, delay := 10)
+    {
+        SelectAbility(key, delay)
+
+        SendInput, %activateAbility%
     }
+
+    Enter::Space
 
     XButton2::
-        motionTracker := 2
-
-        useAbility(motionTracker, XButton2)
-        resetToGrapplingHook()
+        UseAbility(motionTracker)
+        SelectAbility(grapplingHook)
     return
 
     XButton1::
-        thruster := 4
-
-        useAbility(thruster, XButton1)
-        resetToGrapplingHook()
+        UseAbility(thruster)
+        SelectAbility(grapplingHook)
     return
 
     g::
-        dropwall := 3
-
-        useAbility(dropwall, g)
-        resetToGrapplingHook()
+        UseAbility(dropwall)
+        SelectAbility(grapplingHook)
     return
-
-    Enter::Space
-    q::m ; Workaround for Q-based ability activation causing shift to be send as well
 }
