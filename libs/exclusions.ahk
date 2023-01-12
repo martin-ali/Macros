@@ -53,3 +53,5 @@ GroupAdd, ExclusionGroup, ahk_exe OxygenNotIncluded.exe
 GroupAdd, ExclusionGroup, ahk_exe HaloInfinite.exe
 GroupAdd, ExclusionGroup, ahk_exe GoW.exe
 GroupAdd, ExclusionGroup, ahk_exe HorizonZeroDawn.exe
+GroupAdd, ExclusionGroup, ahk_exe Frostpunk.exe
+GroupAdd, ExclusionGroup, ahk_exe Titanfall2.exe
