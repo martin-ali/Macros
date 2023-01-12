@@ -108,7 +108,6 @@ activateAbility := "q"
 
             if (elapsedTimeIsFulfilled)
             {
-                ; Send, {Enter}
                 SendInput {Enter}
             }
 
@@ -140,6 +139,7 @@ activateAbility := "q"
     or WinActive("ahk_exe Cyberpunk2077.exe")
     or WinActive("ahk_exe Swat4.exe")
     or WinActive("ahk_exe HorizonZeroDawn.exe")
+    or WinActive("ahk_exe Titanfall2.exe")
 {
     Enter::Space
     BackSpace::Enter
@@ -185,7 +185,7 @@ activateAbility := "q"
     }
 
     UseAbility(key, delay := 10)
-    {
+    { 
         SelectAbility(key, delay)
 
         SendInput, %activateAbility%
