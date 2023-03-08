@@ -282,8 +282,16 @@ sendWithDelay(key, delay := 25)
 
 #if WinActive("ahk_exe vermintide2.exe")
     or WinActive("ahk_exe OxygenNotIncluded.exe")
+    or WinActive("ahk_exe FarCry6.exe")
+    or WinActive("ahk_exe R6-Extraction_Plus.exe")
+    or WinActive("ahk_exe MCC-Win64-Shipping.exe")
+    or WinActive("ahk_exe Dead Space.exe")
+    or WinActive("ahk_exe fc3_blooddragon_d3d11.exe")
+    or WinActive("ahk_exe Mechanicus.exe")
+    or WinActive("ahk_exe MidnightSuns-Win64-Shipping.exe")
 {
     Enter::Space
+    Delete::Enter
 }
 
 #if WinActive("ahk_exe HaloInfinite.exe")
