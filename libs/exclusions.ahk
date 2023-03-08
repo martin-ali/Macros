@@ -55,3 +55,10 @@ GroupAdd, ExclusionGroup, ahk_exe GoW.exe
 GroupAdd, ExclusionGroup, ahk_exe HorizonZeroDawn.exe
 GroupAdd, ExclusionGroup, ahk_exe Frostpunk.exe
 GroupAdd, ExclusionGroup, ahk_exe Titanfall2.exe
+GroupAdd, ExclusionGroup, ahk_exe FarCry6.exe
+GroupAdd, ExclusionGroup, ahk_exe R6-Extraction_Plus.exe
+GroupAdd, ExclusionGroup, ahk_exe MCC-Win64-Shipping.exe
+GroupAdd, ExclusionGroup, ahk_exe Anno1800_plus.exe
+GroupAdd, ExclusionGroup, ahk_exe "Dead Space.exe"
+GroupAdd, ExclusionGroup, ahk_exe fc3_blooddragon_d3d11.exe
+GroupAdd, ExclusionGroup, ahk_exe Mechanicus.exe
