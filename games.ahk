@@ -193,6 +193,59 @@ sendWithDelay(key, delay := 25)
     return
 }
 
+#if WinActive("ahk_exe HorizonZeroDawn.exe")
+{
+    ; cycle tools left
+    WheelUp::
+        sendWithDelay("[")
+    return
+
+    ; cycle tools right
+    WheelDown::
+        sendWithDelay("]")
+    return
+
+    ^WheelUp::
+        Send, {WheelUp}
+    return
+
+    ^WheelDown::
+        Send, {WheelDown}
+    return
+
+    ; ; Tap for map, hold to show HUD
+    ; Tab::
+    ;     desiredHoldMs := 200
+    ;     startMs := A_TickCount
+    ;     HoldIsFulfilled := false
+
+    ;     while GetKeyState("Tab", "P")
+    ;     {
+    ;         elapsedMs := (A_TickCount - startMs)
+    ;         HoldIsFulfilled := (elapsedMs >= desiredHoldMs)
+
+    ;         if (HoldIsFulfilled)
+    ;         {
+    ;             Send, {h down}
+    ;             break
+    ;         }
+
+    ;         Sleep, 10
+    ;     }
+
+    ;     KeyWait, `t
+
+    ;     if(HoldIsFulfilled)
+    ;     {
+    ;         Send, {h up}
+    ;     }
+    ;     else
+    ;     {
+    ;         sendWithDelay("Tab")
+    ;     }
+    ; return
+}
+
 #if WinActive("ahk_exe destiny2.exe")
 {
     Enter::Space
