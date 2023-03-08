@@ -1,4 +1,4 @@
-﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -81,38 +81,104 @@ motionTracker := 2
 dropwall := 3
 thruster := 4
 activateAbility := "q"
+meathookIsEnabled := true
+
+sendWithDelay(key, delay := 25)
+{
+    Send, {%key% down}
+    Sleep, %delay%
+    Send, {%key% up}
+}
 
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
     or WinActive("ahk_exe DOOMx64vk.exe")
 {
+    global meathookIsEnabled
+
     =::Suspend
 
     ; Ice bomb
+    #MaxThreads, 2
     t::
-        SendInput, {WheelDown}{RControl}
+        KeyWait, t
+        SendInput, {h}
         Sleep, 50
-        SendInput, {WheelDown}
+        SendInput, {RControl}
+        Sleep, 50
+        SendInput, {h}
     return
 
     ; Autohop
-    Enter::
+    LControl::
         desiredHoldMs := 100
         startMs := A_TickCount
 
-        SendInput, {Enter}
+        SendInput, {LControl}
 
-        While GetKeyState("Enter", "P")
+        While GetKeyState("LControl", "P")
         {
             elapsedMs := A_TickCount - startMs
             elapsedTimeIsFulfilled := elapsedMs >= desiredHoldMs
 
             if (elapsedTimeIsFulfilled)
             {
-                SendInput {Enter}
+                SendInput {LControl}
             }
 
             Sleep, 1
         }
+    return
+
+    RButton::
+        if (meathookIsEnabled == false)
+        {
+            Send, {e}
+        }
+    return
+
+    c::
+        meathookIsEnabled := false
+        SendInput, {c}
+    return
+
+    x::
+        meathookIsEnabled := true
+        SendInput, {x}
+    return
+
+    v::
+        meathookIsEnabled := true
+        SendInput, {v}
+    return
+
+    b::
+        meathookIsEnabled := true
+        SendInput, {b}
+    return
+
+    Enter::
+        meathookIsEnabled := true
+        SendInput, {Enter}
+    return
+
+    LShift::
+        meathookIsEnabled := true
+        SendInput, {LShift}
+    return
+
+    ; LControl::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {LControl}
+    ; return
+
+    2::
+        meathookIsEnabled := true
+        SendInput, {2}
+    return
+
+    XButton2::
+        meathookIsEnabled := true
+        SendInput, {XButton2}
     return
 }
 
