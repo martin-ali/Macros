@@ -82,6 +82,7 @@ dropwall := 3
 thruster := 4
 activateAbility := "q"
 meathookIsEnabled := true
+weaponWheelIsToggled := false
 
 sendWithDelay(key, delay := 25)
 {
@@ -195,7 +196,8 @@ sendWithDelay(key, delay := 25)
 
 #if WinActive("ahk_exe HorizonZeroDawn.exe")
 {
-    ; cycle tools left
+    global weaponWheelIsToggled
+
     WheelUp::
         sendWithDelay("[")
     return
@@ -213,11 +215,20 @@ sendWithDelay(key, delay := 25)
         Send, {WheelDown}
     return
 
-    ; ; Tap for map, hold to show HUD
-    ; Tab::
-    ;     desiredHoldMs := 200
-    ;     startMs := A_TickCount
-    ;     HoldIsFulfilled := false
+    ; Toggle weapon wheel
+    MButton::
+        if (weaponWheelIsToggled)
+        {
+            Send, {MButton up}
+            weaponWheelIsToggled := false
+
+        }
+        else
+        {
+            Send, {MButton down}
+            weaponWheelIsToggled := true
+        }
+    return
 
     ; Tap for map, hold to show HUD
     Tab::
