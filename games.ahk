@@ -198,19 +198,22 @@ sendWithDelay(key, delay := 25)
 {
     global weaponWheelIsToggled
 
+    ; Cycle tools left
     WheelUp::
         sendWithDelay("[")
     return
 
-    ; cycle tools right
+    ; Cycle tools right
     WheelDown::
         sendWithDelay("]")
     return
 
+    ; Zoom and scroll in menus
     ^WheelUp::
         Send, {WheelUp}
     return
 
+    ; Zoom and scroll in menus
     ^WheelDown::
         Send, {WheelDown}
     return
