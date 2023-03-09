@@ -1,4 +1,4 @@
-﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -219,31 +219,37 @@ sendWithDelay(key, delay := 25)
     ;     startMs := A_TickCount
     ;     HoldIsFulfilled := false
 
-    ;     while GetKeyState("Tab", "P")
-    ;     {
-    ;         elapsedMs := (A_TickCount - startMs)
-    ;         HoldIsFulfilled := (elapsedMs >= desiredHoldMs)
+    ; Tap for map, hold to show HUD
+    Tab::
+        desiredHoldMs := 200
+        startMs := A_TickCount
+        HoldIsFulfilled := false
+        Send, {h down}
 
-    ;         if (HoldIsFulfilled)
-    ;         {
-    ;             Send, {h down}
-    ;             break
-    ;         }
+        while GetKeyState("Tab", "P")
+        {
+            elapsedMs := (A_TickCount - startMs)
+            HoldIsFulfilled := (elapsedMs >= desiredHoldMs)
 
-    ;         Sleep, 10
-    ;     }
+            if (HoldIsFulfilled)
+            {
+                break
+            }
 
-    ;     KeyWait, `t
+            Sleep, 10
+        }
 
-    ;     if(HoldIsFulfilled)
-    ;     {
-    ;         Send, {h up}
-    ;     }
-    ;     else
-    ;     {
-    ;         sendWithDelay("Tab")
-    ;     }
-    ; return
+        KeyWait, `t
+
+        if(HoldIsFulfilled)
+        {
+            Send, {h up}
+        }
+        else
+        {
+            sendWithDelay("Tab")
+        }
+    return
 }
 
 #if WinActive("ahk_exe destiny2.exe")
