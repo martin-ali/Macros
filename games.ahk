@@ -84,11 +84,16 @@ activateAbility := "q"
 meathookIsEnabled := true
 weaponWheelIsToggled := false
 
-sendWithDelay(key, delay := 25)
+SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 {
     Send, {%key% down}
-    Sleep, %delay%
+    Sleep, %delayMs%
     Send, {%key% up}
+
+    if (shouldDelayAfterPress)
+    {
+        Sleep, %delayMs%
+    }
 }
 
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
@@ -200,12 +205,12 @@ sendWithDelay(key, delay := 25)
 
     ; Cycle tools left
     WheelUp::
-        sendWithDelay("[")
+        SendDelayed("[")
     return
 
     ; Cycle tools right
     WheelDown::
-        sendWithDelay("]")
+        SendDelayed("]")
     return
 
     ; Zoom and scroll in menus
@@ -261,7 +266,7 @@ sendWithDelay(key, delay := 25)
         }
         else
         {
-            sendWithDelay("Tab")
+            SendDelayed("Tab")
         }
     return
 }
