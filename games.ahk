@@ -1,4 +1,4 @@
-; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -97,25 +97,24 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 }
 
 #if WinActive("ahk_exe DOOMEternalx64vk.exe")
-    or WinActive("ahk_exe DOOMx64vk.exe")
 {
     global meathookIsEnabled
 
     =::Suspend
 
     ; Ice bomb
-    #MaxThreads, 2
-    t::
-        KeyWait, t
-        SendInput, {h}
-        Sleep, 50
-        SendInput, {RControl}
-        Sleep, 50
-        SendInput, {h}
+    ; #MaxThreads, 2
+    *t::
+    ; KeyWait, t
+    SendInput, {h}
+    Sleep, 50
+    SendInput, {RControl}
+    Sleep, 50
+    SendInput, {h}
     return
 
     ; Autohop
-    LControl::
+    *LControl::
         desiredHoldMs := 100
         startMs := A_TickCount
 
@@ -136,53 +135,54 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     return
 
     ; TODO: Find a cleaner way to disable the meathook
+    *RButton::
         if (meathookIsEnabled == false)
         {
             Send, {e}
         }
     return
 
-    c::
+    *c::
         meathookIsEnabled := false
         SendInput, {c}
     return
 
-    x::
+    *x::
         meathookIsEnabled := true
         SendInput, {x}
     return
 
-    v::
+    *v::
         meathookIsEnabled := true
         SendInput, {v}
     return
 
-    b::
+    *b::
         meathookIsEnabled := true
         SendInput, {b}
     return
 
-    Enter::
+    *Enter::
         meathookIsEnabled := true
         SendInput, {Enter}
     return
 
-    LShift::
+    *LShift::
         meathookIsEnabled := true
         SendInput, {LShift}
     return
 
-    ; LControl::
+    ; *LControl::
     ;     meathookIsEnabled := true
     ;     SendInput, {LControl}
     ; return
 
-    2::
+    *2::
         meathookIsEnabled := true
         SendInput, {2}
     return
 
-    XButton2::
+    *XButton2::
         meathookIsEnabled := true
         SendInput, {XButton2}
     return
@@ -190,11 +190,11 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
 #if WinActive("ahk_exe ULTRAKILL.exe")
 {
-    WheelUp::
+    *WheelUp::
         SendInput, {[}
     return
 
-    WheelDown::
+    *WheelDown::
         SendInput, {]}
     return
 }
@@ -204,27 +204,27 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     global weaponWheelIsToggled
 
     ; Cycle tools left
-    WheelUp::
+    *WheelUp::
         SendDelayed("[")
     return
 
     ; Cycle tools right
-    WheelDown::
+    *WheelDown::
         SendDelayed("]")
     return
 
     ; Zoom in / scroll up
-    ^WheelUp::
+    *^WheelUp::
         Send, {WheelUp}
     return
 
     ; Zoom out / scroll down
-    ^WheelDown::
+    *^WheelDown::
         Send, {WheelDown}
     return
 
     ; Toggle weapon wheel
-    MButton::
+    *MButton::
         if (weaponWheelIsToggled)
         {
             Send, {MButton up}
@@ -239,7 +239,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     return
 
     ; Tap for map, hold to show HUD
-    Tab::
+    *Tab::
         desiredHoldMs := 200
         startMs := A_TickCount
         HoldIsFulfilled := false
@@ -273,10 +273,10 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
 #if WinActive("ahk_exe destiny2.exe")
 {
-    Enter::Space
-    Delete::Enter
-    LControl::Numpad0
-    RControl::Numpad1
+    *Enter::Space
+    *Delete::Enter
+    *LControl::Numpad0
+    *RControl::Numpad1
 }
 
 #if WinActive("ahk_exe Magicka.exe")
@@ -285,24 +285,23 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     or WinActive("ahk_exe HorizonZeroDawn.exe")
     or WinActive("ahk_exe Titanfall2.exe")
 {
-    Enter::Space
-    BackSpace::Enter
-    ; Space::Enter
+    *Enter::Space
+    *BackSpace::Enter
 }
 
 #if WinActive("ahk_exe AI.exe")
 {
-    Enter::Space
-    Ctrl::Shift
-    Shift::C
+    *Enter::Space
+    *Ctrl::Shift
+    *Shift::C
 }
 
 #if WinActive("ahk_exe arma3_x64.exe")
 ; or WinActive("ahk_exe Indiana-Win64-Shipping.exe")
 {
-    Enter::Space
-    Ctrl::Shift
-    Shift::Ctrl
+    *Enter::Space
+    *Ctrl::Shift
+    *Shift::Ctrl
 }
 
 #if WinActive("ahk_exe vermintide2.exe")
@@ -316,8 +315,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     or WinActive("ahk_exe MidnightSuns-Win64-Shipping.exe")
     or WinActive("ahk_exe Control_DX11.exe")
 {
-    Enter::Space
-    Delete::Enter
+    *Enter::Space
+    *Delete::Enter
 }
 
 #if WinActive("ahk_exe HaloInfinite.exe")
