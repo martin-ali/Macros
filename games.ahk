@@ -80,7 +80,7 @@ grapplingHook := 1
 motionTracker := 2
 dropwall := 3
 thruster := 4
-activateAbility := "q"
+activateAbility := "/"
 meathookIsEnabled := true
 weaponWheelIsToggled := false
 
