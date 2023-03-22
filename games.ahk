@@ -191,11 +191,11 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 #if WinActive("ahk_exe ULTRAKILL.exe")
 {
     WheelUp::
-        SendInput T
+        SendInput, {[}
     return
 
     WheelDown::
-        SendInput G
+        SendInput, {]}
     return
 }
 
