@@ -322,40 +322,43 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 #if WinActive("ahk_exe HaloInfinite.exe")
 {
     global grapplingHook
-    global dropwall
     global motionTracker
+    global dropwall
     global thruster
     global activateAbility
 
-    SelectAbility(key, delay := 10)
+    SelectAbility(key)
     {
-        SendInput, {%key% down}
-        Sleep, delay
-
-        SendInput, {%key% up}
-        Sleep, delay
+        SendInput, %key%
     }
 
-    UseAbility(key, delay := 10)
+    ; UseAbility(key, delay := 100)
+    UseAbility(key, delay := 20)
     {
-        SelectAbility(key, delay)
+        SelectAbility(key)
 
-        SendInput, %activateAbility%
+        Sleep, delay
+
+        SendInput, {%activateAbility%}
     }
 
     Enter::Space
 
-    XButton2::
+    *q::
+        UseAbility(grapplingHook)
+    return
+
+    *XButton2::
         UseAbility(motionTracker)
         SelectAbility(grapplingHook)
     return
 
-    XButton1::
+    *XButton1::
         UseAbility(thruster)
         SelectAbility(grapplingHook)
     return
 
-    g::
+    *g::
         UseAbility(dropwall)
         SelectAbility(grapplingHook)
     return
