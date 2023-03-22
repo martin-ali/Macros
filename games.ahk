@@ -314,6 +314,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     or WinActive("ahk_exe fc3_blooddragon_d3d11.exe")
     or WinActive("ahk_exe Mechanicus.exe")
     or WinActive("ahk_exe MidnightSuns-Win64-Shipping.exe")
+    or WinActive("ahk_exe Control_DX11.exe")
 {
     Enter::Space
     Delete::Enter
