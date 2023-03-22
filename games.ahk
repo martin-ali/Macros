@@ -342,7 +342,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         SendInput, {%activateAbility%}
     }
 
-    Enter::Space
+    *Enter::Space
 
     *q::
         UseAbility(grapplingHook)
