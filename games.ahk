@@ -135,7 +135,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         }
     return
 
-    RButton::
+    ; TODO: Find a cleaner way to disable the meathook
         if (meathookIsEnabled == false)
         {
             Send, {e}
@@ -213,12 +213,12 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         SendDelayed("]")
     return
 
-    ; Zoom and scroll in menus
+    ; Zoom in / scroll up
     ^WheelUp::
         Send, {WheelUp}
     return
 
-    ; Zoom and scroll in menus
+    ; Zoom out / scroll down
     ^WheelDown::
         Send, {WheelDown}
     return
@@ -260,11 +260,11 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
         KeyWait, `t
 
-        if(HoldIsFulfilled)
+        if(HoldIsFulfilled) ; Hold
         {
             Send, {h up}
         }
-        else
+        else ; Tap
         {
             SendDelayed("Tab")
         }
