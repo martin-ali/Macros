@@ -88,8 +88,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 {
     Send, {%key% down}
     Sleep, %delayMs%
-    Send, {%key% up}
 
+    Send, {%key% up}
     if (shouldDelayAfterPress)
     {
         Sleep, %delayMs%
@@ -100,17 +100,19 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 {
     global meathookIsEnabled
 
-    =::Suspend
+    *=::Suspend
 
     ; Ice bomb
     ; #MaxThreads, 2
     *t::
-    ; KeyWait, t
-    SendInput, {h}
-    Sleep, 50
-    SendInput, {RControl}
-    Sleep, 50
-    SendInput, {h}
+        ; KeyWait, t
+        SendInput, {h}
+        Sleep, 50
+
+        SendInput, {RControl}
+
+        Sleep, 50
+        SendInput, {h}
     return
 
     ; Autohop
@@ -134,69 +136,65 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         }
     return
 
-    ; TODO: Find a cleaner way to disable the meathook
-    *RButton::
-        if (meathookIsEnabled == false)
-        {
-            Send, {e}
-        }
-    return
-
-    *c::
-        meathookIsEnabled := false
-        SendInput, {c}
-    return
-
-    *x::
-        meathookIsEnabled := true
-        SendInput, {x}
-    return
-
-    *v::
-        meathookIsEnabled := true
-        SendInput, {v}
-    return
-
-    *b::
-        meathookIsEnabled := true
-        SendInput, {b}
-    return
-
-    *Enter::
-        meathookIsEnabled := true
-        SendInput, {Enter}
-    return
-
-    *LShift::
-        meathookIsEnabled := true
-        SendInput, {LShift}
-    return
-
-    ; *LControl::
-    ;     meathookIsEnabled := true
-    ;     SendInput, {LControl}
+    ; ; TODO: Find a cleaner way to disable the meathook
+    ; *RButton::
+    ;     if (meathookIsEnabled == false)
+    ;     {
+    ;         Send, {e}
+    ;     }
     ; return
 
-    *2::
-        meathookIsEnabled := true
-        SendInput, {2}
-    return
+    ; *c::
+    ;     meathookIsEnabled := false
+    ;     SendInput, {c}
+    ; return
 
-    *XButton2::
-        meathookIsEnabled := true
-        SendInput, {XButton2}
-    return
+    ; *x::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {x}
+    ; return
+
+    ; *v::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {v}
+    ; return
+
+    ; *b::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {b}
+    ; return
+
+    ; *Enter::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {Enter}
+    ; return
+
+    ; *LShift::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {LShift}
+    ; return
+
+    ; ; *LControl::
+    ; ;     meathookIsEnabled := true
+    ; ;     SendInput, {LControl}
+    ; ; return
+
+    ; *2::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {2}
+    ; return
+
+    ; *XButton2::
+    ;     meathookIsEnabled := true
+    ;     SendInput, {XButton2}
+    ; return
 }
 
 #if WinActive("ahk_exe ULTRAKILL.exe")
 {
-    *WheelUp::
-        SendInput, {[}
-    return
+    *WheelUp::Send, {[}
 
-    *WheelDown::
-        SendInput, {]}
-    return
+    *WheelDown::Send, {]}
 }
 
 #if WinActive("ahk_exe HorizonZeroDawn.exe")
@@ -204,24 +202,16 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     global weaponWheelIsToggled
 
     ; Cycle tools left
-    *WheelUp::
-        SendDelayed("[")
-    return
+    *WheelUp::SendDelayed("[")
 
     ; Cycle tools right
-    *WheelDown::
-        SendDelayed("]")
-    return
+    *WheelDown::SendDelayed("]")
 
     ; Zoom in / scroll up
-    *^WheelUp::
-        Send, {WheelUp}
-    return
+    *^WheelUp::WheelUp
 
     ; Zoom out / scroll down
-    *^WheelDown::
-        Send, {WheelDown}
-    return
+    *^WheelDown::WheelDown
 
     ; Toggle weapon wheel
     *MButton::
@@ -239,7 +229,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     return
 
     ; Tap for map, hold to show HUD
-    *Tab::
+    Tab::
         desiredHoldMs := 200
         startMs := A_TickCount
         HoldIsFulfilled := false
