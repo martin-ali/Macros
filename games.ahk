@@ -75,6 +75,8 @@ SendMode, Input
 ;PID := DllCall("GetCurrentProcessId")
 ;Process, Priority, %PID%, High
 
+#MaxThreads 12
+
 ; Halo Infinite binds
 grapplingHook := 1
 motionTracker := 2
@@ -103,7 +105,6 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     *=::Suspend
 
     ; Ice bomb
-    ; #MaxThreads, 2
     *t::
         ; KeyWait, t
         SendInput, {h}
@@ -132,7 +133,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
                 SendInput {LControl}
             }
 
-            Sleep, 1
+            Sleep, 5
         }
     return
 
