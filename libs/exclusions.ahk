@@ -64,3 +64,4 @@ GroupAdd, ExclusionGroup, ahk_exe fc3_blooddragon_d3d11.exe
 GroupAdd, ExclusionGroup, ahk_exe Mechanicus.exe
 GroupAdd, ExclusionGroup, ahk_exe SupremeCommander.exe
 GroupAdd, ExclusionGroup, ahk_exe Control_DX11.exe
+GroupAdd, ExclusionGroup, ahk_exe D2R.exe
