@@ -70,7 +70,7 @@ SendMode, Input
 ;PID := DllCall("GetCurrentProcessId")
 ;Process, Priority, %PID%, High
 
-#if !WinActive("ahk_group ExclusionGroup")
+#if !WinActive("ahk_group ExcludedPrograms")
 {
     ; Pause::Suspend
     ; Tab Up::Send, 1
