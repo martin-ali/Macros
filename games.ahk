@@ -86,6 +86,12 @@ activateAbility := "/"
 meathookIsEnabled := true
 weaponWheelIsToggled := false
 
+f1::
+    MsgBox, Services disabled
+
+
+return
+
 SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 {
     Send, {%key% down}
@@ -98,8 +104,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     }
 }
 
-#if WinActive("ahk_exe DOOMEternalx64vk.exe")
-{
+#ifWinActive ahk_exe DOOMEternalx64vk.exe
+
     global meathookIsEnabled
 
     *=::Suspend
@@ -137,7 +143,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         }
     return
 
-    ; ; TODO: Find a cleaner way to disable the meathook
+    ;     ; TODO: Find a cleaner way to disable the meathook
     ; *RButton::
     ;     if (meathookIsEnabled == false)
     ;     {
@@ -166,8 +172,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     ; return
 
     ; *Enter::
-    ;     meathookIsEnabled := true
-    ;     SendInput, {Enter}
+    ; meathookIsEnabled := true
+    ; SendInput, {Enter}
     ; return
 
     ; *LShift::
@@ -189,17 +195,19 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     ;     meathookIsEnabled := true
     ;     SendInput, {XButton2}
     ; return
-}
 
-#if WinActive("ahk_exe ULTRAKILL.exe")
-{
+#ifWinActive
+
+#ifWinActive ahk_exe ULTRAKILL.exe
+
     *WheelUp::Send, {[}
 
     *WheelDown::Send, {]}
-}
 
-#if WinActive("ahk_exe HorizonZeroDawn.exe")
-{
+#IfWinActive
+
+#ifWinActive ahk_exe HorizonZeroDawn.exe
+
     global weaponWheelIsToggled
 
     ; Cycle tools left
@@ -260,58 +268,57 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
             SendDelayed("Tab")
         }
     return
-}
 
-#if WinActive("ahk_exe destiny2.exe")
-{
+#IfWinActive
+
+#ifWinActive ahk_exe destiny2.exe
+
     *Enter::Space
     *Delete::Enter
     *LControl::Numpad0
     *RControl::Numpad1
-}
 
-#if WinActive("ahk_exe Magicka.exe")
-    or WinActive("ahk_exe Cyberpunk2077.exe")
-    or WinActive("ahk_exe Swat4.exe")
-    or WinActive("ahk_exe HorizonZeroDawn.exe")
-    or WinActive("ahk_exe Titanfall2.exe")
-{
+#IfWinActive
+
+GroupAdd, EnterBackspaceGroup, ahk_exe Magicka.exe
+GroupAdd, EnterBackspaceGroup, ahk_exe Cyberpunk2077.exe
+GroupAdd, EnterBackspaceGroup, ahk_exe Swat4.exe
+GroupAdd, EnterBackspaceGroup, ahk_exe Titanfall2.exe
+GroupAdd, EnterBackspaceGroup, ahk_exe bms.exe
+#ifWinActive ahk_group EnterBackspaceGroup
+
     *Enter::Space
     *BackSpace::Enter
-}
 
-#if WinActive("ahk_exe AI.exe")
-{
+#IfWinActive
+
+#ifWinActive ahk_exe AI.exe
+
     *Enter::Space
     *Ctrl::Shift
     *Shift::C
-}
 
-#if WinActive("ahk_exe arma3_x64.exe")
-; or WinActive("ahk_exe Indiana-Win64-Shipping.exe")
-{
-    *Enter::Space
-    *Ctrl::Shift
-    *Shift::Ctrl
-}
+#IfWinActive
 
-#if WinActive("ahk_exe vermintide2.exe")
-    or WinActive("ahk_exe OxygenNotIncluded.exe")
-    or WinActive("ahk_exe FarCry6.exe")
-    or WinActive("ahk_exe R6-Extraction_Plus.exe")
-    or WinActive("ahk_exe MCC-Win64-Shipping.exe")
-    or WinActive("ahk_exe Dead Space.exe")
-    or WinActive("ahk_exe fc3_blooddragon_d3d11.exe")
-    or WinActive("ahk_exe Mechanicus.exe")
-    or WinActive("ahk_exe MidnightSuns-Win64-Shipping.exe")
-    or WinActive("ahk_exe Control_DX11.exe")
-{
+GroupAdd, EnterDeleteGroup, ahk_exe vermintide2.exe
+GroupAdd, EnterDeleteGroup, ahk_exe OxygenNotIncluded.exe
+GroupAdd, EnterDeleteGroup, ahk_exe FarCry6.exe
+GroupAdd, EnterDeleteGroup, ahk_exe R6-Extraction_Plus.exe
+GroupAdd, EnterDeleteGroup, ahk_exe MCC-Win64-Shipping.exe
+GroupAdd, EnterDeleteGroup, ahk_exe Dead Space.exe
+GroupAdd, EnterDeleteGroup, ahk_exe fc3_blooddragon_d3d11.exe
+GroupAdd, EnterDeleteGroup, ahk_exe Mechanicus.exe
+GroupAdd, EnterDeleteGroup, ahk_exe MidnightSuns-Win64-Shipping.exe
+GroupAdd, EnterDeleteGroup, ahk_exe Control_DX11.exe
+#ifWinActive ahk_group EnterDeleteGroup
+
     *Enter::Space
     *Delete::Enter
-}
 
-#if WinActive("ahk_exe HaloInfinite.exe")
-{
+#IfWinActive
+
+#ifWinActive ahk_exe HaloInfinite.exe
+
     global grapplingHook
     global motionTracker
     global dropwall
@@ -353,4 +360,5 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         UseAbility(dropwall)
         SelectAbility(grapplingHook)
     return
-}
+
+#IfWinActive
