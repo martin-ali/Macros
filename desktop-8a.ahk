@@ -5,7 +5,7 @@
 
 #SingleInstance, Force
     ;Skips the dialog box and replaces the old
-    ;instance automatically, which is similar 
+    ;instance automatically, which is similar
     ;in effect to the Reload command.
 
 #Persistent
@@ -70,8 +70,8 @@ SendMode, Input
 ;PID := DllCall("GetCurrentProcessId")
 ;Process, Priority, %PID%, High
 
-#if !WinActive("ahk_group ExcludedPrograms")
-{
+#IfWinNotActive ahk_group ExcludedPrograms
+
     ; Pause::Suspend
     ; Tab Up::Send, 1
     Tab::Tab
@@ -199,4 +199,5 @@ SendMode, Input
     ; Misc
     Enter & Tab::CapsLock
     ; / or ? focuses on the search bar in some websites
-}
+
+#IfWinNotActive
