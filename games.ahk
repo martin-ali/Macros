@@ -77,21 +77,6 @@ SendMode, Input
 
 #MaxThreads 12
 
-; Halo Infinite binds
-grapplingHook := 1
-motionTracker := 2
-dropwall := 3
-thruster := 4
-activateAbility := "/"
-meathookIsEnabled := true
-weaponWheelIsToggled := false
-
-f1::
-    MsgBox, Services disabled
-
-
-return
-
 SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 {
     Send, {%key% down}
@@ -104,7 +89,43 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     }
 }
 
-#ifWinActive ahk_exe DOOMEternalx64vk.exe
+; Halo Infinite
+grapplingHook := 1
+motionTracker := 2
+dropwall := 3
+thruster := 4
+activateAbility := "/"
+
+; Doom Eternal
+meathookIsEnabled := true
+
+; Horizon Zero Dawn
+weaponWheelIsToggled := false
+
+GroupAdd, CommonRebinds, ahk_exe Magicka.exe
+GroupAdd, CommonRebinds, ahk_exe Cyberpunk2077.exe
+GroupAdd, CommonRebinds, ahk_exe Swat4.exe
+GroupAdd, CommonRebinds, ahk_exe Titanfall2.exe
+GroupAdd, CommonRebinds, ahk_exe bms.exe
+GroupAdd, CommonRebinds, ahk_exe vermintide2.exe
+GroupAdd, CommonRebinds, ahk_exe OxygenNotIncluded.exe
+GroupAdd, CommonRebinds, ahk_exe FarCry6.exe
+GroupAdd, CommonRebinds, ahk_exe R6-Extraction_Plus.exe
+GroupAdd, CommonRebinds, ahk_exe MCC-Win64-Shipping.exe
+GroupAdd, CommonRebinds, ahk_exe Dead Space.exe
+GroupAdd, CommonRebinds, ahk_exe fc3_blooddragon_d3d11.exe
+GroupAdd, CommonRebinds, ahk_exe Mechanicus.exe
+GroupAdd, CommonRebinds, ahk_exe MidnightSuns-Win64-Shipping.exe
+GroupAdd, CommonRebinds, ahk_exe Control_DX11.exe
+
+#IfWinActive ahk_group CommonRebinds
+
+    *Enter::Space
+    *Delete::Enter
+
+#IfWinActive
+
+#IfWinActive ahk_exe DOOMEternalx64vk.exe
 
     global meathookIsEnabled
 
@@ -143,7 +164,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         }
     return
 
-    ;     ; TODO: Find a cleaner way to disable the meathook
+    ; ; TODO: Find a cleaner way to disable the meathook
     ; *RButton::
     ;     if (meathookIsEnabled == false)
     ;     {
@@ -172,8 +193,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     ; return
 
     ; *Enter::
-    ; meathookIsEnabled := true
-    ; SendInput, {Enter}
+    ;     meathookIsEnabled := true
+    ;     SendInput, {Enter}
     ; return
 
     ; *LShift::
@@ -196,9 +217,9 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
     ;     SendInput, {XButton2}
     ; return
 
-#ifWinActive
+#IfWinActive
 
-#ifWinActive ahk_exe ULTRAKILL.exe
+#IfWinActive ahk_exe ULTRAKILL.exe
 
     *WheelUp::Send, {[}
 
@@ -206,9 +227,11 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
 #IfWinActive
 
-#ifWinActive ahk_exe HorizonZeroDawn.exe
+#IfWinActive ahk_exe HorizonZeroDawn.exe
 
     global weaponWheelIsToggled
+
+    Enter::Space
 
     ; Cycle tools left
     *WheelUp::SendDelayed("[")
@@ -228,7 +251,6 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
         {
             Send, {MButton up}
             weaponWheelIsToggled := false
-
         }
         else
         {
@@ -271,7 +293,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
 #IfWinActive
 
-#ifWinActive ahk_exe destiny2.exe
+#IfWinActive ahk_exe destiny2.exe
 
     *Enter::Space
     *Delete::Enter
@@ -280,19 +302,7 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
 
 #IfWinActive
 
-GroupAdd, EnterBackspaceGroup, ahk_exe Magicka.exe
-GroupAdd, EnterBackspaceGroup, ahk_exe Cyberpunk2077.exe
-GroupAdd, EnterBackspaceGroup, ahk_exe Swat4.exe
-GroupAdd, EnterBackspaceGroup, ahk_exe Titanfall2.exe
-GroupAdd, EnterBackspaceGroup, ahk_exe bms.exe
-#ifWinActive ahk_group EnterBackspaceGroup
-
-    *Enter::Space
-    *BackSpace::Enter
-
-#IfWinActive
-
-#ifWinActive ahk_exe AI.exe
+#IfWinActive ahk_exe AI.exe ; Alien Isolation
 
     *Enter::Space
     *Ctrl::Shift
@@ -300,24 +310,7 @@ GroupAdd, EnterBackspaceGroup, ahk_exe bms.exe
 
 #IfWinActive
 
-GroupAdd, EnterDeleteGroup, ahk_exe vermintide2.exe
-GroupAdd, EnterDeleteGroup, ahk_exe OxygenNotIncluded.exe
-GroupAdd, EnterDeleteGroup, ahk_exe FarCry6.exe
-GroupAdd, EnterDeleteGroup, ahk_exe R6-Extraction_Plus.exe
-GroupAdd, EnterDeleteGroup, ahk_exe MCC-Win64-Shipping.exe
-GroupAdd, EnterDeleteGroup, ahk_exe Dead Space.exe
-GroupAdd, EnterDeleteGroup, ahk_exe fc3_blooddragon_d3d11.exe
-GroupAdd, EnterDeleteGroup, ahk_exe Mechanicus.exe
-GroupAdd, EnterDeleteGroup, ahk_exe MidnightSuns-Win64-Shipping.exe
-GroupAdd, EnterDeleteGroup, ahk_exe Control_DX11.exe
-#ifWinActive ahk_group EnterDeleteGroup
-
-    *Enter::Space
-    *Delete::Enter
-
-#IfWinActive
-
-#ifWinActive ahk_exe HaloInfinite.exe
+#IfWinActive ahk_exe HaloInfinite.exe
 
     global grapplingHook
     global motionTracker
