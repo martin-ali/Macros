@@ -1,154 +1,221 @@
-﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
-; ; #Warn ; Enable warnings to assist with detecting common errors.
-; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
-; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
+﻿; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; ; ; #Warn ; Enable warnings to assist with detecting common errors.
+; ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
+; ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
-#NoEnv
-    ;Avoids checking empty variables to see if
-    ;they are environment variables
-    ;(recommended for all new scripts).
+; #NoEnv
+;     ;Avoids checking empty variables to see if
+;     ;they are environment variables
+;     ;(recommended for all new scripts).
 
-#SingleInstance, Force
-    ;Skips the dialog box and replaces the old
-    ;instance automatically, which is similar
-    ;in effect to the Reload command.
+#SingleInstance Force
+;Skips the dialog box and replaces the old
+;instance automatically which is similar
+;in effect to the Reload command.
 
-#Persistent
-    ;Keeps a script permanently running (that
-    ;is, until the user closes it or ExitApp
-    ;is encountered).
+; #Persistent
+;     ;Keeps a script permanently running (that
+;     ;is until the user closes it or ExitApp
+;     ;is encountered).
 
-#InstallKeybdHook
-    ;Forces the unconditional installation of
-    ;the keyboard hook.
+; #InstallKeybdHook
+;     ;Forces the unconditional installation of
+;     ;the keyboard hook.
 
 #UseHook
-    ;Force the use of the hook for hotkeys
-    ;after this point.
+;Force the use of the hook for hotkeys
+;after this point.
 
-#KeyHistory, 0
-    ;Sets the maximum number of keyboard and
-    ;mouse events displayed by the KeyHistory
-    ;window. You can set it to 0 to disable
-    ;key history.
+; #KeyHistory 0
+;     ;Sets the maximum number of keyboard and
+;     ;mouse events displayed by the KeyHistory
+;     ;window. You can set it to 0 to disable
+;     ;key history.
 
-#HotKeyInterval 1
-    ;Along with #MaxHotkeysPerInterval,
-    ;specifies the rate of hotkey activations
-    ;beyond which a warning dialog will be
-    ;displayed.
+; #HotKeyInterval 1
+;     ;Along with #MaxHotkeysPerInterval,
+;     ;specifies the rate of hotkey activations
+;     ;beyond which a warning dialog will be
+;     ;displayed.
 
 
-#MaxHotkeysPerInterval 127
-    ;Along with #HotkeyInterval, specifies the
-    ;rate of hotkey activations beyond which a
-    ;warning dialog will be displayed.
+; #MaxHotkeysPerInterval 127
+;     ;Along with #HotkeyInterval specifies the
+;     ;rate of hotkey activations beyond which a
+;     ;warning dialog will be displayed.
 
-SetKeyDelay,-1, 1
-    ;Sets the delay that will occur after each
-    ;keystroke sent by Send and ControlSend.
+; SetKeyDelay,-1 1
+;     ;Sets the delay that will occur after each
+;     ;keystroke sent by Send and ControlSend.
 
-SetControlDelay, -1
-    ;Sets the delay that will occur after each
-    ;control-modifying command.
+; SetControlDelay -1
+;     ;Sets the delay that will occur after each
+;     ;control-modifying command.
 
-SetMouseDelay, -1
-    ;Sets the delay that will occur after each
-    ;mouse movement or click.
+; SetMouseDelay -1
+;     ;Sets the delay that will occur after each
+;     ;mouse movement or click.
 
-SetWinDelay,-1
-    ;Sets the delay that will occur after each
-    ;windowing command, such as WinActivate.
+; SetWinDelay,-1
+;     ;Sets the delay that will occur after each
+;     ;windowing command such as WinActivate.
 
-SendMode, Input
-    ;Switches to the SendInput method for Send,
-    ;SendRaw, Click, and MouseMove/Click/Drag.
+; SendMode Input
+;     ;Switches to the SendInput method for Send,
+;     ;SendRaw Click and MouseMove/Click/Drag.
 
-;SendMode, InputThenPlay
-    ;Same as above except that rather than
-    ;falling back to Event mode when SendInput
-    ;is unavailable, it reverts to Play mode
-    ;(below). This also causes the SendInput
-    ;command itself to revert to Play mode when
-    ;SendInput is unavailable.
+; ;SendMode InputThenPlay
+;     ;Same as above except that rather than
+;     ;falling back to Event mode when SendInput
+;     ;is unavailable it reverts to Play mode
+;     ;(below). This also causes the SendInput
+;     ;command itself to revert to Play mode when
+;     ;SendInput is unavailable.
 
-;PID := DllCall("GetCurrentProcessId")
-;Process, Priority, %PID%, High
+; ;PID := DllCall("GetCurrentProcessId")
+; ;Process Priority %PID% High
+
+; #MaxThreadsBuffer True
+; ; Buffer keypresses rather than ignoring them when over the thread limit
+; ; Experimental
 
 #MaxThreads 12
 
-SendDelayed(key, delayMs := 25, shouldDelayAfterPress := false)
-{
-    Send, {%key% down}
-    Sleep, %delayMs%
+#Requires AutoHotkey >=v2.0
 
-    Send, {%key% up}
+SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
+{
+    SendInput("{" key " down}")
+
+    Sleep(delayMs)
+
+    SendInput("{" key " up}")
+
     if (shouldDelayAfterPress)
     {
-        Sleep, %delayMs%
+        Sleep(delayMs)
     }
 }
 
-; Halo Infinite
-grapplingHook := 1
-motionTracker := 2
-dropwall := 3
-thruster := 4
-activateAbility := "/"
+GroupAdd "CommonRebinds", "ahk_exe Magicka.exe"
+GroupAdd "CommonRebinds", "ahk_exe Cyberpunk2077.exe"
+GroupAdd "CommonRebinds", "ahk_exe Swat4.exe"
+GroupAdd "CommonRebinds", "ahk_exe Titanfall2.exe"
+GroupAdd "CommonRebinds", "ahk_exe bms.exe"
+GroupAdd "CommonRebinds", "ahk_exe vermintide2.exe"
+GroupAdd "CommonRebinds", "ahk_exe OxygenNotIncluded.exe"
+GroupAdd "CommonRebinds", "ahk_exe FarCry6.exe"
+GroupAdd "CommonRebinds", "ahk_exe R6-Extraction_Plus.exe"
+GroupAdd "CommonRebinds", "ahk_exe MCC-Win64-Shipping.exe"
+GroupAdd "CommonRebinds", "ahk_exe Dead Space.exe"
+GroupAdd "CommonRebinds", "ahk_exe fc3_blooddragon_d3d11.exe"
+GroupAdd "CommonRebinds", "ahk_exe Mechanicus.exe"
+GroupAdd "CommonRebinds", "ahk_exe MidnightSuns-Win64-Shipping.exe"
+GroupAdd "CommonRebinds", "ahk_exe Control_DX11.exe"
+GroupAdd "CommonRebinds", "ahk_exe SW3.exe"
+GroupAdd "CommonRebinds", "ahk_exe Rage.exe"
+GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
-; Doom Eternal
-meathookIsEnabled := true
-
-; Horizon Zero Dawn
-weaponWheelIsToggled := false
-
-GroupAdd, CommonRebinds, ahk_exe Magicka.exe
-GroupAdd, CommonRebinds, ahk_exe Cyberpunk2077.exe
-GroupAdd, CommonRebinds, ahk_exe Swat4.exe
-GroupAdd, CommonRebinds, ahk_exe Titanfall2.exe
-GroupAdd, CommonRebinds, ahk_exe bms.exe
-GroupAdd, CommonRebinds, ahk_exe vermintide2.exe
-GroupAdd, CommonRebinds, ahk_exe OxygenNotIncluded.exe
-GroupAdd, CommonRebinds, ahk_exe FarCry6.exe
-GroupAdd, CommonRebinds, ahk_exe R6-Extraction_Plus.exe
-GroupAdd, CommonRebinds, ahk_exe MCC-Win64-Shipping.exe
-GroupAdd, CommonRebinds, ahk_exe Dead Space.exe
-GroupAdd, CommonRebinds, ahk_exe fc3_blooddragon_d3d11.exe
-GroupAdd, CommonRebinds, ahk_exe Mechanicus.exe
-GroupAdd, CommonRebinds, ahk_exe MidnightSuns-Win64-Shipping.exe
-GroupAdd, CommonRebinds, ahk_exe Control_DX11.exe
-
-#IfWinActive ahk_group CommonRebinds
-
+#HotIf WinActive("ahk_group CommonRebinds")
+{
     *Enter::Space
     *Delete::Enter
+}
+#HotIf
 
-#IfWinActive
+#HotIf WinActive("ahk_exe RAGE2.exe")
+{
+    ; *WheelUp::
+    ; {
+    ;     SendPlay("{q}")
+    ;     SendPlay("{WheelDown}")
+    ; }
 
-#IfWinActive ahk_exe DOOMEternalx64vk.exe
+    ; *WheelDown::
+    ; {
+    ;     SendPlay("{q}")
+    ;     SendPlay("{WheelUp}")
+    ; }
+}
+#HotIf
 
-    global meathookIsEnabled
+#HotIf WinActive("ahk_exe ULTRAKILL.exe")
+{
+    *WheelUp:: SendInput("{[}") ; Swap weapon variant
+    *WheelDown:: SendInput("{]}") ; Swap fist variant
+}
+#HotIf
 
-    *=::Suspend
+#HotIf WinActive("ahk_exe deadspace2.exe")
+{
+    *XButton1::[ ; Stasis
+    *XButton2::] ; Kinesis
 
-    ; Ice bomb
-    *t::
-        ; KeyWait, t
-        SendInput, {h}
-        Sleep, 50
+    *Enter:: ; WIP. DirectInput game?
+    {
+        playerIsAiming := GetKeyState("LButton", "P") or GetKeyState("RButton", "P")
 
-        SendInput, {RControl}
+        ; MsgBox playerIsAiming
+        if (playerIsAiming)
+        {
+            SendDelayed(".", 25, true)
+            SendInput("{.}")
+            MsgBox("Aiming")
+        }
+        else
+        {
+            SendDelayed("/", 25, true)
+            SendInput("{/}")
+            MsgBox("Running")
+        }
+    }
+}
+#HotIf
 
-        Sleep, 50
-        SendInput, {h}
-    return
+#HotIf WinActive("ahk_exe Borderlands3.exe")
+{
+    *WheelUp::WheelDown
+    *f::LCtrl
+}
+#HotIf
 
-    ; Autohop
-    *LControl::
+#HotIf WinActive("ahk_exe destiny2.exe")
+{
+    *Enter::Space
+    *Delete::Enter
+    *LControl::Numpad0
+    *RControl::Numpad1
+}
+#HotIf
+
+#HotIf WinActive("ahk_exe AI.exe") ; Alien Isolation
+{
+    *Enter::Space
+    *Ctrl::Shift
+    *Shift::C
+}
+#HotIf
+
+#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
+{
+    meathookIsEnabled := true
+
+    *t:: ; Ice bomb
+    {
+        ; KeyWait t
+        Send("{h}")
+        Sleep(50)
+        Send("{RControl}")
+        Sleep(50)
+        Send("{h}")
+    }
+
+    *LControl:: ; Autohop
+    {
         desiredHoldMs := 100
         startMs := A_TickCount
 
-        SendInput, {LControl}
+        Send("{LControl}")
 
         While GetKeyState("LControl", "P")
         {
@@ -157,87 +224,131 @@ GroupAdd, CommonRebinds, ahk_exe Control_DX11.exe
 
             if (elapsedTimeIsFulfilled)
             {
-                SendInput {LControl}
+                Send("{LControl}")
             }
 
-            Sleep, 5
+            Sleep(5)
         }
-    return
+    }
 
     ; ; TODO: Find a cleaner way to disable the meathook
     ; *RButton::
+    ; {
     ;     if (meathookIsEnabled == false)
     ;     {
-    ;         Send, {e}
+    ;         Send("{e}")
     ;     }
-    ; return
+    ; }
 
     ; *c::
+    ; {
     ;     meathookIsEnabled := false
-    ;     SendInput, {c}
-    ; return
+    ;     SendInput("{c}")
+    ; }
 
     ; *x::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {x}
-    ; return
+    ;     SendInput("{x}")
+    ; }
 
     ; *v::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {v}
-    ; return
+    ;     SendInput("{v}")
+    ; }
 
     ; *b::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {b}
-    ; return
+    ;     SendInput("{b}")
+    ; }
 
     ; *Enter::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {Enter}
-    ; return
+    ;     SendInput("{Enter}")
+    ; }
 
     ; *LShift::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {LShift}
-    ; return
-
-    ; ; *LControl::
-    ; ;     meathookIsEnabled := true
-    ; ;     SendInput, {LControl}
-    ; ; return
+    ;     SendInput("{LShift}")
+    ; }
 
     ; *2::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {2}
-    ; return
+    ;     SendInput("{2}")
+    ; }
 
     ; *XButton2::
+    ; {
     ;     meathookIsEnabled := true
-    ;     SendInput, {XButton2}
-    ; return
+    ;     SendInput("{XButton2}")
+    ; }
+}
+#HotIf
 
-#IfWinActive
+#HotIf WinActive("ahk_exe HaloInfinite.exe")
+{
+    grapplingHook := 1
+    motionTracker := 2
+    dropwall := 3
+    thruster := 4
+    activateAbility := "/"
 
-#IfWinActive ahk_exe ULTRAKILL.exe
+    SelectAbility(key)
+    {
+        SendInput(key)
+    }
 
-    *WheelUp::Send, {[}
+    UseAbility(key, delay := 25)
+    {
+        SelectAbility(key)
 
-    *WheelDown::Send, {]}
+        Sleep(delay)
 
-#IfWinActive
+        SendInput("{" activateAbility "}")
+    }
 
-#IfWinActive ahk_exe HorizonZeroDawn.exe
+    *Enter::Space
 
-    global weaponWheelIsToggled
+    *q::
+    {
+        UseAbility(grapplingHook)
+    }
 
-    Enter::Space
+    *XButton2::
+    {
+        UseAbility(motionTracker)
+        SelectAbility(grapplingHook)
+    }
+
+    *XButton1::
+    {
+        UseAbility(thruster)
+        SelectAbility(grapplingHook)
+    }
+
+    *g::
+    {
+        UseAbility(dropwall)
+        SelectAbility(grapplingHook)
+    }
+}
+#HotIf
+
+#HotIf WinActive("ahk_exe HorizonZeroDawn.exe")
+{
+    ; Run
+    *Enter::Space
 
     ; Cycle tools left
-    *WheelUp::SendDelayed("[")
+    *WheelUp:: SendDelayed("[")
 
     ; Cycle tools right
-    *WheelDown::SendDelayed("]")
+    *WheelDown:: SendDelayed("]")
 
     ; Zoom in / scroll up
     *^WheelUp::WheelUp
@@ -247,28 +358,30 @@ GroupAdd, CommonRebinds, ahk_exe Control_DX11.exe
 
     ; Toggle weapon wheel
     *MButton::
-        if (weaponWheelIsToggled)
+    {
+        wheelIsToggled := GetKeyState("MButton")
+        if (wheelIsToggled)
         {
-            Send, {MButton up}
-            weaponWheelIsToggled := false
+            SendInput("{MButton up}") ; Release wheel
         }
         else
         {
-            Send, {MButton down}
-            weaponWheelIsToggled := true
+            SendInput("{MButton down}") ; Activate wheel
         }
-    return
+    }
 
-    ; Tap for map, hold to show HUD
-    Tab::
+    ; Tap for map hold to show HUD
+    *Tab::
+    {
         desiredHoldMs := 200
         startMs := A_TickCount
         HoldIsFulfilled := false
-        Send, {h down}
+        SendInput("{h down}")
 
         while GetKeyState("Tab", "P")
         {
-            elapsedMs := (A_TickCount - startMs)
+            currentMs := A_TickCount
+            elapsedMs := (currentMs - startMs)
             HoldIsFulfilled := (elapsedMs >= desiredHoldMs)
 
             if (HoldIsFulfilled)
@@ -276,82 +389,19 @@ GroupAdd, CommonRebinds, ahk_exe Control_DX11.exe
                 break
             }
 
-            Sleep, 10
+            Sleep(5)
         }
 
-        KeyWait, `t
+        KeyWait("Tab") ; This line is fucking important. Otherwise the repeat rate hijacks the whole thing
 
-        if(HoldIsFulfilled) ; Hold
+        if (HoldIsFulfilled) ; Hold
         {
-            Send, {h up}
+            SendInput("{h up}")
         }
         else ; Tap
         {
             SendDelayed("Tab")
         }
-    return
-
-#IfWinActive
-
-#IfWinActive ahk_exe destiny2.exe
-
-    *Enter::Space
-    *Delete::Enter
-    *LControl::Numpad0
-    *RControl::Numpad1
-
-#IfWinActive
-
-#IfWinActive ahk_exe AI.exe ; Alien Isolation
-
-    *Enter::Space
-    *Ctrl::Shift
-    *Shift::C
-
-#IfWinActive
-
-#IfWinActive ahk_exe HaloInfinite.exe
-
-    global grapplingHook
-    global motionTracker
-    global dropwall
-    global thruster
-    global activateAbility
-
-    SelectAbility(key)
-    {
-        SendInput, %key%
     }
-
-    ; UseAbility(key, delay := 100)
-    UseAbility(key, delay := 20)
-    {
-        SelectAbility(key)
-
-        Sleep, delay
-
-        SendInput, {%activateAbility%}
-    }
-
-    *Enter::Space
-
-    *q::
-        UseAbility(grapplingHook)
-    return
-
-    *XButton2::
-        UseAbility(motionTracker)
-        SelectAbility(grapplingHook)
-    return
-
-    *XButton1::
-        UseAbility(thruster)
-        SelectAbility(grapplingHook)
-    return
-
-    *g::
-        UseAbility(dropwall)
-        SelectAbility(grapplingHook)
-    return
-
-#IfWinActive
+}
+#HotIf
