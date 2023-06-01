@@ -111,6 +111,13 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
+#HotIf WinActive("ahk_exe ULTRAKILL.exe")
+{
+    *WheelUp:: SendInput("{[}") ; Swap weapon variant
+    *WheelDown:: SendInput("{]}") ; Swap fist variant
+}
+#HotIf
+
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
     sprintIsToggled := false
@@ -151,13 +158,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         Send("{w up}")
         Send("{Enter up}")
     }
-}
-#HotIf
-
-#HotIf WinActive("ahk_exe ULTRAKILL.exe")
-{
-    *WheelUp:: SendInput("{[}") ; Swap weapon variant
-    *WheelDown:: SendInput("{]}") ; Swap fist variant
 }
 #HotIf
 
