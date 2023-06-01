@@ -125,6 +125,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
+    sprintIsToggled := false
+
     ; *WheelUp::
     ; {
     ;     SendPlay("{q}")
@@ -136,6 +138,31 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ;     SendPlay("{q}")
     ;     SendPlay("{WheelUp}")
     ; }
+
+    *Enter:: ; Toggle run. Using the game's own toggle gives it unwanted double-tap-to-rush functionality
+    {
+        sprintIsToggled := GetKeyState("Enter")
+        if (sprintIsToggled)
+        {
+            SendInput("{Enter up}")
+        }
+        else
+        {
+            SendInput("{Enter down}")
+        }
+    }
+
+    ; Makes it so releasing W also causes the sprint to un-toggle
+    *w::
+    {
+        Send("{w down}")
+    }
+
+    *w Up::
+    {
+        Send("{w up}")
+        Send("{Enter up}")
+    }
 }
 #HotIf
 
