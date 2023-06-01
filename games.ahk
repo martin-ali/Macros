@@ -417,7 +417,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     {
         SendInput("{h down}")
 
-        keyIsTapped := KeyWait("Tab", "T0.2")
+        keyIsTapped := KeyWait("Tab", "T0.3")
         if (keyIsTapped)
         {
             SendDelayed("Tab")
