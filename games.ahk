@@ -1,4 +1,4 @@
-﻿; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -370,38 +370,20 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         }
     }
 
-    ; Tap for map hold to show HUD
-    *Tab::
+    ; Tap for map, hold to show HUD
+    *$Tab::
     {
-        desiredHoldMs := 200
-        startMs := A_TickCount
-        HoldIsFulfilled := false
         SendInput("{h down}")
 
-        while GetKeyState("Tab", "P")
-        {
-            currentMs := A_TickCount
-            elapsedMs := (currentMs - startMs)
-            HoldIsFulfilled := (elapsedMs >= desiredHoldMs)
-
-            if (HoldIsFulfilled)
-            {
-                break
-            }
-
-            Sleep(5)
-        }
-
-        KeyWait("Tab") ; This line is fucking important. Otherwise the repeat rate hijacks the whole thing
-
-        if (HoldIsFulfilled) ; Hold
-        {
-            SendInput("{h up}")
-        }
-        else ; Tap
+        keyIsTapped := KeyWait("Tab", "T0.2")
+        if (keyIsTapped)
         {
             SendDelayed("Tab")
         }
+
+        KeyWait("Tab")
+
+        SendInput("{h up}")
     }
 }
 #HotIf
