@@ -201,8 +201,18 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe Borderlands3.exe")
 {
-    *WheelUp::WheelDown
-    *f::LCtrl
+    ; Use wheel to swap fire modes while also preserving its functionality in menus
+    *WheelUp::
+    {
+        Send("{WheelUp}")
+        Send("{.}")
+    }
+
+    *WheelDown::
+    {
+        Send("{WheelDown}")
+        Send("{.}")
+    }
 }
 #HotIf
 
