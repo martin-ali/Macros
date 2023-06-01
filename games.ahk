@@ -401,14 +401,14 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Toggle weapon wheel
     *MButton::
     {
-        wheelIsToggled := GetKeyState("MButton")
-        if (wheelIsToggled)
+        wheelIsShown := GetKeyState("MButton")
+        if (wheelIsShown)
         {
-            SendInput("{MButton up}") ; Release wheel
+            SendInput("{MButton up}") ; Hide wheel
         }
         else
         {
-            SendInput("{MButton down}") ; Activate wheel
+            SendInput("{MButton down}") ; Show wheel
         }
     }
 
