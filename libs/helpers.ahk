@@ -1,7 +1,9 @@
-﻿#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #SingleInstance, Force
-SendMode Input
-SetWorkingDir, %A_ScriptDir%
+; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; ; #SingleInstance, Force
+; SendMode Input
+; SetWorkingDir, %A_ScriptDir%
+
+#Requires AutoHotkey >=v2.0
 
 ; Pause::
 ;     WinGet, id, list, ahk_class AutoHotkey
@@ -28,3 +30,21 @@ SetWorkingDir, %A_ScriptDir%
 ;         PostMessage, 0x111, 65306,,, ahk_id %this_id% ; Use 65305 if you prefer Suspend.
 ;     }
 ; Return
+
+; ; Debugging hold
+; iDown := A_TickCount
+
+; i::
+; {
+;     global
+;     iDown := A_TickCount
+;     tooltip iDown
+;     Send "{f}"
+; }
+
+; i up::
+; {
+;     global
+;     MsgBox "down at " iDown ", up at " A_TickCount ", down for " A_TickCount - iDown " ms."
+; }
+; ; Debugging hold
