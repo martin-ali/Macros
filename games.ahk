@@ -227,6 +227,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         Send("{o up}")
     }
 
+    ; Use F for Zane's secondary ability
+    *f::RCtrl
     *Enter::o
 }
 #HotIf
