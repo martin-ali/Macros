@@ -115,17 +115,17 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 {
     sprintIsToggled := false
 
-    ; *WheelUp::
-    ; {
-    ;     SendPlay("{q}")
-    ;     SendPlay("{WheelDown}")
-    ; }
+    *$WheelUp::
+    {
+        SendInput("{q}")
+        SendInput("{WheelDown}")
+    }
 
-    ; *WheelDown::
-    ; {
-    ;     SendPlay("{q}")
-    ;     SendPlay("{WheelUp}")
-    ; }
+    *$WheelDown::
+    {
+        SendInput("{q}")
+        SendInput("{WheelUp}")
+    }
 
     *Enter:: ; Toggle run. Using the game's own toggle gives it unwanted double-tap-to-rush functionality
     {
