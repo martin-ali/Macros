@@ -79,4 +79,5 @@
 
 #SuspendExempt
 Pause:: Suspend
+PrintScreen:: Reload
 #SuspendExempt False
