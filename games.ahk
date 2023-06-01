@@ -213,6 +213,21 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         Send("{WheelDown}")
         Send("{.}")
     }
+
+    ; Autorun
+    *w::
+    {
+        Send("{w down}")
+        Send("{o down}")
+    }
+
+    *w Up::
+    {
+        Send("{w up}")
+        Send("{o up}")
+    }
+
+    *Enter::o
 }
 #HotIf
 
