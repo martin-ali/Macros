@@ -48,3 +48,17 @@
 ;     MsgBox "down at " iDown ", up at " A_TickCount ", down for " A_TickCount - iDown " ms."
 ; }
 ; ; Debugging hold
+
+SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
+{
+	SendInput("{" key " down}")
+
+	Sleep(delayMs)
+
+	SendInput("{" key " up}")
+
+	if (shouldDelayAfterPress)
+	{
+		Sleep(delayMs)
+	}
+}

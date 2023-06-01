@@ -83,19 +83,7 @@
 
 #Requires AutoHotkey >=v2.0
 
-SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
-{
-    SendInput("{" key " down}")
-
-    Sleep(delayMs)
-
-    SendInput("{" key " up}")
-
-    if (shouldDelayAfterPress)
-    {
-        Sleep(delayMs)
-    }
-}
+#Include libs/helpers.ahk
 
 GroupAdd "CommonRebinds", "ahk_exe Magicka.exe"
 GroupAdd "CommonRebinds", "ahk_exe Cyberpunk2077.exe"
