@@ -225,14 +225,12 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
     }
 
-    *w Up::
+    ; Use F for Zane's secondary ability; Also hold F in menu to inspect weapon
+    *f::
     {
-        Send("{w up}")
-        Send("{o up}")
+        TapAndHold("f", "RCtrl", "f", 300)
     }
 
-    ; Use F for Zane's secondary ability
-    *f::RCtrl
     *Enter::o
 }
 #HotIf
