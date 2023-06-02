@@ -134,7 +134,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         SendInput("{WheelUp}")
     }
 
-    ; Toggle run. Using the game's own toggle gives it unwanted double-tap-to-rush functionality
+    ; Toggle run
+    ; Using the game's own toggle gives it unwanted double-tap-to-rush functionality
     ; Also supports holding to run
     *Enter::
     {
@@ -157,7 +158,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         }
     }
 
-    ; Makes it so releasing W also causes the sprint to un-toggle
+    ; Makes it so releasing W stops sprint
     *w::
     {
         Send("{w down}")
