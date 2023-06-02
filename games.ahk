@@ -1,4 +1,4 @@
-; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -118,21 +118,36 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
+#HotIf WinActive("ahk_exe destiny2.exe")
+{
+    *Enter::Space
+    *Delete::Enter
+    *LControl::Numpad0
+    *RControl::Numpad1
+}
+#HotIf
+
+#HotIf WinActive("ahk_exe AI.exe") ; Alien Isolation
+{
+    *Enter::Space
+    *Ctrl::Shift
+    *Shift::C
+}
+#HotIf
+
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    sprintIsToggled := false
+    ; *$WheelUp::
+    ; {
+    ;     SendInput("{q}")
+    ;     SendInput("{WheelDown}")
+    ; }
 
-    *$WheelUp::
-    {
-        SendInput("{q}")
-        SendInput("{WheelDown}")
-    }
-
-    *$WheelDown::
-    {
-        SendInput("{q}")
-        SendInput("{WheelUp}")
-    }
+    ; *$WheelDown::
+    ; {
+    ;     SendInput("{q}")
+    ;     SendInput("{WheelUp}")
+    ; }
 
     ; Toggle run
     ; Using the game's own toggle gives it unwanted double-tap-to-rush functionality
@@ -233,23 +248,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     }
 
     *Enter::o
-}
-#HotIf
-
-#HotIf WinActive("ahk_exe destiny2.exe")
-{
-    *Enter::Space
-    *Delete::Enter
-    *LControl::Numpad0
-    *RControl::Numpad1
-}
-#HotIf
-
-#HotIf WinActive("ahk_exe AI.exe") ; Alien Isolation
-{
-    *Enter::Space
-    *Ctrl::Shift
-    *Shift::C
 }
 #HotIf
 
