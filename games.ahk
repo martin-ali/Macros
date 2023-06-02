@@ -217,6 +217,12 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     {
         Send("{w down}")
         Send("{o down}")
+
+        KeyWait("w")
+
+        Send("{w up}")
+        Send("{o up}")
+
     }
 
     *w Up::
