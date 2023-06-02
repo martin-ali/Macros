@@ -62,3 +62,35 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
 		Sleep(delayMs)
 	}
 }
+
+TapAndHold(baseKey, tapKey, holdKey, timeoutInMs := 200, shouldDelay := false)
+{
+	timeoutInSeconds := timeoutInMs / 1000
+
+	keyIsTapped := KeyWait(baseKey, "T" timeoutInSeconds "")
+	if (keyIsTapped)
+	{
+		if (shouldDelay)
+		{
+			SendDelayed(tapKey)
+		}
+		else
+		{
+			Send("{" tapKey "}")
+		}
+	}
+	else
+	{
+		if (shouldDelay)
+		{
+			SendDelayed(holdKey)
+		}
+		else
+		{
+			Send("{" holdKey "}")
+
+		}
+	}
+
+	KeyWait(baseKey)
+}
