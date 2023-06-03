@@ -1,4 +1,4 @@
-﻿; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; ; #Warn ; Enable warnings to assist with detecting common errors.
 ; ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 ; ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
@@ -154,16 +154,10 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Also supports holding to run
     *Enter::
     {
-        sprintIsToggled := GetKeyState("Enter")
-        if (sprintIsToggled)
-        {
-            SendInput("{Enter up}")
-        }
-        else
-        {
-            SendInput("{Enter down}")
-        }
+        ;Toggle
+        Toggle("Enter")
 
+        ; Hold
         sprintIsHeld := KeyWait("Enter", "T0.5")
         KeyWait("Enter")
 
