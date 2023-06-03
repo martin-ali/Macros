@@ -1,1 +1,1 @@
-# autohotkey-scripts
+# Autohotkey scripts
