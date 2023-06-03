@@ -167,15 +167,9 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         }
     }
 
-    ; Makes it so releasing W stops sprint
-    *w::
+    ~*w Up::
     {
-        Send("{w down}")
-    }
-
-    *w Up::
-    {
-        Send("{w up}")
+        ; Send("{w up}")
         Send("{Enter up}")
     }
 }
@@ -190,7 +184,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     {
         playerIsAiming := GetKeyState("LButton", "P") or GetKeyState("RButton", "P")
 
-        ; MsgBox playerIsAiming
         if (playerIsAiming)
         {
             SendDelayed(".", 25, true)
@@ -209,28 +202,28 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe Borderlands3.exe")
 {
-    ; Use wheel to swap fire modes while also preserving its functionality in menus
-    *WheelUp::
+    ; Use mouse wheel to swap fire modes while also preserving its scrolling functionality in menus
+    ~*WheelUp::
     {
-        Send("{WheelUp}")
+        ; Send("{WheelUp}")
         Send("{.}")
     }
 
-    *WheelDown::
+    ~*WheelDown::
     {
-        Send("{WheelDown}")
+        ; Send("{WheelDown}")
         Send("{.}")
     }
 
     ; Autorun
-    *w::
+    ~*w::
     {
-        Send("{w down}")
+        ; Send("{w down}")
         Send("{o down}")
 
         KeyWait("w")
 
-        Send("{w up}")
+        ; Send("{w up}")
         Send("{o up}")
 
     }
@@ -238,7 +231,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Use F for Zane's secondary ability; Also hold F in menu to inspect weapon
     *f::
     {
-        TapAndHold("f", "RCtrl", "f", 300)
+        TapAndHold("f", "RControl", "f", 300)
     }
 
     *Enter::o
