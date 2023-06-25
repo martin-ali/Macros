@@ -1,14 +1,4 @@
-; ; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
-; ; ; #Warn ; Enable warnings to assist with detecting common errors.
-; ; SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
-; ; SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
-
-; #NoEnv
-;     ;Avoids checking empty variables to see if
-;     ;they are environment variables
-;     ;(recommended for all new scripts).
-
-#SingleInstance Force
+﻿#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -18,7 +8,7 @@
 ;     ;is until the user closes it or ExitApp
 ;     ;is encountered).
 
-; #InstallKeybdHook
+InstallKeybdHook
 ;     ;Forces the unconditional installation of
 ;     ;the keyboard hook.
 
@@ -32,48 +22,36 @@
 ;     ;window. You can set it to 0 to disable
 ;     ;key history.
 
-; #HotKeyInterval 1
-;     ;Along with #MaxHotkeysPerInterval,
-;     ;specifies the rate of hotkey activations
-;     ;beyond which a warning dialog will be
-;     ;displayed.
+SetKeyDelay(-1, 1)
+;Sets the delay that will occur after each
+;keystroke sent by Send and ControlSend.
 
+SetControlDelay(-1)
+;Sets the delay that will occur after each
+;control-modifying command.
 
-; #MaxHotkeysPerInterval 127
-;     ;Along with #HotkeyInterval specifies the
-;     ;rate of hotkey activations beyond which a
-;     ;warning dialog will be displayed.
+SetMouseDelay(-1)
+;Sets the delay that will occur after each
+;mouse movement or click.
 
-; SetKeyDelay,-1 1
-;     ;Sets the delay that will occur after each
-;     ;keystroke sent by Send and ControlSend.
+SetWinDelay(-1)
+;Sets the delay that will occur after each
+;windowing command such as WinActivate.
 
-; SetControlDelay -1
-;     ;Sets the delay that will occur after each
-;     ;control-modifying command.
-
-; SetMouseDelay -1
-;     ;Sets the delay that will occur after each
-;     ;mouse movement or click.
-
-; SetWinDelay,-1
-;     ;Sets the delay that will occur after each
-;     ;windowing command such as WinActivate.
-
-; SendMode Input
+SendMode("Input")
 ;     ;Switches to the SendInput method for Send,
 ;     ;SendRaw Click and MouseMove/Click/Drag.
 
-; ;SendMode InputThenPlay
-;     ;Same as above except that rather than
-;     ;falling back to Event mode when SendInput
-;     ;is unavailable it reverts to Play mode
-;     ;(below). This also causes the SendInput
-;     ;command itself to revert to Play mode when
-;     ;SendInput is unavailable.
+SendMode("InputThenPlay")
+;Same as above except that rather than
+;falling back to Event mode when SendInput
+;is unavailable it reverts to Play mode
+;(below). This also causes the SendInput
+;command itself to revert to Play mode when
+;SendInput is unavailable.
 
-; ;PID := DllCall("GetCurrentProcessId")
-; ;Process Priority %PID% High
+;PID := DllCall("GetCurrentProcessId")
+;Process Priority %PID% High
 
 ; #MaxThreadsBuffer True
 ; ; Buffer keypresses rather than ignoring them when over the thread limit
@@ -101,7 +79,7 @@ GroupAdd "CommonRebinds", "ahk_exe Mechanicus.exe"
 GroupAdd "CommonRebinds", "ahk_exe MidnightSuns-Win64-Shipping.exe"
 GroupAdd "CommonRebinds", "ahk_exe Control_DX11.exe"
 GroupAdd "CommonRebinds", "ahk_exe SW3.exe"
-GroupAdd "CommonRebinds", "ahk_exe Rage.exe"
+; GroupAdd "CommonRebinds", "ahk_exe Rage.exe"
 GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_group CommonRebinds")
@@ -115,6 +93,14 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 {
     *WheelUp:: SendInput("{[}") ; Swap weapon variant
     *WheelDown:: SendInput("{]}") ; Swap fist variant
+}
+#HotIf
+
+#HotIf WinActive("ahk_exe Rage.exe")
+{
+    *Enter::Space
+    *LWin::Enter
+    *LControl::p
 }
 #HotIf
 
@@ -135,43 +121,149 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
+#HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe") ; Alien Isolation
+{
+    XButton1::
+    {
+        SendInput("{LControl}")
+        Sleep("5")
+        SendInput("{LControl}")
+    }
+}
+#HotIf
+
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    ; *$WheelUp::
-    ; {
-    ;     SendInput("{q}")
-    ;     SendInput("{WheelDown}")
-    ; }
-
-    ; *$WheelDown::
-    ; {
-    ;     SendInput("{q}")
-    ;     SendInput("{WheelUp}")
-    ; }
-
-    ; Toggle run
-    ; Using the game's own toggle gives it unwanted double-tap-to-rush functionality
-    ; Also supports holding to run
-    *Enter::
+    QuickUseEquipment(key, equpmentUseKey, EquipmentSwapKey, position, requiresHolding := false)
     {
-        ;Toggle
-        Toggle("Enter")
-
-        ; Hold
-        sprintIsHeld := KeyWait("Enter", "T0.5")
-        KeyWait("Enter")
-
-        if (!sprintIsHeld)
+        startLoopsCount := position
+        loop (startLoopsCount)
         {
-            SendInput("{Enter up}")
+            SendDelayed(EquipmentSwapKey, 10)
+        }
+
+        SendInput("{" equpmentUseKey " down}")
+
+        if (requiresHolding)
+        {
+            KeyWait(key)
+        }
+
+        SendInput("{" equpmentUseKey " up}")
+
+        returnLoopsCount := 4 - position
+        loop (returnLoopsCount)
+        {
+            SendDelayed(EquipmentSwapKey, 10)
         }
     }
 
-    ~*w Up::
+    ; Binds
+    sprint := "Enter"
+    useEquipment := "RCtrl"
+    switchEquipment := "["
+
+    ; Item positions
+    grenade := "0"
+    wingstick := "1"
+    shockGrenades := "2"
+    turretDrone := "3"
+
+    ![::
     {
-        ; Send("{w up}")
-        Send("{Enter up}")
+        SendInput("{WheelUp}")
     }
+
+    !]::
+    {
+        SendInput("{WheelDown}")
+    }
+
+    ~$q::
+    {
+        inFocus := GetKeyState("XButton1", "P")
+        if (!inFocus)
+        {
+            QuickUseEquipment("q", useEquipment, switchEquipment, wingstick, true)
+        }
+
+        KeyWait("q")
+    }
+
+    $g::
+    {
+        keyIsTapped := KeyWait("g", "T0.2")
+
+        inFocus := GetKeyState("XButton1", "P")
+        if (inFocus)
+        {
+            SendInput("g")
+        }
+        else if (keyIsTapped)
+        {
+            QuickUseEquipment("g", useEquipment, switchEquipment, shockGrenades)
+        }
+        else ; Key is held
+        {
+            QuickUseEquipment("g", useEquipment, switchEquipment, turretDrone)
+        }
+
+        KeyWait("g")
+    }
+
+    ; ; Toggle run
+    ; ; Using the game's own toggle gives it unwanted double-tap-to-rush functionality
+    ; ; Also supports holding to run
+    ; *$Enter::
+    ; {
+    ;     SendInput("{Enter}")
+
+    ;     ; Toggle
+    ;     running := GetKeyState("w")
+    ;     notSprinting := !GetKeyState(sprint)
+    ;     if (running and notSprinting)
+    ;     {
+    ;         Toggle(sprint)
+    ;     }
+
+    ;     ; Hold
+    ;     sprintIsReleased := !KeyWait("Enter", "T0.3")
+    ;     KeyWait("Enter")
+    ;     if (sprintIsReleased)
+    ;     {
+    ;         Toggle(sprint)
+    ;     }
+
+    ;     ; Edge case: If sprint is already toggled on, holding the sprint key should continue sprinting until released
+    ;     ; Side-effect: When toggling sprint off, the toggle now triggers on keyup instead of keydown
+    ;     notRunning := !running
+    ;     sprinting := !notSprinting
+    ;     if (sprinting or notRunning)
+    ;     {
+    ;         ; Toggle(sprint)
+    ;         SendInput("{" sprint " up}")
+    ;     }
+    ; }
+
+    ; ~*w Up::
+    ; {
+    ;     SendInput("{" sprint " up}")
+    ; }
+
+    ; ~*Escape::
+    ; {
+    ;     SendInput("{" sprint " up}")
+    ; }
+
+    ; ~*Tab::
+    ; {
+    ;     SendInput("{" sprint " up}")
+    ; }
+
+    ; ; ~*Shift::
+    ; ; {
+    ; ;     Send("{" sprint " up}")
+    ; ; }
 }
 #HotIf
 
@@ -205,27 +297,22 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Use mouse wheel to swap fire modes while also preserving its scrolling functionality in menus
     ~*WheelUp::
     {
-        ; Send("{WheelUp}")
         Send("{.}")
     }
 
     ~*WheelDown::
     {
-        ; Send("{WheelDown}")
         Send("{.}")
     }
 
     ; Autorun
     ~*w::
     {
-        ; Send("{w down}")
         Send("{o down}")
 
         KeyWait("w")
 
-        ; Send("{w up}")
         Send("{o up}")
-
     }
 
     ; Use F for Zane's secondary ability; Also hold F in menu to inspect weapon
@@ -240,38 +327,34 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
 {
-    meathookIsEnabled := true
+    ; meathookIsEnabled := true
 
-    *t:: ; Ice bomb
-    {
-        ; KeyWait t
-        Send("{h}")
-        Sleep(50)
-        Send("{RControl}")
-        Sleep(50)
-        Send("{h}")
-    }
+    ; ; Ice bomb
+    ; *t::
+    ; {
+    ;     delay := 10
+    ;     SendDelayed("/", delay)
+    ;     SendDelayed("RControl", delay)
+    ;     SendDelayed("/", delay)
 
-    *LControl:: ; Autohop
-    {
-        desiredHoldMs := 100
-        startMs := A_TickCount
+    ;     KeyWait("t")
+    ; }
 
-        Send("{LControl}")
+    ; ;  Autohop
+    ; ; BUG: Sometimes starts hopping on its own; Cause unknown
+    ; ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function
+    ; $LControl::
+    ; {
+    ;     ; SendInput("{LControl}")
 
-        While GetKeyState("LControl", "P")
-        {
-            elapsedMs := A_TickCount - startMs
-            elapsedTimeIsFulfilled := elapsedMs >= desiredHoldMs
+    ;     ; KeyWait("LControl", "T0.2")
 
-            if (elapsedTimeIsFulfilled)
-            {
-                Send("{LControl}")
-            }
-
-            Sleep(5)
-        }
-    }
+    ;     While GetKeyState("LControl", "P")
+    ;     {
+    ;         Send("{LControl}")
+    ;         Sleep(10)
+    ;     }
+    ; }
 
     ; ; TODO: Find a cleaner way to disable the meathook
     ; *RButton::
@@ -356,7 +439,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
     *Enter::Space
 
-    *q::
+    ~*q::
     {
         UseAbility(grapplingHook)
     }
