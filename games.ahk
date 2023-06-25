@@ -132,9 +132,99 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
+#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
+{
+    ; meathookIsEnabled := true
+
+    ; ; Ice bomb
+    ; *t::
+    ; {
+    ;     delay := 10
+    ;     SendDelayed("/", delay)
+    ;     SendDelayed("RControl", delay)
+    ;     SendDelayed("/", delay)
+
+    ;     KeyWait("t")
+    ; }
+
+    ; ;  Autohop
+    ; ; BUG: Sometimes starts hopping on its own; Cause unknown
+    ; ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function
+    ; $LControl::
+    ; {
+    ;     ; SendInput("{LControl}")
+
+    ;     ; KeyWait("LControl", "T0.2")
+
+    ;     While GetKeyState("LControl", "P")
+    ;     {
+    ;         Send("{LControl}")
+    ;         Sleep(10)
+    ;     }
+    ; }
+
+    ; ; TODO: Find a cleaner way to disable the meathook
+    ; *RButton::
+    ; {
+    ;     if (meathookIsEnabled == false)
+    ;     {
+    ;         Send("{e}")
+    ;     }
+    ; }
+
+    ; *c::
+    ; {
+    ;     meathookIsEnabled := false
+    ;     SendInput("{c}")
+    ; }
+
+    ; *x::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{x}")
+    ; }
+
+    ; *v::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{v}")
+    ; }
+
+    ; *b::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{b}")
+    ; }
+
+    ; *Enter::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{Enter}")
+    ; }
+
+    ; *LShift::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{LShift}")
+    ; }
+
+    ; *2::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{2}")
+    ; }
+
+    ; *XButton2::
+    ; {
+    ;     meathookIsEnabled := true
+    ;     SendInput("{XButton2}")
+    ; }
+}
+#HotIf
+
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    QuickUseEquipment(key, equpmentUseKey, EquipmentSwapKey, position, requiresHolding := false)
+    QuickUseEquipment(key, position, equpmentUseKey, EquipmentSwapKey, requiresHolding := false)
     {
         startLoopsCount := position
         loop (startLoopsCount)
@@ -184,7 +274,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         inFocus := GetKeyState("XButton1", "P")
         if (!inFocus)
         {
-            QuickUseEquipment("q", useEquipment, switchEquipment, wingstick, true)
+            QuickUseEquipment("q", wingstick, useEquipment, switchEquipment, true)
         }
 
         KeyWait("q")
@@ -201,11 +291,11 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         }
         else if (keyIsTapped)
         {
-            QuickUseEquipment("g", useEquipment, switchEquipment, shockGrenades)
+            QuickUseEquipment("g", shockGrenades, useEquipment, switchEquipment)
         }
         else ; Key is held
         {
-            QuickUseEquipment("g", useEquipment, switchEquipment, turretDrone)
+            QuickUseEquipment("g", turretDrone, useEquipment, switchEquipment)
         }
 
         KeyWait("g")
@@ -322,96 +412,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     }
 
     *Enter::o
-}
-#HotIf
-
-#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
-{
-    ; meathookIsEnabled := true
-
-    ; ; Ice bomb
-    ; *t::
-    ; {
-    ;     delay := 10
-    ;     SendDelayed("/", delay)
-    ;     SendDelayed("RControl", delay)
-    ;     SendDelayed("/", delay)
-
-    ;     KeyWait("t")
-    ; }
-
-    ; ;  Autohop
-    ; ; BUG: Sometimes starts hopping on its own; Cause unknown
-    ; ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function
-    ; $LControl::
-    ; {
-    ;     ; SendInput("{LControl}")
-
-    ;     ; KeyWait("LControl", "T0.2")
-
-    ;     While GetKeyState("LControl", "P")
-    ;     {
-    ;         Send("{LControl}")
-    ;         Sleep(10)
-    ;     }
-    ; }
-
-    ; ; TODO: Find a cleaner way to disable the meathook
-    ; *RButton::
-    ; {
-    ;     if (meathookIsEnabled == false)
-    ;     {
-    ;         Send("{e}")
-    ;     }
-    ; }
-
-    ; *c::
-    ; {
-    ;     meathookIsEnabled := false
-    ;     SendInput("{c}")
-    ; }
-
-    ; *x::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{x}")
-    ; }
-
-    ; *v::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{v}")
-    ; }
-
-    ; *b::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{b}")
-    ; }
-
-    ; *Enter::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{Enter}")
-    ; }
-
-    ; *LShift::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{LShift}")
-    ; }
-
-    ; *2::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{2}")
-    ; }
-
-    ; *XButton2::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{XButton2}")
-    ; }
 }
 #HotIf
 
