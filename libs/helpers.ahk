@@ -1,4 +1,4 @@
-﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; ; #SingleInstance, Force
 ; SendMode Input
 ; SetWorkingDir, %A_ScriptDir%
@@ -65,8 +65,8 @@ SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
 
 Toggle(key)
 {
-	keyIsToggled := GetKeyState(key)
-	if (keyIsToggled)
+	keyIsDown := GetKeyState(key)
+	if (keyIsDown)
 	{
 		SendInput("{" key " up}")
 	}
