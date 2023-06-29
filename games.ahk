@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -136,8 +136,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
 {
-    ; meathookIsEnabled := true
-
     ; ; Ice bomb
     ; *t::
     ; {
@@ -149,78 +147,23 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ;     KeyWait("t")
     ; }
 
-    ; ;  Autohop
-    ; ; BUG: Sometimes starts hopping on its own; Cause unknown
-    ; ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function
-    ; $LControl::
-    ; {
-    ;     ; SendInput("{LControl}")
+    ;  Autohop
+    ; BUG: Sometimes starts hopping on its own; Cause unknown
+    ; NOTE: Maybe it's timing-related? Multithreading issue? Behaviour I don't know about?
+    ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function (which has a slower repeat rate)
+    *$LControl::
+    {
+        ; SendInput("{LControl}")
 
-    ;     ; KeyWait("LControl", "T0.2")
+        ; KeyWait("LControl", "T0.2")
 
-    ;     While GetKeyState("LControl", "P")
-    ;     {
-    ;         Send("{LControl}")
-    ;         Sleep(10)
-    ;     }
-    ; }
-
-    ; ; TODO: Find a cleaner way to disable the meathook
-    ; *RButton::
-    ; {
-    ;     if (meathookIsEnabled == false)
-    ;     {
-    ;         Send("{e}")
-    ;     }
-    ; }
-
-    ; *c::
-    ; {
-    ;     meathookIsEnabled := false
-    ;     SendInput("{c}")
-    ; }
-
-    ; *x::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{x}")
-    ; }
-
-    ; *v::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{v}")
-    ; }
-
-    ; *b::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{b}")
-    ; }
-
-    ; *Enter::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{Enter}")
-    ; }
-
-    ; *LShift::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{LShift}")
-    ; }
-
-    ; *2::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{2}")
-    ; }
-
-    ; *XButton2::
-    ; {
-    ;     meathookIsEnabled := true
-    ;     SendInput("{XButton2}")
-    ; }
+        While GetKeyState("LControl", "P")
+        {
+            Send("{o}")
+            Sleep(10)
+            continue
+        }
+    }
 }
 #HotIf
 
