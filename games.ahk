@@ -487,10 +487,10 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     *WheelDown:: SendDelayed("]")
 
     ; Zoom in / scroll up
-    *^WheelUp::WheelUp
+    *!WheelUp::WheelUp
 
     ; Zoom out / scroll down
-    *^WheelDown::WheelDown
+    *!WheelDown::WheelDown
 
     ; Toggle weapon wheel
     *MButton::
