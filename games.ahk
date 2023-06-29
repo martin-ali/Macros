@@ -85,20 +85,13 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     }
 
     ;  Autohop
-    ; BUG: Sometimes starts hopping on its own; Cause unknown
-    ; NOTE: Maybe it's timing-related? Multithreading issue? Behaviour I don't know about?
-    ; WORKAROUND: Temporarily re-implemented using the reWASD turbo function (which has a slower repeat rate)
     *$LControl::
     {
-        ; SendInput("{LControl}")
-
-        ; KeyWait("LControl", "T0.2")
+        SetKeyDelay(1, 0)
 
         While GetKeyState("LControl", "P")
         {
-            Send("{o}")
-            Sleep(10)
-            continue
+            SendEvent("{LControl}")
         }
     }
 }
