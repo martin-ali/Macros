@@ -60,7 +60,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
-#HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe") ; Alien Isolation
+#HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe")
 {
     XButton1::
     {
