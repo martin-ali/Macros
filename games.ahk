@@ -395,7 +395,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe Borderlands3.exe")
 {
-    ; Use mouse wheel to swap fire modes while also preserving its scrolling functionality in menus
+    ; Use the mouse wheel to change fire modes and preserve scrolling in menus
     ~*WheelUp::
     {
         Send("{.}")
