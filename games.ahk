@@ -226,36 +226,40 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    QuickUseEquipment(key, position, equpmentUseKey, EquipmentSwapKey, requiresHolding := false)
+    QuickUseEquipment(position, key, requiresHolding := false)
     {
+        global sprint
+        global useEquipment
+        global switchEquipment
+
         startLoopsCount := position
         loop (startLoopsCount)
         {
-            SendDelayed(EquipmentSwapKey, 10)
+            SendDelayed(switchEquipment, 10)
         }
 
-        SendInput("{" equpmentUseKey " down}")
+        SendInput("{" useEquipment " down}")
 
         if (requiresHolding)
         {
             KeyWait(key)
         }
 
-        SendInput("{" equpmentUseKey " up}")
+        SendInput("{" useEquipment " up}")
 
         returnLoopsCount := 4 - position
         loop (returnLoopsCount)
         {
-            SendDelayed(EquipmentSwapKey, 10)
+            SendDelayed(switchEquipment, 10)
         }
     }
 
-    ; Binds
-    sprint := "Enter"
-    useEquipment := "RCtrl"
-    switchEquipment := "["
+    ; Keybinds
+    global sprint := "Enter"
+    global useEquipment := "RCtrl"
+    global switchEquipment := "["
 
-    ; Item positions
+    ; Item indices
     grenade := "0"
     wingstick := "1"
     shockGrenades := "2"
@@ -271,36 +275,41 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         SendInput("{WheelDown}")
     }
 
+    ; Wingstick
     ~$q::
     {
+        thisKey := "q"
+
         inFocus := GetKeyState("XButton1", "P")
         if (!inFocus)
         {
-            QuickUseEquipment("q", wingstick, useEquipment, switchEquipment, true)
+            QuickUseEquipment(wingstick, thisKey, true)
         }
 
-        KeyWait("q")
+        KeyWait(thisKey)
     }
 
+    ; Tap for shock grenades, hold for turret drone
     $g::
     {
         keyIsTapped := KeyWait("g", "T0.2")
+        thisKey := "g"
 
         inFocus := GetKeyState("XButton1", "P")
         if (inFocus)
         {
-            SendInput("g")
+            SendInput(thisKey)
         }
         else if (keyIsTapped)
         {
-            QuickUseEquipment("g", shockGrenades, useEquipment, switchEquipment)
+            QuickUseEquipment(shockGrenades, thisKey)
         }
         else ; Key is held
         {
-            QuickUseEquipment("g", turretDrone, useEquipment, switchEquipment)
+            QuickUseEquipment(turretDrone, thisKey)
         }
 
-        KeyWait("g")
+        KeyWait(thisKey)
     }
 
     ; ; Toggle run
