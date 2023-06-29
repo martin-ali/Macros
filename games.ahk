@@ -72,16 +72,17 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
 {
-    ; ; Ice bomb
-    ; *t::
-    ; {
-    ;     delay := 10
-    ;     SendDelayed("/", delay)
-    ;     SendDelayed("RControl", delay)
-    ;     SendDelayed("/", delay)
+    ; Ice bomb
+    *t::
+    {
+        SetKeyDelay(1, 1)
 
-    ;     KeyWait("t")
-    ; }
+        SendEvent("{/}")
+        SendEvent("{RControl}")
+        SendEvent("{/}")
+
+        KeyWait("t")
+    }
 
     ;  Autohop
     ; BUG: Sometimes starts hopping on its own; Cause unknown
