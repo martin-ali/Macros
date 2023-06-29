@@ -22,7 +22,7 @@ InstallKeybdHook
 ;     ;window. You can set it to 0 to disable
 ;     ;key history.
 
-SetKeyDelay(-1, 1)
+SetKeyDelay(-1, -1)
 ;Sets the delay that will occur after each
 ;keystroke sent by Send and ControlSend.
 
@@ -35,23 +35,18 @@ SetMouseDelay(-1)
 ;mouse movement or click.
 
 SetWinDelay(-1)
-;Sets the delay that will occur after each
-;windowing command such as WinActivate.
+; Sets the delay that will occur after each
+; windowing command such as WinActivate.
 
-SendMode("Input")
-;     ;Switches to the SendInput method for Send,
-;     ;SendRaw Click and MouseMove/Click/Drag.
+; ProcessSetPriority "High"
 
-SendMode("InputThenPlay")
-;Same as above except that rather than
-;falling back to Event mode when SendInput
-;is unavailable it reverts to Play mode
-;(below). This also causes the SendInput
-;command itself to revert to Play mode when
-;SendInput is unavailable.
+; #MaxThreadsBuffer True
+; ; Buffer keypresses rather than ignoring them when over the thread limit
+; ; Experimental
 
-; ;PID := DllCall("GetCurrentProcessId")
-; ;Process, Priority, %PID%, High
+A_HotkeyInterval := 0
+
+#MaxThreads 12
 
 #Requires AutoHotkey >=v2.0
 
