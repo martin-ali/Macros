@@ -18,7 +18,6 @@ GroupAdd "CommonRebinds", "ahk_exe Mechanicus.exe"
 GroupAdd "CommonRebinds", "ahk_exe MidnightSuns-Win64-Shipping.exe"
 GroupAdd "CommonRebinds", "ahk_exe Control_DX11.exe"
 GroupAdd "CommonRebinds", "ahk_exe SW3.exe"
-; GroupAdd "CommonRebinds", "ahk_exe Rage.exe"
 GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_group CommonRebinds")
