@@ -4,3 +4,8 @@
 <https://www.autohotkey.com/docs/v2/Hotkeys.htm>
 <https://www.autohotkey.com/docs/v2/lib/KeyWait.htm>
 <https://www.autohotkey.com/docs/v2/lib/GetKeyState.htm>
+
+## Misc
+
+- AHK V2's default send mode is "SendInput"
+- Prefer SendEvent to Send/Input for loops
