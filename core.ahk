@@ -16,7 +16,7 @@ InstallKeybdHook
 ;Force the use of the hook for hotkeys
 ;after this point.
 
-; #KeyHistory 0
+KeyHistory(0)
 ;     ;Sets the maximum number of keyboard and
 ;     ;mouse events displayed by the KeyHistory
 ;     ;window. You can set it to 0 to disable
