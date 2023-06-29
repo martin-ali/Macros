@@ -99,37 +99,38 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    QuickUseEquipment(position, key, requiresHolding := false)
+    QuickUseEquipment(position, keyToHold := "")
     {
-        global sprint
+        SetKeyDelay(25, 1)
+
         global useEquipment
         global switchEquipment
 
         startLoopsCount := position
         loop (startLoopsCount)
         {
-            SendDelayed(switchEquipment, 10)
+            SendEvent("{" switchEquipment "}")
         }
 
-        SendInput("{" useEquipment " down}")
+        SendEvent("{" useEquipment " down}")
 
-        if (requiresHolding)
+        if (keyToHold)
         {
-            KeyWait(key)
+            KeyWait(keyToHold)
         }
 
-        SendInput("{" useEquipment " up}")
+        SendEvent("{" useEquipment " up}")
 
         returnLoopsCount := 4 - position
         loop (returnLoopsCount)
         {
-            SendDelayed(switchEquipment, 10)
+            SendEvent("{" switchEquipment "}")
         }
     }
 
     ; Keybinds
     global sprint := "Enter"
-    global useEquipment := "RCtrl"
+    global useEquipment := "RControl"
     global switchEquipment := "["
 
     ; Item indices
@@ -141,35 +142,34 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Wingstick
     ~$q::
     {
-        thisKey := "q"
+        thisKey := SubStr(ThisHotkey, 3)
 
         inFocus := GetKeyState("XButton1", "P")
         if (!inFocus)
         {
-            QuickUseEquipment(wingstick, thisKey, true)
+            QuickUseEquipment(wingstick, thisKey)
         }
 
         KeyWait(thisKey)
     }
 
     ; Tap for shock grenades, hold for turret drone
-    $g::
+    ~$g::
     {
-        keyIsTapped := KeyWait("g", "T0.2")
-        thisKey := "g"
+        thisKey := SubStr(ThisHotkey, 3)
+        keyIsTapped := KeyWait(thisKey, "T0.2")
 
         inFocus := GetKeyState("XButton1", "P")
-        if (inFocus)
+        if (!inFocus)
         {
-            SendInput(thisKey)
-        }
-        else if (keyIsTapped)
-        {
-            QuickUseEquipment(shockGrenades, thisKey)
-        }
-        else ; Key is held
-        {
-            QuickUseEquipment(turretDrone, thisKey)
+            if (keyIsTapped)
+            {
+                QuickUseEquipment(shockGrenades)
+            }
+            else ; Key is held
+            {
+                QuickUseEquipment(turretDrone)
+            }
         }
 
         KeyWait(thisKey)
