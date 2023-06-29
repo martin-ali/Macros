@@ -1,4 +1,4 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -35,27 +35,29 @@ SetMouseDelay(-1)
 ;mouse movement or click.
 
 SetWinDelay(-1)
-;Sets the delay that will occur after each
-;windowing command such as WinActivate.
+; Sets the delay that will occur after each
+; windowing command such as WinActivate.
 
 SendMode("Input")
-;     ;Switches to the SendInput method for Send,
-;     ;SendRaw Click and MouseMove/Click/Drag.
+;Switches to the SendInput method for Send,
+;SendRaw Click and MouseMove/Click/Drag.
 
 SendMode("InputThenPlay")
-;Same as above except that rather than
-;falling back to Event mode when SendInput
-;is unavailable it reverts to Play mode
-;(below). This also causes the SendInput
-;command itself to revert to Play mode when
-;SendInput is unavailable.
+; Same as above except that rather than
+; falling back to Event mode when SendInput
+; is unavailable it reverts to Play mode
+; (below). This also causes the SendInput
+; command itself to revert to Play mode when
+; SendInput is unavailable.
 
-;PID := DllCall("GetCurrentProcessId")
-;Process Priority %PID% High
+; PID := DllCall("GetCurrentProcessId")
+; Process Priority %PID% High
 
-; #MaxThreadsBuffer True
-; ; Buffer keypresses rather than ignoring them when over the thread limit
-; ; Experimental
+#MaxThreadsBuffer True
+; Buffer keypresses rather than ignoring them when over the thread limit
+; Experimental
+
+A_HotkeyInterval := 0
 
 #MaxThreads 12
 
