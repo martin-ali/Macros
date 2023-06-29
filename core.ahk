@@ -1,4 +1,4 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -38,12 +38,7 @@ SetWinDelay(-1)
 ; Sets the delay that will occur after each
 ; windowing command such as WinActivate.
 
-; ProcessSetPriority "High"
-
-; #MaxThreadsBuffer True
-; ; Buffer keypresses rather than ignoring them when over the thread limit
-; ; Experimental
-
+ProcessSetPriority "High"
 A_HotkeyInterval := 0
 
 #MaxThreads 12
