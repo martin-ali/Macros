@@ -368,31 +368,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
-#HotIf WinActive("ahk_exe deadspace2.exe")
-{
-    *XButton1::[ ; Stasis
-    *XButton2::] ; Kinesis
-
-    *Enter:: ; WIP. DirectInput game?
-    {
-        playerIsAiming := GetKeyState("LButton", "P") or GetKeyState("RButton", "P")
-
-        if (playerIsAiming)
-        {
-            SendDelayed(".", 25, true)
-            SendInput("{.}")
-            MsgBox("Aiming")
-        }
-        else
-        {
-            SendDelayed("/", 25, true)
-            SendInput("{/}")
-            MsgBox("Running")
-        }
-    }
-}
-#HotIf
-
 #HotIf WinActive("ahk_exe Borderlands3.exe")
 {
     ; Use the mouse wheel to change fire modes and preserve scrolling in menus
