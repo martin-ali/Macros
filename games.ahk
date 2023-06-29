@@ -1,4 +1,4 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -207,16 +207,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     wingstick := "1"
     shockGrenades := "2"
     turretDrone := "3"
-
-    ![::
-    {
-        SendInput("{WheelUp}")
-    }
-
-    !]::
-    {
-        SendInput("{WheelDown}")
-    }
 
     ; Wingstick
     ~$q::
