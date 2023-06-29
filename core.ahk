@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 ;Skips the dialog box and replaces the old
 ;instance automatically which is similar
 ;in effect to the Reload command.
@@ -8,13 +8,14 @@
 ;     ;is until the user closes it or ExitApp
 ;     ;is encountered).
 
+#UseHook
+;Force the use of the hook for hotkeys
+;after this point.
+
 InstallKeybdHook
 ;     ;Forces the unconditional installation of
 ;     ;the keyboard hook.
 
-#UseHook
-;Force the use of the hook for hotkeys
-;after this point.
 
 KeyHistory(0)
 ;     ;Sets the maximum number of keyboard and
