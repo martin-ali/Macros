@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 #Include common-headers.ahk
 
@@ -76,3 +76,4 @@ GroupAdd "ExcludedPrograms", "ahk_exe SpaceMarine.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe CrabChampions-Win64-Shipping.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe FSD-Win64-Shipping.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe Boltgun-Win64-Shipping.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe POSTAL Brain Damaged.exe"
