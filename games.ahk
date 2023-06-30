@@ -1,5 +1,6 @@
 #Requires AutoHotkey >=v2.0
 
+#Include libs/common-headers.ahk
 #Include libs/helpers.ahk
 
 GroupAdd "CommonRebinds", "ahk_exe Magicka.exe"

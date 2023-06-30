@@ -1,19 +1,20 @@
 #Requires AutoHotkey >=v2.0
 
+#Include libs/common-headers.ahk
 #Include libs/exclusions.ahk
 
 #HotIf !WinActive("ahk_group ExcludedPrograms")
 {
-    SendKeyOnlyOnTap(key, timeoutInMs := 200)
+    SendKeyOnlyOnTap(key, timeoutInMs := 100)
     {
         timeoutInSeconds := timeoutInMs / 1000
 
-        keyIsTapped := KeyWait(key, "T" timeoutInSeconds "")
+        keyIsTapped := KeyWait(key, "T" timeoutInSeconds)
         KeyWait(key)
 
         if (keyIsTapped)
         {
-            Send("{" key "}")
+            SendInput("{" key "}")
         }
     }
 
@@ -23,6 +24,7 @@
     }
 
     $Enter::
+
     {
         SendKeyOnlyOnTap("Enter")
     }
@@ -40,6 +42,7 @@
         [::^PgDn ; Tab right
         p::^w ; Close tab
     }
+    #HotIf
 
     #HotIf GetKeyState("Enter", "p") and !WinActive("ahk_group ExcludedPrograms")
     {

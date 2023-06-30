@@ -5,6 +5,8 @@
 
 #Requires AutoHotkey >=v2.0
 
+#Include common-headers.ahk
+
 ; Pause::
 ;     WinGet, id, list, ahk_class AutoHotkey
 ;     Loop, %id%
@@ -89,7 +91,7 @@ TapAndHold(baseKey, tapKey, holdKey, timeoutInMs := 200, shouldDelay := false)
 		}
 		else
 		{
-			Send("{" tapKey "}")
+			SendInput("{" tapKey "}")
 		}
 	}
 	else
@@ -100,8 +102,7 @@ TapAndHold(baseKey, tapKey, holdKey, timeoutInMs := 200, shouldDelay := false)
 		}
 		else
 		{
-			Send("{" holdKey "}")
-
+			SendInput("{" holdKey "}")
 		}
 	}
 

@@ -1,9 +1,6 @@
-﻿; #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
-; ; #SingleInstance, Force
-; SendMode Input
-; SetWorkingDir, %A_ScriptDir%
+﻿#Requires AutoHotkey >=v2.0
 
-#Requires AutoHotkey >=v2.0
+#Include common-headers.ahk
 
 GroupAdd "ExcludedPrograms", "ahk_exe bms.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe DOOMEternalx64vk.exe"

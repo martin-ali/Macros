@@ -12,11 +12,7 @@ InstallKeybdHook
 ;     ;Forces the unconditional installation of
 ;     ;the keyboard hook.
 
-#UseHook
-;Force the use of the hook for hotkeys
-;after this point.
-
-; #KeyHistory 0
+KeyHistory(0)
 ;     ;Sets the maximum number of keyboard and
 ;     ;mouse events displayed by the KeyHistory
 ;     ;window. You can set it to 0 to disable
@@ -38,16 +34,13 @@ SetWinDelay(-1)
 ; Sets the delay that will occur after each
 ; windowing command such as WinActivate.
 
-; PID := DllCall("GetCurrentProcessId")
-; Process Priority %PID% High
-ProcessSetPriority "High"
+#UseHook
+;Force the use of the hook for hotkeys
+;after this point.
 
-#MaxThreadsBuffer True
-; Buffer keypresses rather than ignoring them when over the thread limit
-; Experimental
+#MaxThreadsBuffer False
 
+; ProcessSetPriority "High"
 A_HotkeyInterval := 0
 
 #MaxThreads 12
-
-#Requires AutoHotkey >=v2.0 AutoHotkey >=v2.0
