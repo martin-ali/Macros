@@ -78,6 +78,17 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         SendEvent("{LControl}")
     }
 
+    ;  Autohop
+    *$LControl::
+    {
+        SetTimer(Hop, 1)
+    }
+
+    *$LControl Up::
+    {
+        SetTimer(Hop, 0)
+    }
+
     ; Ice bomb
     *t::
     {
@@ -88,17 +99,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         SendEvent("{/}")
 
         KeyWait("t")
-    }
-
-    ;  Autohop
-    *$LControl::
-    {
-        SetTimer(Hop, 1)
-    }
-
-    *$LControl Up::
-    {
-        SetTimer(Hop, 0)
     }
 }
 #HotIf
