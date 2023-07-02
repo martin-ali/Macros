@@ -112,8 +112,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
         global useEquipment
         global switchEquipment
 
-        startLoopsCount := position
-        loop (startLoopsCount)
+        forwardsLoopsCount := position
+        loop (forwardsLoopsCount)
         {
             SendEvent("{" switchEquipment "}")
         }
@@ -127,8 +127,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
         SendEvent("{" useEquipment " up}")
 
-        returnLoopsCount := 4 - position
-        loop (returnLoopsCount)
+        backwardsLoopsCount := 4 - position
+        loop (backwardsLoopsCount)
         {
             SendEvent("{" switchEquipment "}")
         }
@@ -148,7 +148,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Wingstick
     ~$q::
     {
-        thisKey := SubStr(ThisHotkey, 3)
+        thisKey := ThisHotkeyClean(ThisHotkey)
 
         inFocus := GetKeyState("XButton1", "P")
         if (!inFocus)
@@ -162,7 +162,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Tap for shock grenades, hold for turret drone
     ~$g::
     {
-        thisKey := SubStr(ThisHotkey, 3)
+        thisKey := ThisHotkeyClean(ThisHotkey)
         keyIsTapped := KeyWait(thisKey, "T0.2")
 
         inFocus := GetKeyState("XButton1", "P")
