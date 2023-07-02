@@ -19,19 +19,11 @@
     }
 
     $\::
-    {
-        SendKeyOnlyOnTap("\")
-    }
-
     $Enter::
-
-    {
-        SendKeyOnlyOnTap("Enter")
-    }
-
     $Tab::
     {
-        SendKeyOnlyOnTap("Tab")
+        thisKey := ThisHotkeyClean(ThisHotkey)
+        SendKeyOnlyOnTap(thisKey)
     }
 
     #HotIf GetKeyState("\", "p") and !WinActive("ahk_group ExcludedPrograms")
