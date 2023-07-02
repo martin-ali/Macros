@@ -60,12 +60,6 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 }
 #HotIf
 
-#HotIf WinActive("ahk_exe Boltgun-Win64-Shipping.exe")
-{
-    XButton2::t
-}
-#HotIf
-
 #HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe")
 {
     XButton1::
