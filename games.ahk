@@ -73,6 +73,11 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 
 #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
 {
+    Hop()
+    {
+        SendEvent("{LControl}")
+    }
+
     ; Ice bomb
     *t::
     {
@@ -88,12 +93,12 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ;  Autohop
     *$LControl::
     {
-        SetKeyDelay(1, 0)
+        SetTimer(Hop, 1)
+    }
 
-        While GetKeyState("LControl", "P")
-        {
-            SendEvent("{LControl}")
-        }
+    *$LControl Up::
+    {
+        SetTimer(Hop, 0)
     }
 }
 #HotIf
