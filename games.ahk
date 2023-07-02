@@ -329,15 +329,8 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Toggle weapon wheel
     *MButton::
     {
-        wheelIsShown := GetKeyState("MButton")
-        if (wheelIsShown)
-        {
-            SendInput("{MButton up}") ; Hide wheel
-        }
-        else
-        {
-            SendInput("{MButton down}") ; Show wheel
-        }
+        thisKey := ThisHotkeyClean(ThisHotkey)
+        Toggle(thisKey)
     }
 
     ; Tap for map, hold to show HUD
