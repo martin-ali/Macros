@@ -2,6 +2,14 @@
 
 #Include common-headers.ahk
 
+HOTKEY_MODIFIERS := "#!^+&<>*~$"
+
+ThisHotkeyClean(hotkey)
+{
+	cleanedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
+	return cleanedHotkey
+}
+
 SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
 {
 	SendInput("{" key " down}")
