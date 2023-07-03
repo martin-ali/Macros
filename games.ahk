@@ -268,18 +268,18 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     thruster := 4
     activateAbility := "/"
 
+    SetKeyDelay(5, 1)
+
     SelectAbility(key)
     {
-        SendInput(key)
+        SendEvent(key)
     }
 
-    UseAbility(key, delay := 25)
+    UseAbility(key)
     {
         SelectAbility(key)
 
-        Sleep(delay)
-
-        SendInput("{" activateAbility "}")
+        SendEvent("{" activateAbility "}")
     }
 
     *Enter::Space
