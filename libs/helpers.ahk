@@ -73,3 +73,5 @@ TapAndHold(baseKey, tapKey, holdKey, timeoutInMs := 200, shouldDelay := false)
 ; Multi-tap
 
 ; Double tap and hold
+
+; Hold, long hold, and tap
