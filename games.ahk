@@ -240,7 +240,7 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 
 #HotIf WinActive("ahk_exe Borderlands3.exe")
 {
-    ; Use the mouse wheel to change fire modes and scroll in menus
+    ; Change fire mode / scroll
     ~*WheelUp::
     ~*WheelDown:: SendInput("{.}")
 
@@ -254,7 +254,7 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
         SendInput("{o up}")
     }
 
-    ; Tap F for Zane's secondary ability; Also hold F in menu to inspect weapon
+    ; Tap F for Zane's secondary ability, hold F in menu to inspect weapon
     *f:: TapAndHold("f", "RControl", "f", 300)
 
     *Enter::o
