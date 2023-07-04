@@ -96,10 +96,6 @@
     c::^c ; Copy
     v::^v ; Paste
     m::^m ; Mute Tab
-    p::CapsLock
-    ; Tab & f::^f ; Search
-    Left::^Left ; Select all
-    Right::^Right ; Select all
 
     ; Function row
     1::F1
