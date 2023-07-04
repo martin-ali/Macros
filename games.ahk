@@ -70,6 +70,8 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
         SendEvent("{LControl}")
         SendEvent("{LControl}")
     }
+
+    XButton2::f
 }
 #HotIf
 
