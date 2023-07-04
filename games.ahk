@@ -148,7 +148,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Wingstick
     ~$q::
     {
-        thisKey := ThisHotkeyClean(ThisHotkey)
+        thisKey := TrimModifiers(ThisHotkey)
 
         inFocus := GetKeyState("XButton1", "P")
         if (!inFocus)
@@ -162,7 +162,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Tap for shock grenades, hold for turret drone
     ~$g::
     {
-        thisKey := ThisHotkeyClean(ThisHotkey)
+        thisKey := TrimModifiers(ThisHotkey)
         keyIsTapped := KeyWait(thisKey, "T0.2")
 
         inFocus := GetKeyState("XButton1", "P")
@@ -329,7 +329,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
     ; Toggle weapon wheel
     *MButton::
     {
-        thisKey := ThisHotkeyClean(ThisHotkey)
+        thisKey := TrimModifiers(ThisHotkey)
         Toggle(thisKey)
     }
 

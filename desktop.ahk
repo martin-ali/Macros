@@ -22,7 +22,7 @@
     $Enter::
     $Tab::
     {
-        thisKey := ThisHotkeyClean(ThisHotkey)
+        thisKey := TrimModifiers(ThisHotkey)
         SendKeyOnlyOnTap(thisKey)
     }
 }

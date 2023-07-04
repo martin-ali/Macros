@@ -4,7 +4,7 @@
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 
-ThisHotkeyClean(hotkey)
+TrimModifiers(hotkey)
 {
 	cleanedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
 	return cleanedHotkey
