@@ -65,9 +65,10 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 {
     XButton1::
     {
-        SendInput("{LControl}")
-        Sleep("5")
-        SendInput("{LControl}")
+        SetKeyDelay(1, 1)
+
+        SendEvent("{LControl}")
+        SendEvent("{LControl}")
     }
 }
 #HotIf
