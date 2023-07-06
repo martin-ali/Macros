@@ -1,5 +1,6 @@
 #Requires AutoHotkey >=v2.0
 
+#Include libs/exclusions.ahk
 #Include libs/common-headers.ahk
 #Include libs/helpers.ahk
 
@@ -21,6 +22,13 @@ GroupAdd "CommonRebinds", "ahk_exe Control_DX11.exe"
 GroupAdd "CommonRebinds", "ahk_exe SW3.exe"
 GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
+
+; Switching languages in games sometimes breaks macros
+#HotIf WinActive("ahk_group ExcludedPrograms")
+{
+    !Shift:: return
+}
+#HotIf
 
 #HotIf WinActive("ahk_group CommonRebinds")
 {
