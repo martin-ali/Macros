@@ -7,7 +7,6 @@
 GroupAdd "CommonRebinds", "ahk_exe Magicka.exe"
 GroupAdd "CommonRebinds", "ahk_exe Cyberpunk2077.exe"
 GroupAdd "CommonRebinds", "ahk_exe Swat4.exe"
-GroupAdd "CommonRebinds", "ahk_exe Titanfall2.exe"
 GroupAdd "CommonRebinds", "ahk_exe bms.exe"
 GroupAdd "CommonRebinds", "ahk_exe vermintide2.exe"
 GroupAdd "CommonRebinds", "ahk_exe OxygenNotIncluded.exe"
