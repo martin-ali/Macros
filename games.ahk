@@ -114,21 +114,26 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 ; }
 ; #HotIf
 
-
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    QuickUseEquipment(position, keyToHold := "")
+    LoopEquipment(count)
+    {
+        global switchEquipment
+
+        loop (count)
+        {
+            SendEvent("{" switchEquipment "}")
+        }
+    }
+
+    QuickUseEquipment(equipment, keyToHold := "")
     {
         SetKeyDelay(25, 1)
 
         global useEquipment
         global switchEquipment
 
-        forwardsLoopsCount := position
-        loop (forwardsLoopsCount)
-        {
-            SendEvent("{" switchEquipment "}")
-        }
+        LoopEquipment(equipment)
 
         SendEvent("{" useEquipment " down}")
 
@@ -139,15 +144,11 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 
         SendEvent("{" useEquipment " up}")
 
-        backwardsLoopsCount := 4 - position
-        loop (backwardsLoopsCount)
-        {
-            SendEvent("{" switchEquipment "}")
-        }
+        LoopEquipment(4 - equipment)
     }
 
     ; Keybinds
-    global sprint := "Enter"
+    global sprint := "'"
     global useEquipment := "RControl"
     global switchEquipment := "["
 
@@ -158,7 +159,7 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
     turretDrone := "3"
 
     ; Wingstick
-    ~$q::
+    ~*$q::
     {
         thisKey := TrimModifiers(ThisHotkey)
 
@@ -172,7 +173,7 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
     }
 
     ; Tap for shock grenades, hold for turret drone
-    ~$g::
+    ~*$g::
     {
         thisKey := TrimModifiers(ThisHotkey)
         keyIsTapped := KeyWait(thisKey, "T0.2")
