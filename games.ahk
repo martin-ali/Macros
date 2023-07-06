@@ -82,37 +82,38 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 }
 #HotIf
 
-#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
-{
-    Hop()
-    {
-        SendEvent("{LControl}")
-    }
+; #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
+; {
+;     Hop()
+;     {
+;         SendEvent("{LControl}")
+;     }
 
-    ;  Autohop
-    *$LControl::
-    {
-        SetTimer(Hop, 1)
-    }
+;     ;  Autohop
+;     *$LControl::
+;     {
+;         SetTimer(Hop, 1)
+;     }
 
-    *$LControl Up::
-    {
-        SetTimer(Hop, 0)
-    }
+;     *$LControl Up::
+;     {
+;         SetTimer(Hop, 0)
+;     }
 
-    ; Ice bomb
-    *t::
-    {
-        SetKeyDelay(1, 1)
+;     ; Ice bomb
+;     *t::
+;     {
+;         SetKeyDelay(1, 0)
 
-        SendEvent("{/}")
-        SendEvent("{RControl}")
-        SendEvent("{/}")
+;         SendEvent("{/}")
+;         SendEvent("{RControl}")
+;         SendEvent("{/}")
 
-        KeyWait("t")
-    }
-}
-#HotIf
+;         KeyWait("t")
+;     }
+; }
+; #HotIf
+
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
