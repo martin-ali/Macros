@@ -25,6 +25,10 @@
         thisKey := TrimModifiers(ThisHotkey)
         SendKeyOnlyOnTap(thisKey)
     }
+
+    WheelLeft::^PgUp
+
+    WheelRight::^PgDn
 }
 #HotIf
 
