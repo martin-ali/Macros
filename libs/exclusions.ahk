@@ -79,3 +79,4 @@ GroupAdd "ExcludedPrograms", "ahk_exe Boltgun-Win64-Shipping.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe POSTAL Brain Damaged.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe NieRAutomata.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe Fallout3.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe QRSL.exe" ; Tower of Fantasy
