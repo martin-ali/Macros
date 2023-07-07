@@ -158,6 +158,14 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
     shockGrenades := "2"
     turretDrone := "3"
 
+    ; Dash instant cast
+    ; Workaround for sometimes casting void or focus explosion instead of dash
+    *$XButton1::
+    {
+        thisKey := TrimModifiers(ThisHotkey)
+        SendInput("{" thisKey "}")
+    }
+
     ; Wingstick
     ~*$q::
     {
