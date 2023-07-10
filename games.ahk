@@ -123,8 +123,6 @@ ProcessSetPriority "High"
 {
     LoopEquipment(count)
     {
-        global switchEquipment
-
         loop (count)
         {
             SendEvent("{" switchEquipment "}")
@@ -134,9 +132,6 @@ ProcessSetPriority "High"
     QuickUseEquipment(equipment, keyToHold := "")
     {
         SetKeyDelay(25, 1)
-
-        global useEquipment
-        global switchEquipment
 
         LoopEquipment(equipment)
 
@@ -152,10 +147,10 @@ ProcessSetPriority "High"
         LoopEquipment(4 - equipment)
     }
 
-    ; Keybinds
-    global sprint := "'"
-    global useEquipment := "RControl"
-    global switchEquipment := "["
+    ; Binds
+    sprint := "'"
+    useEquipment := "RControl"
+    switchEquipment := "["
 
     ; Item indices
     grenade := "0"
