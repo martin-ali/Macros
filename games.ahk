@@ -303,6 +303,7 @@ ProcessSetPriority "High"
 
 #HotIf WinActive("ahk_exe HaloInfinite.exe")
 {
+    ; Binds
     grapplingHook := 1
     motionTracker := 2
     dropwall := 3
