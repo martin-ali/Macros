@@ -151,6 +151,8 @@ ProcessSetPriority "High"
     sprint := "'"
     useEquipment := "RControl"
     switchEquipment := "["
+    focus := "p"
+    instantCastShatter := "e"
 
     ; Item indices
     grenade := "0"
@@ -164,6 +166,24 @@ ProcessSetPriority "High"
     {
         thisKey := TrimModifiers(ThisHotkey)
         SendInput("{" thisKey "}")
+    }
+
+    ; Reworks dash/focus to shatter/focus
+    ~*$XButton2::
+    {
+        thisKey := TrimModifiers(ThisHotkey)
+
+        SendEvent("{" focus " down}")
+
+        isTapped := KeyWait(thisKey, "T0.3")
+        KeyWait(thisKey)
+
+        if (isTapped)
+        {
+            SendEvent("{" instantCastShatter "}")
+        }
+
+        SendEvent("{" focus " up}")
     }
 
     ; Wingstick
