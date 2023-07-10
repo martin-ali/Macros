@@ -22,6 +22,9 @@ GroupAdd "CommonRebinds", "ahk_exe SW3.exe"
 GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 
+ProcessSetPriority "High"
+
+; Disables language switching while in-game
 ; Switching languages in games sometimes breaks macros
 #HotIf WinActive("ahk_group ExcludedPrograms")
 {
@@ -82,37 +85,39 @@ GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 }
 #HotIf
 
-; #HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
-; {
-;     Hop()
-;     {
-;         SendEvent("{LControl}")
-;     }
+#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
+{
+    Hop()
+    {
+        SetKeyDelay(-1, -1)
 
-;     ;  Autohop
-;     *$LControl::
-;     {
-;         SetTimer(Hop, 1)
-;     }
+        SendEvent("{LControl}")
+    }
 
-;     *$LControl Up::
-;     {
-;         SetTimer(Hop, 0)
-;     }
+    ;  Autohop
+    *$LControl::
+    {
+        SetTimer(Hop, 1)
+    }
 
-;     ; Ice bomb
-;     *t::
-;     {
-;         SetKeyDelay(1, 0)
+    *$LControl Up::
+    {
+        SetTimer(Hop, 0)
+    }
 
-;         SendEvent("{/}")
-;         SendEvent("{RControl}")
-;         SendEvent("{/}")
+    ; Ice bomb
+    *t::
+    {
+        SetKeyDelay(1, 0)
 
-;         KeyWait("t")
-;     }
-; }
-; #HotIf
+        SendEvent("{/}")
+        SendEvent("{RControl}")
+        SendEvent("{/}")
+
+        KeyWait("t")
+    }
+}
+#HotIf
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {

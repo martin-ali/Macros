@@ -6,6 +6,8 @@
 #Include games.ahk
 #Include desktop.ahk
 
+ProcessSetPriority "High"
+
 #SuspendExempt
 Pause:: Suspend
 PrintScreen:: Reload
