@@ -337,6 +337,9 @@ ProcessSetPriority "High"
 
 #HotIf WinActive("ahk_exe HorizonZeroDawn.exe")
 {
+    ; Binds
+    showHud := "h"
+
     ; Run
     *Enter::Space
 
@@ -362,17 +365,19 @@ ProcessSetPriority "High"
     ; Tap for map, hold to show HUD
     *$Tab::
     {
-        SendInput("{h down}")
+        thisKey := TrimModifiers(ThisHotkey)
 
-        keyIsTapped := KeyWait("Tab", "T0.35")
+        SendInput("{" showHud " down}")
+
+        keyIsTapped := KeyWait(thisKey, "T0.35")
         if (keyIsTapped)
         {
-            SendDelayed("Tab")
+            SendDelayed(thisKey)
         }
 
-        KeyWait("Tab")
+        KeyWait(thisKey)
 
-        SendInput("{h up}")
+        SendInput("{" showHud " up}")
     }
 }
 #HotIf
