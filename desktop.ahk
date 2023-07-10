@@ -26,7 +26,8 @@
         SendKeyOnlyOnTap(thisKey)
     }
 
-    WheelLeft::^PgUp
+    Numpad4::^PgUp ; WheelLeft
+    Numpad5::^PgDn ; WheelRight
 
     WheelRight::^PgDn
 }
@@ -34,6 +35,7 @@
 
 #HotIf GetKeyState("\", "p") and !WinActive("ahk_group ExcludedPrograms")
 {
+    Delete::NumLock
     -::^- ; Zoom in
     =::^= ; Zoom out
     0::^0 ; Zoom reset
