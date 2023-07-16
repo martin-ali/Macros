@@ -191,7 +191,7 @@ ProcessSetPriority "High"
     {
         thisKey := TrimModifiers(ThisHotkey)
 
-        inFocus := GetKeyState("XButton1", "P")
+        inFocus := GetKeyState("XButton1", PHYSICAL_STATE)
         if (!inFocus)
         {
             QuickUseEquipment(wingstick, thisKey)
@@ -206,7 +206,7 @@ ProcessSetPriority "High"
         thisKey := TrimModifiers(ThisHotkey)
         keyIsTapped := KeyWait(thisKey, "T0.2")
 
-        inFocus := GetKeyState("XButton1", "P")
+        inFocus := GetKeyState("XButton1", PHYSICAL_STATE)
         if (!inFocus)
         {
             if (keyIsTapped)

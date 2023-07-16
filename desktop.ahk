@@ -2,6 +2,7 @@
 
 #Include libs/common-headers.ahk
 #Include libs/exclusions.ahk
+#Include libs/helpers.ahk
 
 #HotIf !WinActive("ahk_group ExcludedPrograms")
 {
@@ -33,7 +34,7 @@
 }
 #HotIf
 
-#HotIf GetKeyState("\", "p") and !WinActive("ahk_group ExcludedPrograms")
+#HotIf GetKeyState("\", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
 {
     Delete::NumLock
     -::^- ; Zoom in
@@ -45,7 +46,7 @@
 }
 #HotIf
 
-#HotIf GetKeyState("Enter", "p") and !WinActive("ahk_group ExcludedPrograms")
+#HotIf GetKeyState("Enter", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
 {
     ; Functionality
     m::^m ; Mute Tab
@@ -99,7 +100,7 @@
 }
 #HotIf
 
-#HotIf GetKeyState("Tab", "p") and !WinActive("ahk_group ExcludedPrograms")
+#HotIf GetKeyState("Tab", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
 {
     ; Tab
     q::^PgUp ; Tab left

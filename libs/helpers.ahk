@@ -1,8 +1,9 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 #Include common-headers.ahk
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
+PHYSICAL_STATE := "p"
 
 TrimModifiers(hotkey)
 {
