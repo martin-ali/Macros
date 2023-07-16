@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 #Include common-headers.ahk
 
@@ -82,3 +82,4 @@ GroupAdd "ExcludedPrograms", "ahk_exe NieRAutomata.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe Fallout3.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe QRSL.exe" ; Tower of Fantasy
 GroupAdd "ExcludedPrograms", "ahk_exe SystemReShock-Win64-Shipping.exe" ; System Shock Remake demo
+GroupAdd "ExcludedPrograms", "ahk_exe Yakisoba-Win64-Shipping.exe" ; Starship Troopers: Extermination
