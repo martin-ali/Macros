@@ -4,7 +4,7 @@
 #Include libs/exclusions.ahk
 #Include libs/helpers.ahk
 
-#HotIf !WinActive("ahk_group ExcludedPrograms")
+#HotIf !WinActive('ahk_group ExcludedPrograms')
 {
     SendKeyOnlyOnTap(key, timeoutInMs := 100)
     {
@@ -30,92 +30,79 @@
     Numpad4::^PgUp ; WheelLeft
     Numpad5::^PgDn ; WheelRight
 
-    WheelRight::^PgDn
-}
-#HotIf
+    \ & Delete::NumLock
+    \ & -::^- ; Zoom in
+    \ & =::^= ; Zoom out
+    \ & 0::^0 ; Zoom reset
+    \ & o::^PgUp ; Tab left
+    \ & [::^PgDn ; Tab right
+    \ & p::^w ; Close tab
 
-#HotIf GetKeyState("\", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
-{
-    Delete::NumLock
-    -::^- ; Zoom in
-    =::^= ; Zoom out
-    0::^0 ; Zoom reset
-    o::^PgUp ; Tab left
-    [::^PgDn ; Tab right
-    p::^w ; Close tab
-}
-#HotIf
-
-#HotIf GetKeyState("Enter", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
-{
     ; Functionality
-    m::^m ; Mute Tab
-    `::Escape
-    g::AppsKey
-    Space::Enter
-    Tab::CapsLock
+    Enter & m::^m ; Mute Tab
+    Enter & `::Escape
+    Enter & g::AppsKey
+    Enter & Space::Enter
+    Enter & Tab::CapsLock
     ; ; / or ? focuses on the search bar in some websites
 
     ; Navigation left side
-    w::Up
-    s::Down
-    a::Left
-    d::Right
+    Enter & w::Up
+    Enter & s::Down
+    Enter & a::Left
+    Enter & d::Right
 
-    q::Home
-    e::End
-    f::PgUp
-    c::PgDn
+    Enter & q::Home
+    Enter & e::End
+    Enter & f::PgUp
+    Enter & c::PgDn
 
-    z:: Send "{Browser_Back}"
-    x:: Send "{Browser_Forward}"
+    Enter & z:: Send "{Browser_Back}"
+    Enter & x:: Send "{Browser_Forward}"
 
     ; Navigation right side
-    p::Up
-    `;::Down
-    l::Left
-    '::Right
+    Enter & p::Up
+    Enter & `;::Down
+    Enter & l::Left
+    Enter & '::Right
 
-    o::Home
-    [::End
-    k::PgUp
-    ,::PgDn
+    Enter & o::Home
+    Enter & [::End
+    Enter & k::PgUp
+    Enter & ,::PgDn
 
-    .:: Send "{Browser_Back}"
-    /:: Send "{Browser_Forward}"
+    Enter & .:: Send "{Browser_Back}"
+    Enter & /:: Send "{Browser_Forward}"
 
     ; Function row
-    1::F1
-    2::F2
-    3::F3
-    4::F4
-    5::F5
-    6::F6
-    7::F7
-    8::F8
-    9::F9
-    0::F10
-    -::F11
-    =::F12
-}
-#HotIf
+    Enter & 1::F1
+    Enter & 2::F2
+    Enter & 3::F3
+    Enter & 4::F4
+    Enter & 5::F5
+    Enter & 6::F6
+    Enter & 7::F7
+    Enter & 8::F8
+    Enter & 9::F9
+    Enter & 0::F10
+    Enter & -::F11
+    Enter & =::F12
 
-#HotIf GetKeyState("Tab", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
-{
+    ; #HotIf GetKeyState("Tab", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
     ; Tab
-    q::^PgUp ; Tab left
-    w::^w ; Close tab
-    e::^PgDn ; Tab right
-    t::^t ; New tab
+    Tab & q::^PgUp ; Tab left
+    Tab & w::^w ; Close tab
+    Tab & e::^PgDn ; Tab right
+    Tab & t::^t ; New tab
 
-    a::^a ; Select all
-    s::^s ; Save
-    d::^d ; Duplicate line
+    Tab & a::^a ; Select all
+    Tab & s::^s ; Save
+    Tab & d::^d ; Duplicate line
 
-    z::^z ; Undo
-    x::^x ; Cut
-    c::^c ; Copy
-    v::^v ; Paste
-    m::^m ; Mute Tab
+    Tab & z::^z ; Undo
+    Tab & x::^x ; Cut
+    Tab & c::^c ; Copy
+    Tab & v::^v ; Paste
+    Tab & m::^m ; Mute Tab
 }
 #HotIf
