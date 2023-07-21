@@ -152,7 +152,7 @@ ProcessSetPriority "High"
     useEquipment := "RControl"
     switchEquipment := "["
     focus := "p"
-    instantCastShatter := "e"
+    shatter := "e"
 
     ; Item indices
     grenade := "0"
@@ -180,7 +180,7 @@ ProcessSetPriority "High"
 
         if (isTapped)
         {
-            SendEvent("{" instantCastShatter "}")
+            SendEvent("{" shatter "}")
         }
 
         SendEvent("{" focus " up}")
