@@ -84,7 +84,6 @@ ProcessSetPriority "High"
     Hop()
     {
         SetKeyDelay(-1, -1)
-
         SendEvent("{LControl}")
     }
 
@@ -164,10 +163,9 @@ ProcessSetPriority "High"
     ; Reworks dash/focus to shatter/focus
     ~*$XButton2::
     {
-        thisKey := TrimModifiers(ThisHotkey)
-
         SendEvent("{" focus " down}")
 
+        thisKey := TrimModifiers(ThisHotkey)
         isTapped := KeyWait(thisKey, "T0.3")
         KeyWait(thisKey)
 
@@ -366,10 +364,9 @@ ProcessSetPriority "High"
     ; Tap for map, hold to show HUD
     *$Tab::
     {
-        thisKey := TrimModifiers(ThisHotkey)
-
         SendInput("{" showHud " down}")
 
+        thisKey := TrimModifiers(ThisHotkey)
         keyIsTapped := KeyWait(thisKey, "T0.35")
         if (keyIsTapped)
         {
