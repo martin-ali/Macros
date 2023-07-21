@@ -26,52 +26,46 @@ ProcessSetPriority "High"
 
 ; Disables language switching while in-game
 ; Switching languages in games sometimes breaks macros
-#HotIf WinActive("ahk_group ExcludedPrograms")
+#HotIf WinActive('ahk_group ExcludedPrograms')
 {
     !Shift:: return
 }
-#HotIf
 
-#HotIf WinActive("ahk_group CommonRebinds")
+#HotIf WinActive('ahk_group CommonRebinds')
 {
     *Enter::Space
     *Delete::Enter
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe ULTRAKILL.exe")
+#HotIf WinActive('ahk_exe ULTRAKILL.exe')
 {
     *WheelUp:: SendInput("{[}") ; Swap weapon variant
     *WheelDown:: SendInput("{]}") ; Swap fist variant
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe Rage.exe")
+#HotIf WinActive('ahk_exe Rage.exe')
 {
     *Enter::Space
     *LWin::Enter
     *LControl::p
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe destiny2.exe")
+#HotIf WinActive('ahk_exe destiny2.exe')
 {
     *Enter::Space
     *Delete::Enter
     *LControl::Numpad0
     *RControl::Numpad1
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe AI.exe") ; Alien Isolation
+#HotIf WinActive('ahk_exe AI.exe') ; Alien Isolation
 {
     *Enter::Space
     *Ctrl::Shift
     *Shift::C
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe")
+#HotIf WinActive('ahk_exe CrabChampions-Win64-Shipping.exe')
 {
     *XButton1::
     {
@@ -85,7 +79,7 @@ ProcessSetPriority "High"
 }
 #HotIf
 
-#HotIf WinActive("ahk_exe DOOMEternalx64vk.exe")
+#HotIf WinActive('ahk_exe DOOMEternalx64vk.exe')
 {
     Hop()
     {
@@ -117,9 +111,8 @@ ProcessSetPriority "High"
         KeyWait("t")
     }
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe RAGE2.exe")
+#HotIf WinActive('ahk_exe RAGE2.exe')
 {
     SwapEquipment(count)
     {
@@ -270,15 +263,9 @@ ProcessSetPriority "High"
     ; {
     ;     SendInput("{" sprint " up}")
     ; }
-
-    ; ; ~*Shift::
-    ; ; {
-    ; ;     Send("{" sprint " up}")
-    ; ; }
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe Borderlands3.exe")
+#HotIf WinActive('ahk_exe Borderlands3.exe')
 {
     ; Change fire mode / scroll
     ~*WheelUp::
@@ -299,9 +286,8 @@ ProcessSetPriority "High"
 
     *Enter::o
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe HaloInfinite.exe")
+#HotIf WinActive('ahk_exe HaloInfinite.exe')
 {
     ; Binds
     grapplingHook := 1
@@ -349,9 +335,8 @@ ProcessSetPriority "High"
         SelectAbility(grapplingHook)
     }
 }
-#HotIf
 
-#HotIf WinActive("ahk_exe HorizonZeroDawn.exe")
+#HotIf WinActive('ahk_exe HorizonZeroDawn.exe')
 {
     ; Binds
     showHud := "h"
