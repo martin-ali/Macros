@@ -22,6 +22,7 @@
     $\::
     $Enter::
     $Tab::
+    $Delete::
     {
         thisKey := TrimModifiers(ThisHotkey)
         SendKeyOnlyOnTap(thisKey)
@@ -29,6 +30,10 @@
 
     Numpad4::^PgUp ; WheelLeft
     Numpad5::^PgDn ; WheelRight
+
+    Delete & -::^- ; Zoom in
+    Delete & =::^= ; Zoom out
+    Delete & 0::^0 ; Zoom reset
 
     \ & Delete::NumLock
     \ & -::^- ; Zoom in
