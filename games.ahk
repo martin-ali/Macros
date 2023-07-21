@@ -121,7 +121,7 @@ ProcessSetPriority "High"
 
 #HotIf WinActive("ahk_exe RAGE2.exe")
 {
-    LoopEquipment(count)
+    SwapEquipment(count)
     {
         loop (count)
         {
@@ -133,7 +133,7 @@ ProcessSetPriority "High"
     {
         SetKeyDelay(25, 1)
 
-        LoopEquipment(equipment)
+        SwapEquipment(equipment)
 
         SendEvent("{" useEquipment " down}")
 
@@ -144,7 +144,7 @@ ProcessSetPriority "High"
 
         SendEvent("{" useEquipment " up}")
 
-        LoopEquipment(4 - equipment)
+        SwapEquipment(4 - equipment)
     }
 
     ; Binds
