@@ -73,7 +73,7 @@ ProcessSetPriority "High"
 
 #HotIf WinActive("ahk_exe CrabChampions-Win64-Shipping.exe")
 {
-    XButton1::
+    *XButton1::
     {
         SetKeyDelay(1, 1)
 
@@ -81,7 +81,7 @@ ProcessSetPriority "High"
         SendEvent("{LControl}")
     }
 
-    XButton2::f
+    *XButton2::f
 }
 #HotIf
 
