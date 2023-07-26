@@ -83,3 +83,4 @@ GroupAdd "ExcludedPrograms", "ahk_exe Fallout3.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe QRSL.exe" ; Tower of Fantasy
 GroupAdd "ExcludedPrograms", "ahk_exe SystemReShock-Win64-Shipping.exe" ; System Shock Remake demo
 GroupAdd "ExcludedPrograms", "ahk_exe Yakisoba-Win64-Shipping.exe" ; Starship Troopers: Extermination
+GroupAdd "ExcludedPrograms", "ahk_exe NarakaBladepoint.exe"
