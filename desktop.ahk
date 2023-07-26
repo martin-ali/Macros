@@ -28,6 +28,15 @@
         SendKeyOnlyOnTap(thisKey)
     }
 
+    ; Window switching
+    XButton2 & WheelUp:: SendInput("!{Escape}") ; Next window
+    XButton2 & WheelDown:: SendInput("!+{Escape}") ; Previous window
+    XButton2::XButton2
+
+    XButton1 & WheelUp:: SendInput("!{Escape}") ; Next window
+    XButton1 & WheelDown:: SendInput("!+{Escape}") ; Previous window
+    XButton1::XButton1
+
     Numpad4::^PgUp ; WheelLeft
     Numpad5::^PgDn ; WheelRight
 
