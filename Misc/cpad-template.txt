@@ -1,0 +1,45 @@
+﻿::
+
+    moveval := 0
+    pixeldist := 100
+
+    if GetKeyState("","p") {
+        MouseGetPos, x1, y1
+        KeyWait,
+    }
+
+    MouseGetPos, x2, y2
+
+    XDif := (x2 - x1)
+    YDif := (y2 - y1)
+
+    if (abs(XDif) >= abs(YDif))
+    {
+      if (XDif >= pixeldist)
+    	moveval := 1
+      if (XDif <= -pixeldist)
+    	moveval := 2
+    }
+
+    else
+    {
+      if (YDif >= pixeldist)
+       moveval := 3
+      if (YDif <= -pixeldist)
+       moveval := 4
+    }
+
+    {
+    if (moveval = 0) ; no movement
+    	Send 0
+    if (moveval = 1) ; right
+    	Send 1
+    if (moveval = 2) ; left
+    	Send 2
+    if (moveval = 3) ; down
+    	Send 3
+    if (moveval = 4) ; up
+    	Send 4
+    }
+
+return

@@ -1,6 +1,5 @@
 #Requires AutoHotkey >=v2.0
 
-#Include libs/common-headers.ahk
 #Include libs/exclusions.ahk
 #Include libs/helpers.ahk
 
@@ -28,13 +27,18 @@
         SendKeyOnlyOnTap(thisKey)
     }
 
+    ; Disable extra buttons
+    Numpad0:: return
+    Numpad1:: return
+    Numpad2:: return
+
     ; Window switching
-    XButton2 & WheelUp:: SendInput("!{Escape}") ; Next window
-    XButton2 & WheelDown:: SendInput("!+{Escape}") ; Previous window
+    XButton2 & WheelUp:: SendInput("!{escape}") ; Next window
+    XButton2 & WheelDown:: SendInput("!+{escape}") ; Previous window
     XButton2::XButton2
 
-    XButton1 & WheelUp:: SendInput("!{Escape}") ; Next window
-    XButton1 & WheelDown:: SendInput("!+{Escape}") ; Previous window
+    XButton1 & WheelUp:: SendInput("!{escape}") ; Next window
+    XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
     XButton1::XButton1
 
     Numpad4::^PgUp ; WheelLeft
@@ -71,8 +75,8 @@
     Enter & f::PgUp
     Enter & c::PgDn
 
-    Enter & z:: Send "{Browser_Back}"
-    Enter & x:: Send "{Browser_Forward}"
+    Enter & z:: Send "{browser_back}"
+    Enter & x:: Send "{browser_forward}"
 
     ; Navigation right side
     Enter & p::Up
@@ -85,8 +89,8 @@
     Enter & k::PgUp
     Enter & ,::PgDn
 
-    Enter & .:: Send "{Browser_Back}"
-    Enter & /:: Send "{Browser_Forward}"
+    Enter & .:: Send "{browser_back}"
+    Enter & /:: Send "{browser_forward}"
 
     ; Function row
     Enter & 1::F1

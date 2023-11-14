@@ -1,6 +1,4 @@
-#Requires AutoHotkey >=v2.0
-
-#Include common-headers.ahk
+﻿#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"

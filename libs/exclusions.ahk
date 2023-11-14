@@ -1,7 +1,5 @@
 ﻿#Requires AutoHotkey >=v2.0
 
-#Include common-headers.ahk
-
 GroupAdd "ExcludedPrograms", "ahk_exe bms.exe" ; Black Mesa
 GroupAdd "ExcludedPrograms", "ahk_exe DOOMEternalx64vk.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe DOOMx64vk.exe"
@@ -84,3 +82,10 @@ GroupAdd "ExcludedPrograms", "ahk_exe QRSL.exe" ; Tower of Fantasy
 GroupAdd "ExcludedPrograms", "ahk_exe SystemReShock-Win64-Shipping.exe" ; System Shock Remake demo
 GroupAdd "ExcludedPrograms", "ahk_exe Yakisoba-Win64-Shipping.exe" ; Starship Troopers: Extermination
 GroupAdd "ExcludedPrograms", "ahk_exe NarakaBladepoint.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe bg3.exe" ; Baldur's Gate 3
+GroupAdd "ExcludedPrograms", "ahk_exe quake2ex_steam.exe" ; Quake 2 Remastered
+GroupAdd "ExcludedPrograms", "ahk_exe armoredcore6.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe DRG Survivor.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe Necromunda-Win64-Shipping.exe" ; Necromunda: Hired Gun
+GroupAdd "ExcludedPrograms", "ahk_exe Darktide.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe The Coffin of Andy and Leyley"
