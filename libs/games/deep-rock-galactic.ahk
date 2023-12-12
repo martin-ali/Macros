@@ -19,23 +19,5 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 
 		Toggle("LButton")
 	}
-
-	*$LShift::
-	{
-		thisKey := TrimModifiers(ThisHotkey)
-		SendInput("{" thisKey "}")
-	}
-
-	; y::
-	; {
-	; 	while (GetKeyState("y", "P"))
-	; 	{
-	; 		Send("{a}")
-	; 		Sleep(100)
-
-	; 		Send("{d}")
-	; 		Sleep(100)
-	; 	}
-	; }
 }
 #HotIf
