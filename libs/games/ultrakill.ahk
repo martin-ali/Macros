@@ -2,13 +2,13 @@
 
 #HotIf WinActive('ahk_exe ULTRAKILL.exe')
 {
-	*$WheelUp:: SendInput("{[}") ; Swap weapon variant
+	*$WheelUp:: SendInput("{[}") ; Weapon variant
+	*$WheelDown:: SendInput("{]}") ; Fist variant
 
-	*$WheelDown:: SendInput("{]}") ; Swap fist variant
+	*$Numpad1::q ; Whiplash
 
-	*$Numpad1::q ; Swap fist variant
+	*$Numpad0::e ; Punch
 
-	*$Numpad0::e
-	*$XButton2::e
+	*$XButton2::e ; Punch
 }
 #HotIf
