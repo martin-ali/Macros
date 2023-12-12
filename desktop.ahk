@@ -28,9 +28,10 @@
     }
 
     ; Disable extra buttons
-    Numpad0:: return
-    Numpad1:: return
-    Numpad2:: return
+    Numpad0::MButton
+
+    Numpad1:: SendInput("!{escape}") ; Next window
+    Numpad2:: SendInput("!+{escape}") ; Previous window
 
     ; Window switching
     XButton2 & WheelUp:: SendInput("!{escape}") ; Next window
