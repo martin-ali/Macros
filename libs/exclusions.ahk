@@ -4,7 +4,7 @@ GroupAdd "ExcludedPrograms", "ahk_exe bms.exe" ; Black Mesa
 GroupAdd "ExcludedPrograms", "ahk_exe DOOMEternalx64vk.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe DOOMx64vk.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe Fallout4.exe"
-GroupAdd "ExcludedPrograms", "ahk_exe SC2_x64.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe SC2_x64.exe" ; StarCraft 2
 GroupAdd "ExcludedPrograms", "ahk_exe Prodeus.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe sw.x64.exe" ; Shadow Warrior 2013
 GroupAdd "ExcludedPrograms", "ahk_exe ShadowWarrior2.exe"
@@ -89,3 +89,6 @@ GroupAdd "ExcludedPrograms", "ahk_exe DRG Survivor.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe Necromunda-Win64-Shipping.exe" ; Necromunda: Hired Gun
 GroupAdd "ExcludedPrograms", "ahk_exe Darktide.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe The Coffin of Andy and Leyley"
+GroupAdd "ExcludedPrograms", "ahk_exe Turbo Overkill.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe CPPFPS-Win64-Shipping.exe" ; Trepang2
+GroupAdd "ExcludedPrograms", "ahk_exe FactoryGame-Win64-Shipping.exe" ; Satosfactory
