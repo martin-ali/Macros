@@ -18,6 +18,7 @@ GroupAdd "CommonRebinds", "ahk_exe Rage64.exe"
 GroupAdd "CommonRebinds", "ahk_exe Fallout3.exe"
 GroupAdd "CommonRebinds", "ahk_exe DRG Survivor.exe"
 GroupAdd "CommonRebinds", "ahk_exe Darktide.exe"
+GroupAdd "CommonRebinds", "ahk_exe FactoryGame-Win64-Shipping.exe"
 
 #HotIf WinActive('ahk_group CommonRebinds')
 {
