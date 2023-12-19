@@ -20,6 +20,7 @@ ProcessSetPriority "High"
 #Include libs/games/deep-rock-galactic.ahk
 #Include libs/games/destiny-2.ahk
 ; #Include libs/games/doom-eternal.ahk
+#Include libs/games/Fallout-4.ahk
 #Include libs/games/halo-infinite.ahk
 #Include libs/games/horizon-zero-dawn.ahk
 #Include libs/games/necromunda-hired-gun.ahk
