@@ -104,8 +104,6 @@
 		KeyWait(thisKey)
 	}
 
-	f1:: MsgBox
-
 	; ; Run
 	; ; Using the game's own toggle gives it unwanted double-tap-to-rush functionality
 	; ~w & ~Enter::
