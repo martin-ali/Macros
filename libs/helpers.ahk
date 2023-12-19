@@ -3,6 +3,20 @@
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
 
+ConvertFromHoldToToggle(key)
+{
+	Toggle(key)
+}
+
+ConvertFromToggleToHold(key)
+{
+	SendInput("{" key "}")
+
+	KeyWait(key)
+
+	SendInput("{" key "}")
+}
+
 TrimModifiers(hotkey)
 {
 	cleanedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
