@@ -4,10 +4,11 @@
 {
 	swapGrenade := "/"
 	fireGrenade := "RControl"
+	jump := "LControl"
 
 	Hop()
 	{
-		SendEvent("{LControl}")
+		SendEvent("{" jump "}")
 	}
 
 	;  Autohop
