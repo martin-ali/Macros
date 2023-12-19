@@ -27,3 +27,4 @@ GroupAdd "CommonRebinds", "ahk_exe FactoryGame-Win64-Shipping.exe"
 	*$Delete::Enter
 }
 #HotIf
+	
