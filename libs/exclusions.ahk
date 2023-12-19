@@ -91,4 +91,6 @@ GroupAdd "ExcludedPrograms", "ahk_exe Darktide.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe The Coffin of Andy and Leyley"
 GroupAdd "ExcludedPrograms", "ahk_exe Turbo Overkill.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe CPPFPS-Win64-Shipping.exe" ; Trepang2
-GroupAdd "ExcludedPrograms", "ahk_exe FactoryGame-Win64-Shipping.exe" ; Satosfactory
+GroupAdd "ExcludedPrograms", "ahk_exe FactoryGame-Win64-Shipping.exe" ; Satisfactory
+GroupAdd "ExcludedPrograms", "ahk_exe Sprawl-Win64-Shipping.exe"
+GroupAdd "ExcludedPrograms", "ahk_exe ThankYouVeryCool-Win64-Shipping.exe" ; Severed Steel
