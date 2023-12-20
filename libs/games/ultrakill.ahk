@@ -4,5 +4,18 @@
 {
 	*$WheelUp:: SendInput("{[}") ; Weapon variant
 	*$WheelDown:: SendInput("{]}") ; Fist variant
+
+	*$Numpad0::
+	{
+		SendEvent("{]}")
+
+		SendEvent("{e down}")
+
+		KeyWait("Numpad0")
+
+		SendEvent("{e up}")
+
+		SendEvent("{]}")
+	}
 }
 #HotIf
