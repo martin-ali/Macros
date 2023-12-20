@@ -27,4 +27,5 @@ ProcessSetPriority "High"
 #Include libs/games/quake-2-remastered.ahk
 #Include libs/games/rage-1.ahk
 #Include libs/games/rage-2.ahk
+#Include libs/games/turbo-overkill.ahk
 #Include libs/games/ultrakill.ahk
