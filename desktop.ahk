@@ -29,7 +29,9 @@
 
     ; Disable extra buttons
     Numpad0::MButton
+    Numpad6::MButton
 
+    ; Upper side buttons
     Numpad1:: SendInput("!{escape}") ; Next window
     Numpad2:: SendInput("!+{escape}") ; Previous window
 
