@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
@@ -51,6 +51,15 @@ LongPress(key, timeMs)
 	SendInput("{" key " down}")
 
 	Sleep(timeMs)
+
+	SendInput("{" key " up}")
+}
+
+Hold(key)
+{
+	SendInput("{" key " down}")
+
+	KeyWait(key)
 
 	SendInput("{" key " up}")
 }
