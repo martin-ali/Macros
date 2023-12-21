@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 #Include ../helpers.ahk
 
@@ -11,7 +11,14 @@
 	{
 		thisKey := SanitizeModifiers(ThisHotkey)
 
-		TapAndHold(thisKey, thisKey, "b")
+		if (IsHeld(thisKey))
+		{
+			SendInput("b")
+		}
+		else
+		{
+			SendInput(thisKey)
+		}
 	}
 }
 #HotIf

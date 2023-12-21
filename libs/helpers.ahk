@@ -50,35 +50,17 @@ Toggle(key)
 	}
 }
 
-TapAndHold(baseKey, tapKey, holdKey, timeoutInMs := 200, shouldDelay := false)
+IsHeld(baseKey, timeoutInMs := 200)
 {
 	timeoutInSeconds := timeoutInMs / 1000
 
-	keyIsTapped := KeyWait(baseKey, "T" timeoutInSeconds "")
-	if (keyIsTapped)
+	keyIsHeld := !KeyWait(baseKey, "T" timeoutInSeconds "")
+	if (keyIsHeld)
 	{
-		if (shouldDelay)
-		{
-			SendDelayed(tapKey)
-		}
-		else
-		{
-			SendInput("{" tapKey "}")
-		}
-	}
-	else
-	{
-		if (shouldDelay)
-		{
-			SendDelayed(holdKey)
-		}
-		else
-		{
-			SendInput("{" holdKey "}")
-		}
+		return true
 	}
 
-	KeyWait(baseKey)
+	return false
 }
 
 ; Double tap

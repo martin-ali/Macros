@@ -19,7 +19,19 @@
 	}
 
 	; Tap F for Zane's secondary ability, hold F in menu to inspect weapon
-	*f:: TapAndHold("f", "RControl", "f", 300)
+	*f::
+	{
+		thisKey := SanitizeModifiers(ThisHotkey)
+
+		if (IsHeld(thisKey, 300))
+		{
+			SendInput(thisKey)
+		}
+		else
+		{
+			SendInput("RControl")
+		}
+	}
 
 	*Enter::o
 }
