@@ -29,7 +29,7 @@
 
     ; Disable extra buttons
     Numpad0::MButton
-    Numpad6::MButton
+    Numpad5::MButton
 
     ; Upper side buttons
     Numpad1:: SendInput("!{escape}") ; Next window
@@ -44,8 +44,8 @@
     XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
     XButton1::XButton1
 
-    Numpad4::^PgUp ; WheelLeft
-    Numpad5::^PgDn ; WheelRight
+    Numpad3::^PgUp ; WheelLeft
+    Numpad4::^PgDn ; WheelRight
 
     Delete & -::^- ; Zoom in
     Delete & =::^= ; Zoom out
