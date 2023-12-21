@@ -1,7 +1,9 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
+
+global lastPressTicksPerKey := Map()
 
 ConvertFromHoldToToggle(key)
 {
@@ -77,7 +79,28 @@ IsHeld(baseKey, timeoutInMs := 200)
 	return false
 }
 
-; Double tap
+; Advantages:
+; - Works even if other keys are pressed during the macro execution
+; Limitations:
+; - Always writes its new state, so it can't be used multiple times in a single shortcut
+; - Relies on a global variable
+; - No support for more taps than 2
+; - Could interfere with other macros if rapidly switching between windows in games using the same key
+IsDoublePressed(key, currentPressMilliseconds, timeout := 200)
+{
+	global lastPressTicksPerKey
+	if (lastPressTicksPerKey.Has(key) == false)
+	{
+		lastPressTicksPerKey[key] := 0
+	}
+
+	previousPressTime := lastPressTicksPerKey[key]
+	timeSinceLastPress := currentPressMilliseconds - previousPressTime
+
+	lastPressTicksPerKey[key] := currentPressMilliseconds
+
+	return timeSinceLastPress < timeout
+}
 
 ; Multi-tap
 
