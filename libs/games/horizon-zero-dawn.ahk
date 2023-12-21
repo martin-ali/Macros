@@ -25,7 +25,7 @@
 	; Toggle weapon wheel
 	*MButton::
 	{
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		Toggle(thisKey)
 	}
 
@@ -34,7 +34,7 @@
 	{
 		SendInput("{" showHud " down}")
 
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		keyIsTapped := KeyWait(thisKey, "T0.35")
 		if (keyIsTapped)
 		{

@@ -47,7 +47,7 @@
 	; Workaround for sometimes casting void or focus explosion instead of dash
 	*$XButton1::
 	{
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		SendInput("{" thisKey "}")
 	}
 
@@ -56,7 +56,7 @@
 	{
 		SendEvent("{" focus " down}")
 
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		focusIsTapped := KeyWait(thisKey, "T0.3")
 		KeyWait(thisKey)
 
@@ -71,7 +71,7 @@
 	; Wingstick
 	~*$q::
 	{
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 
 		inFocus := GetKeyState("XButton1", PHYSICAL_STATE)
 		if (!inFocus)
@@ -85,7 +85,7 @@
 	; Tap for shock grenades, hold for turret drone
 	~*$g::
 	{
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		keyIsTapped := KeyWait(thisKey, "T0.2")
 
 		inFocus := GetKeyState("XButton1", PHYSICAL_STATE)

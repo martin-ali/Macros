@@ -14,7 +14,7 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 
 		Toggle("LButton")
 
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 		KeyWait(thisKey)
 
 		Toggle("LButton")

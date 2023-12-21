@@ -23,7 +23,7 @@
     $Tab::
     $Delete::
     {
-        thisKey := TrimModifiers(ThisHotkey)
+        thisKey := SanitizeModifiers(ThisHotkey)
         SendKeyOnlyOnTap(thisKey)
     }
 

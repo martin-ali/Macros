@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
@@ -17,7 +17,7 @@ ConvertFromToggleToHold(key)
 	SendInput("{" key "}")
 }
 
-TrimModifiers(hotkey)
+SanitizeModifiers(hotkey)
 {
 	cleanedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
 	return cleanedHotkey

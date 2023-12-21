@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 #Include ../helpers.ahk
 
@@ -9,7 +9,7 @@
 
 	*$r::
 	{
-		thisKey := TrimModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey)
 
 		TapAndHold(thisKey, thisKey, "b")
 	}
