@@ -5,7 +5,7 @@
 	; Flashlight
 	$*t::
 	{
-		Hold("Tab", 350)
+		LongPress("Tab", 350)
 	}
 }
 #HotIf

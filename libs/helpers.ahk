@@ -50,6 +50,15 @@ Toggle(key)
 	}
 }
 
+LongPress(key, timeMs)
+{
+	SendInput("{" key " down}")
+
+	Sleep(timeMs)
+
+	SendInput("{" key " up}")
+}
+
 IsHeld(baseKey, timeoutInMs := 200)
 {
 	timeoutInSeconds := timeoutInMs / 1000
