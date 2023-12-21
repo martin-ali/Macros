@@ -3,8 +3,6 @@
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
 
-global lastPressTicksPerKey := Map()
-
 ConvertFromHoldToToggle(key)
 {
 	Toggle(key)
@@ -83,17 +81,18 @@ IsHeld(baseKey, timeoutInMs := 200)
 ; - Works even if other keys are pressed during the macro execution
 ; Limitations:
 ; - Always writes its new state, so it can't be used multiple times in a single shortcut
-; - Relies on a global variable
 ; - No support for more taps than 2
 ; - Could interfere with other macros if rapidly switching between windows in games using the same key
-IsDoublePressed(key, currentPressMilliseconds, timeout := 200)
+IsDoubleTapped(key, timeout := 200)
 {
-	global lastPressTicksPerKey
+	static lastPressTicksPerKey := Map()
+
 	if (lastPressTicksPerKey.Has(key) == false)
 	{
 		lastPressTicksPerKey[key] := 0
 	}
 
+	currentPressMilliseconds := A_TickCount
 	previousPressTime := lastPressTicksPerKey[key]
 	timeSinceLastPress := currentPressMilliseconds - previousPressTime
 
