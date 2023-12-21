@@ -23,15 +23,11 @@ SanitizeModifiers(hotkey)
 	return cleanedHotkey
 }
 
-SendDelayed(key, delayMs := 25, shouldDelayAfterPress := true)
+SendDelayed(key, delayMs := 25, delayAfterPress := true)
 {
-	SendInput("{" key " down}")
+	LongPress(key, delayMs)
 
-	Sleep(delayMs)
-
-	SendInput("{" key " up}")
-
-	if (shouldDelayAfterPress)
+	if (delayAfterPress)
 	{
 		Sleep(delayMs)
 	}
