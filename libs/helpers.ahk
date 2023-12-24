@@ -68,13 +68,8 @@ IsHeld(baseKey, timeoutInMs := 200)
 {
 	timeoutInSeconds := timeoutInMs / 1000
 
-	keyIsHeld := !KeyWait(baseKey, "T" timeoutInSeconds "")
-	if (keyIsHeld)
-	{
-		return true
-	}
-
-	return false
+	keyIsHeld := !KeyWait(baseKey, "T" timeoutInSeconds)
+	return keyIsHeld
 }
 
 ; Advantages:
