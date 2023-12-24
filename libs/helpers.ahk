@@ -89,11 +89,8 @@ IsDoubleTapped(key, timeout := 300)
 	currentPressMs := A_TickCount
 	msSinceLastPress := currentPressMs - previousPressMsByKey[key]
 
-	previousPressMsByKey[key] := currentPressMs
-
 	doubleTapDetected := msSinceLastPress <= timeout
-
-	if (doubleTapDetected) ; Reset, so repeated taps don't keep being detected double tap spam
+	if (doubleTapDetected) ; Reset, so repeated taps don't keep being detected as double tap spam
 	{
 		previousPressMsByKey[key] := 0
 	}
