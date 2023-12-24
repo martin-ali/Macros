@@ -25,6 +25,7 @@ GroupAdd "CommonRebinds", "ahk_exe FactoryGame-Win64-Shipping.exe"
 	*$Enter::Space
 
 	*$Delete::Enter
+
+	*$Numpad5::MButton
 }
 #HotIf
-	
