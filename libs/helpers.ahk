@@ -83,22 +83,31 @@ IsHeld(baseKey, timeoutInMs := 200)
 ; - Always writes its new state, so it can't be used multiple times in a single shortcut
 ; - No support for more taps than 2
 ; - Could interfere with other macros if rapidly switching between windows in games using the same key
-IsDoubleTapped(key, timeout := 200)
+IsDoubleTapped(key, timeout := 300)
 {
-	static lastPressTicksPerKey := Map()
-
-	if (lastPressTicksPerKey.Has(key) == false)
+	static previousPressMsByKey := Map()
+	if (previousPressMsByKey.Has(key) == false)
 	{
-		lastPressTicksPerKey[key] := 0
+		previousPressMsByKey[key] := 0
 	}
 
-	currentPressMilliseconds := A_TickCount
-	previousPressTime := lastPressTicksPerKey[key]
-	timeSinceLastPress := currentPressMilliseconds - previousPressTime
+	currentPressMs := A_TickCount
+	msSinceLastPress := currentPressMs - previousPressMsByKey[key]
 
-	lastPressTicksPerKey[key] := currentPressMilliseconds
+	previousPressMsByKey[key] := currentPressMs
 
-	return timeSinceLastPress < timeout
+	doubleTapDetected := msSinceLastPress <= timeout
+
+	if (doubleTapDetected) ; Reset, so repeated taps don't keep being detected double tap spam
+	{
+		previousPressMsByKey[key] := 0
+	}
+	else
+	{
+		previousPressMsByKey[key] := currentPressMs
+	}
+
+	return doubleTapDetected
 }
 
 ; Multi-tap
