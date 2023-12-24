@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
@@ -75,6 +75,11 @@ IsHeld(baseKey, timeoutInMs := 200)
 IsDoubleTapped(key, timeout := 300)
 {
 	return IsMultiTapped(key, 2, timeout)
+}
+
+IsTripleTapped(key, timeout := 300)
+{
+	return IsMultiTapped(key, 3, timeout)
 }
 
 ; Advantages:
