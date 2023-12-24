@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
@@ -72,16 +72,6 @@ IsHeld(baseKey, timeoutInMs := 200)
 	return keyIsHeld
 }
 
-IsDoubleTapped(key, timeout := 300)
-{
-	return IsMultiTapped(key, 2, timeout)
-}
-
-IsTripleTapped(key, timeout := 300)
-{
-	return IsMultiTapped(key, 3, timeout)
-}
-
 ; Advantages:
 ; - Works even if other keys are pressed during the macro execution
 ; Limitations:
@@ -121,6 +111,16 @@ IsMultiTapped(key, tapCount, timeout := 300)
 	TapsCountInSeriesByKey[key] := TapsCountInSeriesByKey[key] + 1
 
 	return multiTapDetected
+}
+
+IsDoubleTapped(key, timeout := 300)
+{
+	return IsMultiTapped(key, 2, timeout)
+}
+
+IsTripleTapped(key, timeout := 300)
+{
+	return IsMultiTapped(key, 3, timeout)
 }
 
 ; Multi-tap
