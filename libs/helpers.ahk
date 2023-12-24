@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
@@ -72,34 +72,50 @@ IsHeld(baseKey, timeoutInMs := 200)
 	return keyIsHeld
 }
 
+IsDoubleTapped(key, timeout := 300)
+{
+	return IsMultiTapped(key, 2, timeout)
+}
+
 ; Advantages:
 ; - Works even if other keys are pressed during the macro execution
 ; Limitations:
 ; - Always writes its new state, so it can't be used multiple times in a single shortcut
 ; - No support for more taps than 2
 ; - Could interfere with other macros if rapidly switching between windows in games using the same key
-IsDoubleTapped(key, timeout := 300)
+IsMultiTapped(key, tapCount, timeout := 300)
 {
 	static previousPressMsByKey := Map()
-	if (previousPressMsByKey.Has(key) == false)
+	static TapsCountInSeriesByKey := Map()
+
+	if (previousPressMsByKey.Has(key) == false
+		|| TapsCountInSeriesByKey.Has(key) == false)
 	{
 		previousPressMsByKey[key] := 0
+		TapsCountInSeriesByKey[key] := 1
 	}
 
 	currentPressMs := A_TickCount
 	msSinceLastPress := currentPressMs - previousPressMsByKey[key]
 
-	doubleTapDetected := msSinceLastPress <= timeout
-	if (doubleTapDetected) ; Reset, so repeated taps don't keep being detected as double tap spam
+	additionalTapDetected := msSinceLastPress <= timeout
+	if (additionalTapDetected == false)
 	{
 		previousPressMsByKey[key] := 0
-	}
-	else
-	{
-		previousPressMsByKey[key] := currentPressMs
+		TapsCountInSeriesByKey[key] := 1
 	}
 
-	return doubleTapDetected
+	multiTapDetected := TapsCountInSeriesByKey[key] == tapCount
+	if (multiTapDetected)  ; Reset, so repeated taps don't keep being as detected multi tap spam
+	{
+		previousPressMsByKey[key] := 0
+		TapsCountInSeriesByKey[key] := 0
+	}
+
+	previousPressMsByKey[key] := currentPressMs
+	TapsCountInSeriesByKey[key] := TapsCountInSeriesByKey[key] + 1
+
+	return multiTapDetected
 }
 
 ; Multi-tap
