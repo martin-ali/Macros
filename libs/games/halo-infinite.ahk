@@ -3,7 +3,7 @@
 #HotIf WinActive('ahk_exe HaloInfinite.exe')
 {
 	; Binds
-	grapplingHook2 := 1
+	grapplingHook := 1
 	motionTracker := 2
 	dropwall := 3
 	thruster := 4
@@ -27,25 +27,25 @@
 
 	~*q::
 	{
-		UseAbility(grapplingHook2)
+		UseAbility(grapplingHook)
 	}
 
 	*XButton2::
 	{
 		UseAbility(motionTracker)
-		SelectAbility(grapplingHook2)
+		SelectAbility(grapplingHook)
 	}
 
 	*XButton1::
 	{
 		UseAbility(thruster)
-		SelectAbility(grapplingHook2)
+		SelectAbility(grapplingHook)
 	}
 
 	*g::
 	{
 		UseAbility(dropwall)
-		SelectAbility(grapplingHook2)
+		SelectAbility(grapplingHook)
 	}
 }
 #HotIf
