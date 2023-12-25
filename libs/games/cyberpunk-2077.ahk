@@ -13,12 +13,14 @@
 
 		if (IsHeld(thisKey))
 		{
-			SendInput("b")
+			SendInput("=") ; Holster weapon
 		}
 		else
 		{
-			SendInput(thisKey)
+			SendInput(thisKey) ; Reload
 		}
+
+		KeyWait(thisKey)
 	}
 }
 #HotIf
