@@ -38,5 +38,21 @@
 
 		KeyWait(thisKey)
 	}
+
+	*$Tab::
+	{
+		thisKey := SanitizeModifiers(ThisHotkey)
+
+		if (IsHeld(thisKey))
+		{
+			SendInput("{f10}") ; Game menu
+		}
+		else
+		{
+			SendInput("{" thisKey "}") ; Scan toggle
+		}
+
+		KeyWait(thisKey)
+	}
 }
 #HotIf
