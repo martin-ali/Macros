@@ -22,5 +22,21 @@
 
 		KeyWait(thisKey)
 	}
+
+	*$e::
+	{
+		thisKey := SanitizeModifiers(ThisHotkey)
+
+		if (IsHeld(thisKey))
+		{
+			SendInput("-") ; Melee weapon
+		}
+		else
+		{
+			SendInput(thisKey) ; Quick melee
+		}
+
+		KeyWait(thisKey)
+	}
 }
 #HotIf
