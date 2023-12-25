@@ -54,5 +54,17 @@
 
 		KeyWait(thisKey)
 	}
+
+	~*$LShift:: ; Slide
+	{
+		thisKey := SanitizeModifiers(ThisHotkey)
+
+		if (IsDoubleTapped(thisKey))
+		{
+			SendInput(";") ; Crouch
+		}
+
+		KeyWait(thisKey)
+	}
 }
 #HotIf
