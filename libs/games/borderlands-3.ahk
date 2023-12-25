@@ -31,6 +31,8 @@
 		{
 			SendInput("RControl")
 		}
+
+		KeyWait(thisKey)
 	}
 
 	*Enter::o
