@@ -6,18 +6,17 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 
 #HotIf WinActive('ahk_exe FSD-Win64-Shipping.exe')
 {
-	; Instant cast hook
+	; Instant cast grappling hook
 	*$Numpad1::
 	{
-		grapplingHook := "q"
-		SendInput ("{" grapplingHook "}")
+		SendInput ("q") ; Swap to grappling hook
 
-		Toggle("LButton")
+		Toggle("LButton") ; Deploy hook
 
-		thisKey := SanitizeModifiers(ThisHotkey)
+		thisKey := SanitizeModifiers(ThisHotkey) ; Wait for release
 		KeyWait(thisKey)
 
-		Toggle("LButton")
+		Toggle("LButton") ; Release hook
 	}
 }
 #HotIf
