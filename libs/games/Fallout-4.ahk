@@ -3,7 +3,7 @@
 #HotIf WinActive('ahk_exe Fallout4.exe')
 {
 	; Flashlight
-	$*t::
+	*$t::
 	{
 		LongPress("Tab", 350)
 	}
