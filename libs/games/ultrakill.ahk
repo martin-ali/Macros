@@ -5,6 +5,7 @@
 	*$WheelUp:: SendInput("{[}") ; Weapon variant
 	*$WheelDown:: SendInput("{]}") ; Fist variant
 
+	; Dedicated Knuckleblaster key
 	*$Numpad0::
 	{
 		SendEvent("{]}")
