@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 #Include ../helpers.ahk
 
@@ -44,14 +44,15 @@
 	turretDrone := "3"
 
 	; Dash instant cast
-	; Workaround for sometimes casting void or focus explosion instead of dash
+	; Workaround for sometimes casting Void or Focus Explosion instead of Dash
 	*$XButton1::
 	{
 		thisKey := SanitizeModifiers(ThisHotkey)
 		SendInput("{" thisKey "}")
 	}
 
-	; Reworks dash/focus to shatter/focus
+	; Attempts to rework the default Focus behaviour from Dash/Focus to Shatter/Focus
+	; WIP
 	~*$XButton2::
 	{
 		SendEvent("{" focus " down}")
@@ -82,7 +83,7 @@
 		KeyWait(thisKey)
 	}
 
-	; Tap for shock grenades, hold for turret drone
+	; Tap for Shock Grenades, hold for Turret Drone
 	~*$g::
 	{
 		thisKey := SanitizeModifiers(ThisHotkey)
