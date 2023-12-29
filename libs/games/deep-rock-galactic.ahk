@@ -9,7 +9,7 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 	; Instant cast grappling hook
 	*$Numpad1::
 	{
-		SendInput ("q") ; Swap to grappling hook
+		SendInput("q") ; Swap to grappling hook
 
 		Toggle("LButton") ; Deploy hook
 
