@@ -3,11 +3,11 @@
 #HotIf WinActive('ahk_exe HaloInfinite.exe')
 {
 	; Binds
-	grapplingHook := 1
-	motionTracker := 2
-	dropwall := 3
-	thruster := 4
-	activateAbility := "/"
+	global GrapplingHook := 1
+	global MotionTracker := 2
+	global Dropwall := 3
+	global Thruster := 4
+	global ActivateAbility := "/"
 
 	SetKeyDelay(5, 1)
 
@@ -20,32 +20,32 @@
 	{
 		SelectAbility(key)
 
-		SendEvent("{" activateAbility "}")
+		SendEvent("{" ActivateAbility "}")
 	}
 
 	*Enter::Space
 
 	~*q::
 	{
-		UseAbility(grapplingHook)
+		UseAbility(GrapplingHook)
 	}
 
 	*XButton2::
 	{
-		UseAbility(motionTracker)
-		SelectAbility(grapplingHook)
+		UseAbility(MotionTracker)
+		SelectAbility(GrapplingHook)
 	}
 
 	*XButton1::
 	{
-		UseAbility(thruster)
-		SelectAbility(grapplingHook)
+		UseAbility(Thruster)
+		SelectAbility(GrapplingHook)
 	}
 
 	*g::
 	{
-		UseAbility(dropwall)
-		SelectAbility(grapplingHook)
+		UseAbility(Dropwall)
+		SelectAbility(GrapplingHook)
 	}
 }
 #HotIf

@@ -4,12 +4,12 @@
 
 #HotIf WinActive('ahk_exe Turbo Overkill.exe')
 {
-	global weaponRequiresHoldingFire := false
+	global WeaponRequiresHoldingFire := false
 
 	; Shoot alt fire when pressing M1, even for weapons that fire on M2 release
 	~RButton & LButton::
 	{
-		if (weaponRequiresHoldingFire)
+		if (WeaponRequiresHoldingFire)
 		{
 			Hold("LButton")
 		}
@@ -23,7 +23,7 @@
 	~*v:: ; Telefragger
 	~*Numpad4:: ; Plasma Gun
 	{
-		global weaponRequiresHoldingFire := true
+		global WeaponRequiresHoldingFire := true
 	}
 
 	~*r:: ; Magnums
@@ -33,7 +33,7 @@
 	~*b:: ; Rocket Launcher
 	~*XButton2:: ; Uzis
 	{
-		global weaponRequiresHoldingFire := false
+		global WeaponRequiresHoldingFire := false
 	}
 }
 #HotIf

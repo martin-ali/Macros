@@ -5,7 +5,7 @@
 #HotIf WinActive('ahk_exe HorizonZeroDawn.exe')
 {
 	; Binds
-	showHud := "h"
+	global ShowHud := "h"
 
 	; Run
 	*Enter::Space
@@ -32,7 +32,7 @@
 	; Tap for map, hold to show HUD
 	*$Tab::
 	{
-		SendInput("{" showHud " down}")
+		SendInput("{" ShowHud " down}")
 
 		thisKey := SanitizeModifiers(ThisHotkey)
 		keyIsTapped := KeyWait(thisKey, "T0.35")
@@ -43,7 +43,7 @@
 
 		KeyWait(thisKey)
 
-		SendInput("{" showHud " up}")
+		SendInput("{" ShowHud " up}")
 	}
 }
 #HotIf
