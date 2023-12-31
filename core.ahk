@@ -51,6 +51,7 @@ A_HotkeyInterval := 0
 
 #Include games.ahk
 #Include desktop.ahk
+; #Include misc/tests.ahk
 
 #SuspendExempt
 *$Pause:: Suspend
