@@ -94,3 +94,4 @@ GroupAdd "ExcludedPrograms", "ahk_exe CPPFPS-Win64-Shipping.exe" ; Trepang2
 GroupAdd "ExcludedPrograms", "ahk_exe FactoryGame-Win64-Shipping.exe" ; Satisfactory
 GroupAdd "ExcludedPrograms", "ahk_exe Sprawl-Win64-Shipping.exe"
 GroupAdd "ExcludedPrograms", "ahk_exe ThankYouVeryCool-Win64-Shipping.exe" ; Severed Steel
+GroupAdd "ExcludedPrograms", "ahk_exe eldenring.exe"
