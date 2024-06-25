@@ -18,9 +18,10 @@
         }
     }
 
+    ; Need a fix for the alt-tab double-tab issue
     $\::
     $Enter::
-    $Tab::
+    ; $Tab::
     $Delete::
     {
         thisKey := SanitizeModifiers(ThisHotkey)
@@ -111,6 +112,7 @@
 
     ; #HotIf GetKeyState("Tab", PHYSICAL_STATE) and !WinActive("ahk_group ExcludedPrograms")
     ; Tab
+    Tab::Tab ; Tab left
     Tab & q::^PgUp ; Tab left
     Tab & w::^w ; Close tab
     Tab & e::^PgDn ; Tab right
