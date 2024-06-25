@@ -11,7 +11,11 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 	{
 		SendInput("q")
 
+		Sleep(20)
+
 		Toggle("LButton")
+
+		Sleep(20)
 
 		thisKey := SanitizeModifiers(ThisHotkey)
 		KeyWait(thisKey)
