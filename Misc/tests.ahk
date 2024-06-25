@@ -1,36 +1,57 @@
 ﻿#Requires AutoHotkey >=v2.0
 
 #Include ../libs/helpers.ahk
+; #Include ../libs/xinput.ahk
 
-f1::
-{
-	thisKey := SanitizeModifiers(ThisHotkey)
+; Joy1::LWin
+; Joy2::LWin
+; Joy3::LWin
+; Joy4::LWin
+; Joy5::LWin
+; Joy6::LWin
+; Joy7::LWin
+; Joy8::LWin
+; Joy9::LWin
+; Joy10::LWin
 
-	isHeldv := IsHeld(thisKey)
-	; isDoubleTappedv := IsDoubleTapped(thisKey)
-	isDoubleTappedv := IsTripleTapped(thisKey)
-	; isDoubleTappedv := IsMultiTapped(thisKey, 6)
+; f1::
+; {
+; 	Loop 20
+; 	{
+; 		if GetKeyState(ControllerNumber "Joy" A_Index)
+; 			buttons_down .= " " A_Index
+; 	}
+; }
 
-	if (isHeldv && isDoubleTappedv) ; Tap and hold
-	{
-		SendInput("TapAndHold - ")
-	}
-	else if (isHeldv)
-	{
-		SendInput("Hold - ")
-	}
-	else if (isDoubleTappedv)
-	{
-		SendInput("MultiTap - ")
-	}
-	else
-	{
-		SendInput("Tap - ")
-	}
+; f1::
+; {
+; 	thisKey := SanitizeModifiers(ThisHotkey)
 
-	KeyWait(thisKey)
+; 	isHeldv := IsHeld(thisKey)
+; 	; isDoubleTappedv := IsDoubleTapped(thisKey)
+; 	isDoubleTappedv := IsTripleTapped(thisKey)
+; 	; isDoubleTappedv := IsMultiTapped(thisKey, 6)
 
-}
+; 	if (isHeldv && isDoubleTappedv) ; Tap and hold
+; 	{
+; 		SendInput("TapAndHold - ")
+; 	}
+; 	else if (isHeldv)
+; 	{
+; 		SendInput("Hold - ")
+; 	}
+; 	else if (isDoubleTappedv)
+; 	{
+; 		SendInput("MultiTap - ")
+; 	}
+; 	else
+; 	{
+; 		SendInput("Tap - ")
+; 	}
+
+; 	KeyWait(thisKey)
+
+; }
 
 ; $f1::
 ; {
