@@ -1,6 +1,6 @@
 #Requires AutoHotkey >=v2.0
 
-#Include libs/exclusions.ahk
+#Include libs/exclusions-from-desktop-macros.ahk
 
 ProcessSetPriority "High"
 

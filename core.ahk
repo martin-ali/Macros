@@ -47,7 +47,7 @@ A_HotkeyInterval := 0
 
 #MaxThreads 12
 
-#Include libs/exclusions.ahk
+#Include libs/exclusions-from-desktop-macros.ahk
 
 #Include games.ahk
 #Include desktop.ahk

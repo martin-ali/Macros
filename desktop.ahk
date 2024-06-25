@@ -1,9 +1,9 @@
 #Requires AutoHotkey >=v2.0
 
-#Include libs/exclusions.ahk
+#Include libs/exclusions-from-desktop-macros.ahk
 #Include libs/helpers.ahk
 
-#HotIf !WinActive('ahk_group ExcludedPrograms')
+#HotIf !WinActive('ahk_group ExclusionsFromDesktopMacros')
 {
     SendKeyOnlyOnTap(key, timeoutInMs := 100)
     {
