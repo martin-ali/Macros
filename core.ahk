@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
+#Requires AutoHotkey >=v2.0
 
 #SingleInstance Force
 ;Skips the dialog box and replaces the old
@@ -56,4 +56,5 @@ A_HotkeyInterval := 0
 #SuspendExempt
 *$Pause:: Suspend
 *$PrintScreen:: Reload
+Ctrl & PrintScreen:: ExitApp
 #SuspendExempt False
