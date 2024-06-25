@@ -1,4 +1,4 @@
-#Requires AutoHotkey >=v2.0
+﻿#Requires AutoHotkey >=v2.0
 
 #SingleInstance Force
 ;Skips the dialog box and replaces the old
@@ -48,6 +48,7 @@ A_HotkeyInterval := 0
 #MaxThreads 12
 
 #Include libs/exclusions-from-desktop-macros.ahk
+#Include libs/exclusions-from-strokesplus.ahk
 
 #Include games.ahk
 #Include desktop.ahk
