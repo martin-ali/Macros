@@ -32,18 +32,18 @@
     Numpad0::MButton
     Numpad5::MButton
 
-    ; Upper side buttons
-    Numpad1:: SendInput("!{escape}") ; Next window
-    Numpad2:: SendInput("!+{escape}") ; Previous window
+    ; ; Upper side buttons
+    ; Numpad1:: SendInput("!{escape}") ; Next window
+    ; Numpad2:: SendInput("!+{escape}") ; Previous window
 
-    ; Window switching
-    XButton2 & WheelUp:: SendInput("!{escape}") ; Next window
-    XButton2 & WheelDown:: SendInput("!+{escape}") ; Previous window
-    XButton2::XButton2
+    ; ; Window switching
+    ; XButton2 & WheelUp:: SendInput("!{escape}") ; Next window
+    ; XButton2 & WheelDown:: SendInput("!+{escape}") ; Previous window
+    ; XButton2::XButton2
 
-    XButton1 & WheelUp:: SendInput("!{escape}") ; Next window
-    XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
-    XButton1::XButton1
+    ; XButton1 & WheelUp:: SendInput("!{escape}") ; Next window
+    ; XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
+    ; XButton1::XButton1
 
     Numpad3::^PgUp ; WheelLeft
     Numpad4::^PgDn ; WheelRight
