@@ -112,3 +112,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Hi-Fi-RUSH.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe GhostOfTsushima.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Client-Win64-Shipping.exe" ; Wuthering Waves
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe METAL GEAR RISING REVENGEANCE.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Sifu-Win64-Shipping.exe"
