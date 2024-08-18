@@ -49,13 +49,24 @@ A_HotkeyInterval := 0
 
 #Include libs/exclusions-from-desktop-macros.ahk
 #Include libs/exclusions-from-strokesplus.ahk
+#Include libs/helpers.ahk
 
 #Include games.ahk
 #Include desktop.ahk
 ; #Include misc/tests.ahk
 
+strokesPlusProcessName := "StrokesPlus.net.exe"
+strokesPlusLocation := "C:\Program Files\StrokesPlus.net\StrokesPlus.net.exe"
+
+#f1:: ExitApp
+
+#f2::
+{
+	ToggleApp(strokesPlusProcessName, strokesPlusLocation)
+}
+
 #SuspendExempt
 *$Pause:: Suspend
 *$PrintScreen:: Reload
-Ctrl & PrintScreen:: ExitApp
+; Ctrl & PrintScreen:: ExitApp
 #SuspendExempt False

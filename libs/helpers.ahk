@@ -3,6 +3,18 @@
 HOTKEY_MODIFIERS := "#!^+&<>*~$"
 PHYSICAL_STATE := "p"
 
+ToggleApp(processName, appLocation)
+{
+	If ProcessExist(processName)
+	{
+		ProcessClose(processName)
+	}
+	else
+	{
+		Run(appLocation)
+	}
+}
+
 ConvertFromHoldToToggle(key)
 {
 	Toggle(key)

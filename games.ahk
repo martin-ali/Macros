@@ -38,26 +38,6 @@ ProcessSetPriority "High"
 #Include libs/games/turbo-overkill.ahk
 ; #Include libs/games/ultrakill.ahk
 
-strokesPlusProcessName := "StrokesPlus.net.exe"
-strokesPlusLocation := "C:\Program Files\StrokesPlus.net\StrokesPlus.net.exe"
-
-ToggleApp(processName, appLocation)
-{
-	If ProcessExist(processName)
-	{
-		ProcessClose(processName)
-	}
-	else
-	{
-		Run(appLocation)
-	}
-}
-
-#f1::
-{
-	ToggleApp(strokesPlusProcessName, strokesPlusLocation)
-}
-
 ; ; Disable StrokesPlus the hard way
 ; #HotIf WinActive('ahk_exe FSD-Win64-Shipping.exe')
 ; {
