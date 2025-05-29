@@ -8,6 +8,7 @@
 	global Dropwall := 3
 	global Thruster := 4
 	global ActivateAbility := "/"
+	global DefaultAbility := GrapplingHook
 
 	SetKeyDelay(5, 1)
 
@@ -28,24 +29,25 @@
 	~*q::
 	{
 		UseAbility(GrapplingHook)
+		SelectAbility(DefaultAbility)
 	}
 
 	*XButton2::
 	{
 		UseAbility(MotionTracker)
-		SelectAbility(GrapplingHook)
+		SelectAbility(DefaultAbility)
 	}
 
 	*XButton1::
 	{
 		UseAbility(Thruster)
-		SelectAbility(GrapplingHook)
+		SelectAbility(DefaultAbility)
 	}
 
 	*g::
 	{
 		UseAbility(Dropwall)
-		SelectAbility(GrapplingHook)
+		SelectAbility(DefaultAbility)
 	}
 }
 #HotIf
