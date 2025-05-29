@@ -43,31 +43,31 @@
 	shockGrenades := "2"
 	turretDrone := "3"
 
-	; Dash instant cast
-	; Workaround for sometimes casting Void or Focus Explosion instead of Dash
-	*$XButton1::
-	{
-		thisKey := SanitizeModifiers(ThisHotkey)
-		SendInput("{" thisKey "}")
-	}
+	; ; Dash instant cast
+	; ; Workaround for sometimes casting Void or Focus Explosion instead of Dash
+	; *$XButton1::
+	; {
+	; 	thisKey := SanitizeModifiers(ThisHotkey)
+	; 	SendInput("{" thisKey "}")
+	; }
 
-	; Attempts to rework the default Focus behaviour from Dash/Focus to Shatter/Focus
-	; WIP
-	~*$XButton2::
-	{
-		SendEvent("{" focus " down}")
+	; ; Attempts to rework the default Focus behaviour from Dash/Focus to Shatter/Focus
+	; ; WIP
+	; ~*$XButton2::
+	; {
+	; 	SendEvent("{" focus " down}")
 
-		thisKey := SanitizeModifiers(ThisHotkey)
-		focusIsTapped := KeyWait(thisKey, "T0.3")
-		KeyWait(thisKey)
+	; 	thisKey := SanitizeModifiers(ThisHotkey)
+	; 	focusIsTapped := KeyWait(thisKey, "T0.3")
+	; 	KeyWait(thisKey)
 
-		if (focusIsTapped)
-		{
-			SendEvent("{" shatter "}")
-		}
+	; 	if (focusIsTapped)
+	; 	{
+	; 		SendEvent("{" shatter "}")
+	; 	}
 
-		SendEvent("{" focus " up}")
-	}
+	; 	SendEvent("{" focus " up}")
+	; }
 
 	; Wingstick
 	~*$q::
