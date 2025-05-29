@@ -32,7 +32,7 @@ SetMouseDelay(-1)
 ;Sets the delay that will occur after each
 ;mouse movement or click.
 
-SetWinDelay(-1)
+; SetWinDelay(-1)
 ; Sets the delay that will occur after each
 ; windowing command such as WinActivate.
 
@@ -45,28 +45,26 @@ SetWinDelay(-1)
 ProcessSetPriority "High"
 A_HotkeyInterval := 0
 
-#MaxThreads 12
+#MaxThreads 8
 
 #Include libs/exclusions-from-desktop-macros.ahk
 #Include libs/exclusions-from-strokesplus.ahk
 #Include libs/helpers.ahk
+#Include libs/constants.ahk
 
 #Include games.ahk
 #Include desktop.ahk
 ; #Include misc/tests.ahk
 
-strokesPlusProcessName := "StrokesPlus.net.exe"
-strokesPlusLocation := "C:\Program Files\StrokesPlus.net\StrokesPlus.net.exe"
-
 #f1:: ExitApp
 
 #f2::
 {
-	ToggleApp(strokesPlusProcessName, strokesPlusLocation)
+	ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
 }
 
 #SuspendExempt
 *$Pause:: Suspend
 *$PrintScreen:: Reload
-; Ctrl & PrintScreen:: ExitApp
+; Ctrl & Pause:: ExitApp
 #SuspendExempt False
