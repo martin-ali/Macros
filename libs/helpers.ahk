@@ -1,7 +1,4 @@
-﻿#Requires AutoHotkey >=v2.0
-
-HOTKEY_MODIFIERS := "#!^+&<>*~$"
-PHYSICAL_STATE := "p"
+﻿#Include constants.ahk
 
 ToggleApp(processName, appLocation)
 {
@@ -95,7 +92,7 @@ IsMultiTapped(key, tapCount, timeout := 300)
 	static TapsCountInSeriesByKey := Map()
 
 	if (previousPressMsByKey.Has(key) == false
-		|| TapsCountInSeriesByKey.Has(key) == false)
+	|| TapsCountInSeriesByKey.Has(key) == false)
 	{
 		previousPressMsByKey[key] := 0
 		TapsCountInSeriesByKey[key] := 1
