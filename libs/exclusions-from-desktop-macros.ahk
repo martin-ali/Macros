@@ -113,3 +113,27 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe GhostOfTsushima.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Client-Win64-Shipping.exe" ; Wuthering Waves
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe METAL GEAR RISING REVENGEANCE.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Sifu-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe b1-Win64-Shipping.exe" ; Black Myth: Wukong
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Remnant2-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Wow.exe" ; World of Warcraft
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Yakuza0.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Warhammer 40000 Space Marine 2 - Retail.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe TheSurge2.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe GoWR.exe" ; God of War Ragnarok
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Wonderlands.exe" ; Tiny Tina's Wonderlands
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe vermintide2_dx12.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RelicCardinal.exe" ; Age of Empires IV
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Ixion.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Back4Blood.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DeltaForceClient-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BHDClient-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Endeavor-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe sins2.exe" ; Sins of a Solar Empire II
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DesertsOfKharak64.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SupremeCommander2.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MetalEden-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe LOTF2-Win64-Shipping.exe" ; Lords of the Fallen Remake
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PA.exe" ; Planetary Annihilation: TITANS
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe KingdomCome.exe" ; Kingdom Come: Deliverance
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe OblivionRemastered-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DOOMTheDarkAges.exe"
