@@ -137,3 +137,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PA.exe" ; Planetary Annihilatio
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe KingdomCome.exe" ; Kingdom Come: Deliverance
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe OblivionRemastered-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DOOMTheDarkAges.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MassEffect1.exe"
