@@ -141,3 +141,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MassEffect1.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Mechabellum.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe ShadowOfMordor.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RTS.exe" ; ZeroSpace
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PEAK.exe"
