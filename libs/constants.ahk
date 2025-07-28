@@ -5,3 +5,6 @@ PHYSICAL_STATE := "p"
 
 STROKES_PLUS_PROCESS_NAME := "StrokesPlus.net.exe"
 STROKES_PLUS_LOCATION := "C:\Program Files\StrokesPlus.net\StrokesPlus.net.exe"
+
+EXPLORER_PROCESS_NAME := "explorer.exe"
+EXPLORER_LOCATION := "C:\Windows\explorer.exe"

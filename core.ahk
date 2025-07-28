@@ -63,6 +63,11 @@ A_HotkeyInterval := 0
 	ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
 }
 
+#f3::
+{
+	ToggleApp(EXPLORER_PROCESS_NAME, EXPLORER_LOCATION)
+}
+
 #SuspendExempt
 *$Pause:: Suspend
 *$PrintScreen:: Reload
