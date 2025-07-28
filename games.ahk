@@ -43,10 +43,10 @@ ProcessSetPriority "High"
 ; }
 ; #HotIf
 
-; Fix for the alt-tab issue
-#HotIf WinExist('ahk_group ExclusionsFromDesktopMacros')
-{
-	; Alt & Tab::AltTabAndMenu
-	; ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
-}
-#HotIf
+; ; Fix for the alt-tab issue
+; #HotIf WinExist('ahk_group ExclusionsFromDesktopMacros')
+; {
+; 	; Alt & Tab::AltTabAndMenu
+; 	; ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
+; }
+; #HotIf
