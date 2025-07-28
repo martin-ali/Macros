@@ -131,8 +131,6 @@ IsTripleTapped(key, timeout := 300)
 	return IsMultiTapped(key, 3, timeout)
 }
 
-; Multi-tap
-
 ; Double tap and hold
 
 ; Hold, long hold, and tap
