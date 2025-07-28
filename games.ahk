@@ -19,6 +19,7 @@ ProcessSetPriority "High"
 ; #Include libs/games/doom-eternal.ahk
 #Include libs/games/Fallout-4.ahk
 #Include libs/games/halo-infinite.ahk
+#Include libs/games/helldivers-2.ahk
 #Include libs/games/horizon-zero-dawn.ahk
 ; #Include libs/games/necromunda-hired-gun.ahk
 #Include libs/games/quake-2-remastered.ahk
