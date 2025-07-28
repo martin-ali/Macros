@@ -92,7 +92,7 @@ IsMultiTapped(key, tapCount, timeout := 300)
 	static TapsCountInSeriesByKey := Map()
 
 	if (previousPressMsByKey.Has(key) == false
-	|| TapsCountInSeriesByKey.Has(key) == false)
+		|| TapsCountInSeriesByKey.Has(key) == false)
 	{
 		previousPressMsByKey[key] := 0
 		TapsCountInSeriesByKey[key] := 1
