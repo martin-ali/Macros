@@ -28,8 +28,8 @@ ConvertFromToggleToHold(key)
 
 SanitizeModifiers(hotkey)
 {
-	cleanedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
-	return cleanedHotkey
+	sanitizedHotkey := LTrim(hotkey, HOTKEY_MODIFIERS)
+	return sanitizedHotkey
 }
 
 SendDelayed(key, delayMs := 25, delayAfterPress := true)
