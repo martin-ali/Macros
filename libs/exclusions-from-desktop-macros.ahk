@@ -54,7 +54,7 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Frostpunk.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Titanfall2.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe FarCry6.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe R6-Extraction_Plus.exe"
-GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MCC-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MCC-Win64-Shipping.exe" ; Halo: The Master Chief Collection
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Anno1800_plus.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Dead Space.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe fc3_blooddragon_d3d11.exe"
