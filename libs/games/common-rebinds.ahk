@@ -25,7 +25,7 @@ GroupAdd "CommonRebinds", "ahk_exe BHDClient-Win64-Shipping.exe"
 GroupAdd "CommonRebinds", "ahk_exe sins2.exe"
 GroupAdd "CommonRebinds", "ahk_exe MetalEden-Win64-Shipping.exe"
 GroupAdd "CommonRebinds", "ahk_exe KingdomCome.exe"
-GroupAdd "CommonRebinds", "ahk_exe OblivionRemastered-Win64-Shipping.exe"
+GroupAdd "CommonRebinds", "ahk_exe REPO.exe"
 
 #HotIf WinActive('ahk_group CommonRebinds')
 {
