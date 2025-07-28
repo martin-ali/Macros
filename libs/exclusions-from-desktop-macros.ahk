@@ -145,3 +145,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PEAK.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe REPO.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RoboCop-Win64-Shipping.exe" ; Robocop: Rogue City
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DSPGAME.exe" ; Dyson Sphere Program
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Turing Complete.exe"
