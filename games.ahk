@@ -37,6 +37,7 @@ ProcessSetPriority "High"
 ; }
 
 ; ; Disable StrokesPlus
+; ; TODO: Make it automatically disable StrokesPlus when a game is detected
 ; #HotIf WinActive('ahk_exe FSD-Win64-Shipping.exe')
 ; {
 ; 	ToggleApp(strokesPlusProcessName, strokesPlusLocation)
