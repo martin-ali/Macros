@@ -147,3 +147,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RoboCop-Win64-Shipping.exe" ; R
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DSPGAME.exe" ; Dyson Sphere Program
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Turing Complete.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MetroExodus.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe JediSurvivor.exe"
