@@ -1,3 +1,3 @@
 # Autohotkey scripts
 
-This is where I store my macros and some libraries
+This is where I store my macros and related libraries
