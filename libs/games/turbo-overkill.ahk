@@ -6,7 +6,7 @@
 {
 	global WeaponRequiresHoldingFire := false
 
-	; Shoot alt fire when pressing M1, even for weapons that fire on M2 release
+	; Shoot alt fire when pressing down M1, even for weapons that fire on M2 release
 	~RButton & LButton::
 	{
 		if (WeaponRequiresHoldingFire)
