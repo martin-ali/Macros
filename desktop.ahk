@@ -5,11 +5,11 @@
 
 #HotIf !WinActive('ahk_group ExclusionsFromDesktopMacros')
 {
-    SendKeyOnlyOnTap(key, timeoutInMs := 100)
+    SendKeyOnlyOnTap(key, timeoutMs := 100)
     {
-        timeoutInSeconds := timeoutInMs / 1000
+        timeoutSeconds := timeoutMs / 1000
 
-        keyIsTapped := KeyWait(key, "T" timeoutInSeconds)
+        keyIsTapped := KeyWait(key, "T" timeoutSeconds)
         KeyWait(key)
 
         if (keyIsTapped)
