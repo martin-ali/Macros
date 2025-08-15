@@ -148,3 +148,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DSPGAME.exe" ; Dyson Sphere Pro
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Turing Complete.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MetroExodus.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe JediSurvivor.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Witchfire-Win64-Shipping.exe"
