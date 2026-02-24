@@ -154,3 +154,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Mortal Sin.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MuMuNxDevice.exe" ; MuMuPlayer (Android emulator)
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SandFall-Win64-Shipping.exe" ; Clair Obscur: Expedition 33
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SB-Win64-Shipping.exe" ; Stellar Blade
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe VOIN-Win64-Shipping.exe"
