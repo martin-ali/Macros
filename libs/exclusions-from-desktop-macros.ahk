@@ -162,3 +162,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Project-Win64-Shipping.exe" ; S
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe wwm.exe" ; Where Winds Meet
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Dispatch-Win64-Shipping.exe" ; Dispatch
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Painkiller-Win64-Shipping.exe" ; Painkiller
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Diablo III64.exe"
