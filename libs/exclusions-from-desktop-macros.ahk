@@ -156,3 +156,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SandFall-Win64-Shipping.exe" ; 
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SB-Win64-Shipping.exe" ; Stellar Blade
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe VOIN-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe ChernobylGame-Win64-Shipping.exe" ; Chernpbylite
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe CodeVein-Win64-Shipping.exe"
