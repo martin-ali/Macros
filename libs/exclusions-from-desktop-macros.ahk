@@ -160,3 +160,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe CodeVein-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Returnal-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Project-Win64-Shipping.exe" ; Scars Above
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe wwm.exe" ; Where Winds Meet
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Dispatch-Win64-Shipping.exe" ; Dispatch
