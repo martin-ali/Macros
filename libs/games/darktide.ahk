@@ -4,52 +4,24 @@
 
 #HotIf WinActive('ahk_exe Darktide.exe')
 {
-	weaponIsMelee := true
+	global Dodge := "LControl"
+	global Crouch := "LShift"
 
-	GuaranteeMeleeWeapon(currentWeaponIsMelee)
+	; Dodge slide with one button
+	*$\::
 	{
-		if (weaponIsMelee := false)
-		{
-			Send("c")
-		}
+		Send("{" Dodge "}")
+
+		Sleep(50)
+
+		Toggle(Crouch)
+
+		Sleep(20)
+
+		thisKey := SanitizeModifiers(ThisHotkey)
+		KeyWait(thisKey)
+
+		Toggle(Crouch)
 	}
-
-	~*XButton1::
-	{
-		GuaranteeMeleeWeapon(weaponIsMelee)
-
-		SendInput("{RButton down}")
-
-		KeyWait("XButton1")
-
-		SendInput("{RButton up}")
-	}
-
-	~*XButton2:: 
-	{
-		if (weaponIsMelee := false)
-		{
-			GuaranteeMeleeWeapon(weaponIsMelee)
-
-			Sleep(100)
-		}
-
-		SendInput("{LButton down}")
-
-		KeyWait("XButton2")
-
-		SendInput("{LButton up}")
-	}
-
-	~*$x:: ; Ranged weapon
-	{
-		weaponIsMelee := false
-	}
-
-	~*$c:: ; Melee weapon
-	{
-		weaponIsMelee := true
-	}
-
 }
 #HotIf

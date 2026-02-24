@@ -13,7 +13,7 @@ ProcessSetPriority "High"
 #Include libs/games/crab-champions.ahk
 #Include libs/games/cyberpunk-2077.ahk
 ; #Include libs/games/daemon-x-machina.ahk
-; #Include libs/games/darktide.ahk
+#Include libs/games/darktide.ahk
 #Include libs/games/deep-rock-galactic.ahk
 #Include libs/games/destiny-2.ahk
 ; #Include libs/games/doom-eternal.ahk
