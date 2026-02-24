@@ -159,3 +159,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe ChernobylGame-Win64-Shipping.ex
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe CodeVein-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Returnal-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Project-Win64-Shipping.exe" ; Scars Above
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe wwm.exe" ; Where Winds Meet
