@@ -45,8 +45,8 @@
     ; XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
     ; XButton1::XButton1
 
-    Numpad3::^PgUp ; WheelLeft
-    Numpad4::^PgDn ; WheelRight
+    Numpad1::^PgUp ; WheelLeft
+    Numpad2::^PgDn ; WheelRight
 
     Delete & -::^- ; Zoom in
     Delete & =::^= ; Zoom out

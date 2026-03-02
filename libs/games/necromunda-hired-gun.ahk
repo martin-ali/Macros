@@ -5,6 +5,6 @@
 #HotIf WinActive('ahk_exe Necromunda-Win64-Shipping.exe')
 {
 	XButton1::LShift
-	Numpad1::q
+	Numpad2::q
 }
 #HotIf

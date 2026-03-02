@@ -21,7 +21,7 @@
 	}
 
 	~*v:: ; Telefragger
-	~*Numpad4:: ; Plasma Gun
+	~*Numpad2:: ; Plasma Gun
 	{
 		global WeaponRequiresHoldingFire := true
 	}

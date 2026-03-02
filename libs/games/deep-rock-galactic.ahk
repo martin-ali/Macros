@@ -7,7 +7,7 @@ GroupAdd "CommonRebinds", "ahk_exe FSD-Win64-Shipping.exe"
 #HotIf WinActive('ahk_exe FSD-Win64-Shipping.exe')
 {
 	; Instant cast grappling hook
-	*$Numpad1::
+	*$Numpad2::
 	{
 		SendInput("q")
 
