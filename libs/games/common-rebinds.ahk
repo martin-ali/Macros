@@ -2,7 +2,6 @@
 
 GroupAdd "CommonRebinds", "ahk_exe Magicka.exe"
 GroupAdd "CommonRebinds", "ahk_exe Swat4.exe"
-GroupAdd "CommonRebinds", "ahk_exe bms.exe" ; Black Mesa
 GroupAdd "CommonRebinds", "ahk_exe vermintide2.exe"
 GroupAdd "CommonRebinds", "ahk_exe OxygenNotIncluded.exe"
 GroupAdd "CommonRebinds", "ahk_exe FarCry6.exe"
