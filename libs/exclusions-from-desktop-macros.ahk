@@ -164,4 +164,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Dispatch-Win64-Shipping.exe" ; 
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Painkiller-Win64-Shipping.exe" ; Painkiller
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Diablo III64.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Fall of Avalon.exe"
-GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PRAGMATA_SKETCHBOOK.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PRAGMATA.exe"
