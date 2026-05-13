@@ -5,7 +5,7 @@
 #HotIf WinActive('ahk_exe Darktide.exe')
 {
 	global Dodge := "LControl"
-	global Crouch := "LShift"
+	global Crouch := "j"
 
 	; Dodge slide with one button
 	*$\::
