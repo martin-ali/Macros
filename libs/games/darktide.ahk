@@ -14,14 +14,14 @@
 
 		Sleep(50)
 
-		Toggle(Crouch)
+		SendInput("{" Crouch " down}")
 
 		Sleep(20)
 
 		thisKey := SanitizeModifiers(ThisHotkey)
 		KeyWait(thisKey)
 
-		Toggle(Crouch)
+		SendInput("{" Crouch " up}")
 	}
 }
 #HotIf
