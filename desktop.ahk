@@ -3,6 +3,8 @@
 #Include libs/exclusions-from-desktop-macros.ahk
 #Include libs/helpers.ahk
 
+$#q::Insert
+
 #HotIf !WinActive('ahk_group ExclusionsFromDesktopMacros')
 {
     SendKeyOnlyOnTap(key, timeoutMs := 100)
