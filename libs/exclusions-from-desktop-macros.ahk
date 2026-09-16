@@ -191,3 +191,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe The_Holy_Fool-Win64-Shipping.ex
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MortalShell2-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe spring.exe" ; Beyond All Reason
 GroupAdd "ExclusionsFromDesktopMacros", "Stonemachia-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "TyrClient-Win64-Shipping.exe"
