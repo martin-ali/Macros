@@ -171,3 +171,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Diablo IV Launcher.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe PagodaSteam-Win64-Shipping.exe" ; Dead as Disco
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Morbid Metal.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SpeciesUnknown-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RedSoul-Win64-Shipping.exe" ; Crimson Oath
