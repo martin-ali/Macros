@@ -182,3 +182,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MonsterHunterWorld.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BatmanAK.exe" ; Batman: Arkham Knight
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe UAWEA.exe" ; Universe at War: Earth Assault
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Shady Knight Demo.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe StormGame-Win64-Shipping.exe" ; Bulletstorm
