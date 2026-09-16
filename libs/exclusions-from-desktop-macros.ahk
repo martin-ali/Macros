@@ -179,3 +179,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DD2.exe" ; Dragon's Dogma 2
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BioshockHD.exe" ; Bioshock Remastered
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe AoMRT_s.exe" ; Age of Mythology: Retold
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MonsterHunterWorld.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BatmanAK.exe" ; Batman: Arkham Knight
