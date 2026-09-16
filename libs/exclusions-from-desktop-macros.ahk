@@ -180,3 +180,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BioshockHD.exe" ; Bioshock Rema
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe AoMRT_s.exe" ; Age of Mythology: Retold
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MonsterHunterWorld.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BatmanAK.exe" ; Batman: Arkham Knight
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe UAWEA.exe" ; Universe at War: Earth Assault
