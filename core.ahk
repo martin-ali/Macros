@@ -56,14 +56,14 @@ A_HotkeyInterval := 0
 #Include desktop.ahk
 ; #Include misc/tests.ahk
 
-#f1:: ExitApp
+#1:: ExitApp
 
-#f2::
+#2::
 {
 	ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
 }
 
-#f3::
+#3::
 {
 	ToggleApp(EXPLORER_PROCESS_NAME, EXPLORER_LOCATION)
 }

@@ -9,7 +9,7 @@ ProcessSetPriority "High"
 #Include libs/games/alien-isolation.ahk
 #Include libs/games/baldurs-gate-3.ahk
 #Include libs/games/borderlands-3.ahk
-#Include libs/games/common-rebinds.ahk
+; #Include libs/games/common-rebinds.ak
 #Include libs/games/crab-champions.ahk
 #Include libs/games/cyberpunk-2077.ahk
 ; #Include libs/games/daemon-x-machina.ahk

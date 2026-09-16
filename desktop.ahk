@@ -34,33 +34,14 @@ $#q::Insert
     Numpad0::MButton
     Numpad5::MButton
 
-    ; ; Upper side buttons
-    ; Numpad1:: SendInput("!{escape}") ; Next window
-    ; Numpad2:: SendInput("!+{escape}") ; Previous window
+    \ & '::NumLock
 
-    ; ; Window switching
-    ; XButton2 & WheelUp:: SendInput("!{escape}") ; Next window
-    ; XButton2 & WheelDown:: SendInput("!+{escape}") ; Previous window
-    ; XButton2::XButton2
-
-    ; XButton1 & WheelUp:: SendInput("!{escape}") ; Next window
-    ; XButton1 & WheelDown:: SendInput("!+{escape}") ; Previous window
-    ; XButton1::XButton1
-
-    Numpad1::^PgUp ; WheelLeft
-    Numpad2::^PgDn ; WheelRight
-
-    Delete & -::^- ; Zoom in
-    Delete & =::^= ; Zoom out
-    Delete & 0::^0 ; Zoom reset
-
-    \ & Delete::NumLock
-    \ & -::^- ; Zoom in
-    \ & =::^= ; Zoom out
-    \ & 0::^0 ; Zoom reset
-    \ & o::^PgUp ; Tab left
-    \ & [::^PgDn ; Tab right
-    \ & p::^w ; Close tab
+    Enter & -::^- ; Zoom in
+    Enter & =::^= ; Zoom out
+    Enter & 0::^0 ; Zoom reset
+    Enter & u::^PgUp ; Tab left
+    Enter & o::^PgDn ; Tab right
+    Enter & i::^w ; Close tab
 
     ; Functionality
     Enter & m::^m ; Mute Tab
@@ -69,34 +50,6 @@ $#q::Insert
     Enter & Space::Enter
     Enter & Tab::CapsLock
     ; ; / or ? focuses on the search bar in some websites
-
-    ; Navigation left side
-    Enter & w::Up
-    Enter & s::Down
-    Enter & a::Left
-    Enter & d::Right
-
-    Enter & q::Home
-    Enter & e::End
-    Enter & f::PgUp
-    Enter & c::PgDn
-
-    Enter & z:: Send "{browser_back}"
-    Enter & x:: Send "{browser_forward}"
-
-    ; Navigation right side
-    Enter & p::Up
-    Enter & `;::Down
-    Enter & l::Left
-    Enter & '::Right
-
-    Enter & o::Home
-    Enter & [::End
-    Enter & k::PgUp
-    Enter & ,::PgDn
-
-    Enter & .:: Send "{browser_back}"
-    Enter & /:: Send "{browser_forward}"
 
     ; Function row
     Enter & 1::F1
