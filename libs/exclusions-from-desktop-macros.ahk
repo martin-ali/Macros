@@ -184,3 +184,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe UAWEA.exe" ; Universe at War: E
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Shady Knight Demo.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe StormGame-Win64-Shipping.exe" ; Bulletstorm
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Sanctuary Shattered Sun.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Amethyst-Win64-Shipping.exe" ; Necrofane
