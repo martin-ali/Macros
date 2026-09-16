@@ -174,3 +174,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SpeciesUnknown-Win64-Shipping.e
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe RedSoul-Win64-Shipping.exe" ; Crimson Oath
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MotorSlice-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SLASHER-Win64-Shipping.exe" ; Fatekeeper
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe OnimushaWotS_Demo.exe"
