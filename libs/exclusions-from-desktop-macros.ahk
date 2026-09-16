@@ -189,3 +189,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Jump Space.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe AshesEscalation_DX11.exe" ; Ashes of the Singularity: Escalation
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe The_Holy_Fool-Win64-Shipping.exe" ; Lantern of the Laughless Saint
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MortalShell2-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe spring.exe" ; Beyond All Reason
