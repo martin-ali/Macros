@@ -193,3 +193,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe spring.exe" ; Beyond All Reason
 GroupAdd "ExclusionsFromDesktopMacros", "Stonemachia-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "TyrClient-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "Stalker2-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "Umbrella1-Win64-Shipping.exe" ; Bakudo
