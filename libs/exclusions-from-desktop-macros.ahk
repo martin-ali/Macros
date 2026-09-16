@@ -176,3 +176,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MotorSlice-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe SLASHER-Win64-Shipping.exe" ; Fatekeeper
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe OnimushaWotS_Demo.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe DD2.exe" ; Dragon's Dogma 2
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe BioshockHD.exe" ; Bioshock Remastered
