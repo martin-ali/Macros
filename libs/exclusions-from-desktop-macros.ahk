@@ -187,3 +187,4 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Sanctuary Shattered Sun.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Amethyst-Win64-Shipping.exe" ; Necrofane
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Jump Space.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe AshesEscalation_DX11.exe" ; Ashes of the Singularity: Escalation
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe The_Holy_Fool-Win64-Shipping.exe" ; Lantern of the Laughless Saint
