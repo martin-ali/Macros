@@ -33,6 +33,9 @@ $#q::Insert
     Numpad0::MButton
     Numpad5::MButton
 
+    Numpad1::^PgUp ; WheelLeft
+    Numpad2::^PgDn ; WheelRight
+
     \ & '::NumLock
 
     Enter & -::^- ; Zoom in
