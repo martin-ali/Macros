@@ -190,7 +190,7 @@ GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe AshesEscalation_DX11.exe" ; Ash
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe The_Holy_Fool-Win64-Shipping.exe" ; Lantern of the Laughless Saint
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe MortalShell2-Win64-Shipping.exe"
 GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe spring.exe" ; Beyond All Reason
-GroupAdd "ExclusionsFromDesktopMacros", "Stonemachia-Win64-Shipping.exe"
-GroupAdd "ExclusionsFromDesktopMacros", "TyrClient-Win64-Shipping.exe"
-GroupAdd "ExclusionsFromDesktopMacros", "Stalker2-Win64-Shipping.exe"
-GroupAdd "ExclusionsFromDesktopMacros", "Umbrella1-Win64-Shipping.exe" ; Bakudo
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Stonemachia-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe TyrClient-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Stalker2-Win64-Shipping.exe"
+GroupAdd "ExclusionsFromDesktopMacros", "ahk_exe Umbrella1-Win64-Shipping.exe" ; Bakudo
