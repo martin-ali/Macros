@@ -23,8 +23,7 @@ $#q::Insert
     ; Need a fix for the alt-tab double-tab issue
     $\::
     $Enter::
-    ; $Tab::
-    $Delete::
+    $Tab::
     {
         thisKey := SanitizeModifiers(ThisHotkey)
         SendKeyOnlyOnTap(thisKey)
