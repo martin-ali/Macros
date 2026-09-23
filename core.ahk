@@ -56,18 +56,6 @@ A_HotkeyInterval := 0
 #Include desktop.ahk
 ; #Include misc/tests.ahk
 
-#1:: ExitApp
-
-#2::
-{
-	ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
-}
-
-#3::
-{
-	ToggleApp(EXPLORER_PROCESS_NAME, EXPLORER_LOCATION)
-}
-
 #SuspendExempt
 *$Pause:: Suspend
 *$PrintScreen:: Reload

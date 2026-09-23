@@ -20,6 +20,18 @@ $#q::Insert
         }
     }
 
+    #1:: ExitApp
+
+    #2::
+    {
+        ToggleApp(STROKES_PLUS_PROCESS_NAME, STROKES_PLUS_LOCATION)
+    }
+
+    #3::
+    {
+        ToggleApp(EXPLORER_PROCESS_NAME, EXPLORER_LOCATION)
+    }
+
     ; Need a fix for the alt-tab double-tab issue
     $\::
     $Enter::
